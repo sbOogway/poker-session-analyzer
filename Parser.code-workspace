@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Parser",
+			"path": "."
+		},
+		{
+			"name": "raw hand histories",
+			"path": "../raw hand histories"
+		}
+	],
+	"settings": {}
+}
