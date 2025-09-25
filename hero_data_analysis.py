@@ -87,10 +87,9 @@ class HeroDataAnalyzer:
         went_to_showdown = self.df['Went_to_Showdown'].sum()
         showdown_rate = (went_to_showdown / saw_flop) * 100 if saw_flop > 0 else 0
         
-        # Won money at showdown (only for hands that went to showdown)
-        won_money_at_showdown = self.df['Won_Money_at_Showdown'].sum()
-        won_at_showdown_rate = (won_money_at_showdown > 0).sum() if went_to_showdown > 0 else 0
-        won_at_showdown_rate = (won_at_showdown_rate / went_to_showdown) * 100 if went_to_showdown > 0 else 0
+        # Won at showdown (W$SD) - percentage of showdowns won
+        won_at_showdown = self.df['Won_at_Showdown'].sum()
+        won_at_showdown_rate = (won_at_showdown / went_to_showdown) * 100 if went_to_showdown > 0 else 0
         
         # Preflop metrics
         preflop_raised = self.df['Preflop_Raised'].sum()
@@ -121,7 +120,7 @@ class HeroDataAnalyzer:
             'flop_rate': flop_rate,
             'won_when_saw_flop': won_when_saw_flop,
             'flop_win_rate': flop_win_rate,
-            'won_money_at_showdown': won_money_at_showdown,
+            'won_at_showdown': won_at_showdown,
             'won_at_showdown_rate': won_at_showdown_rate,
             'preflop_raised': preflop_raised,
             'preflop_raise_rate': preflop_raise_rate,
@@ -443,8 +442,8 @@ def main():
             
             with col3:
                 st.metric("Showdown Rate (of Flop)", f"{metrics['showdown_rate']:.1f}%")
-                st.metric("Won at Showdown Rate", f"{metrics['won_at_showdown_rate']:.1f}%")
-                st.metric("Won Money at Showdown", f"${metrics['won_money_at_showdown']:.2f}")
+                st.metric("W$SD (Won at Showdown)", f"{metrics['won_at_showdown_rate']:.1f}%")
+                st.metric("Won at Showdown Count", f"{metrics['won_at_showdown']} times")
             
             with col4:
                 st.metric("C-Bet Turn Rate", f"{(metrics['cbet_turn'] / metrics['total_hands'] * 100) if metrics['total_hands'] > 0 else 0:.1f}%")

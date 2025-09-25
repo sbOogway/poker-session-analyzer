@@ -24,7 +24,7 @@ class HeroData:
     
     # Key analysis metrics
     went_to_showdown: bool = False
-    won_money_at_showdown: float = 0.0
+    won_at_showdown: bool = False  # W$SD - Won at Showdown (boolean)
     won_when_saw_flop: bool = False
     saw_flop: bool = False
     
@@ -56,6 +56,9 @@ class HeroData:
     cbet_flop: bool = False
     cbet_turn: bool = False
     cbet_river: bool = False
+    cbet_flop_opportunity: bool = False  # Hero was aggressor on previous street
+    cbet_turn_opportunity: bool = False
+    cbet_river_opportunity: bool = False
 
 class HeroAnalysisParser:
     """Streamlined parser focused on Hero data analysis only"""
@@ -209,6 +212,23 @@ class HeroAnalysisParser:
         
         return total_rake_amount, total_pot_size
     
+    def detect_multi_player_showdown(self, hand_text: str) -> bool:
+        """Detect if there was a multi-player showdown (2+ players showed cards)"""
+        showdown_players = 0
+        
+        # Look for "shows" or "showed" patterns for all players
+        showdown_patterns = [
+            r'(?mi)^(?:Hero\b|Seat\s+\d+:\s*Hero\b).*?(shows|showed)',
+            r'(?mi)^(?:Seat\s+\d+:\s*[^H][^e][^r][^o]\w*).*?(shows|showed)',
+            r'(?mi)^(?:Seat\s+\d+:\s*\w+).*?(shows|showed)'
+        ]
+        
+        for pattern in showdown_patterns:
+            matches = re.findall(pattern, hand_text)
+            showdown_players += len(matches)
+        
+        return showdown_players >= 2
+    
     def analyze_hero_actions(self, hand_text: str) -> Dict[str, Any]:
         """Clean version of analyze_hero_actions without debug output"""
         hero_pattern = re.compile(r'^(?:Hero\b|Seat\s+\d+:\s*Hero\b)', re.IGNORECASE)
@@ -227,8 +247,11 @@ class HeroAnalysisParser:
             'cbet_flop': False,
             'cbet_turn': False,
             'cbet_river': False,
+            'cbet_flop_opportunity': False,  # Hero was aggressor on previous street
+            'cbet_turn_opportunity': False,
+            'cbet_river_opportunity': False,
             'went_to_showdown': False,
-            'won_money_at_showdown': 0.0,
+            'won_at_showdown': False,  # W$SD - Won at Showdown (boolean)
             'saw_flop': False,
             'rake_amount': 0.0,
             'total_pot_size': 0.0
@@ -236,6 +259,10 @@ class HeroAnalysisParser:
         
         current_street = 'preflop'
         current_round = 0.0
+        
+        # C-bet tracking variables
+        last_aggressor_by_street = {'preflop': '', 'flop': '', 'turn': '', 'river': ''}
+        first_bet_made_by_street = {'flop': False, 'turn': False, 'river': False}
         
         for line in hand_text.splitlines():
             line = line.strip()
@@ -251,10 +278,16 @@ class HeroAnalysisParser:
                     # Normalize street names
                     if 'flop' in street_line.lower():
                         current_street = 'flop'
+                        # C-bet opportunity on flop if Hero was last aggressor on preflop
+                        actions['cbet_flop_opportunity'] = (last_aggressor_by_street.get('preflop') == 'hero')
                     elif 'turn' in street_line.lower():
                         current_street = 'turn'
+                        # C-bet opportunity on turn if Hero was last aggressor on flop
+                        actions['cbet_turn_opportunity'] = (last_aggressor_by_street.get('flop') == 'hero')
                     elif 'river' in street_line.lower():
                         current_street = 'river'
+                        # C-bet opportunity on river if Hero was last aggressor on turn
+                        actions['cbet_river_opportunity'] = (last_aggressor_by_street.get('turn') == 'hero')
                     elif 'showdown' in street_line.lower():
                         current_street = 'showdown'
                     else:
@@ -281,7 +314,8 @@ class HeroAnalysisParser:
                     if m:
                         amount = float(m.group(1))
                         actions['total_collected'] += amount
-                        actions['won_money_at_showdown'] += amount
+                        # W$SD only counts if there was a multi-player showdown
+                        # This will be set later when we detect showdown patterns
                 
                 elif "posts" in line:
                     m = re.search(r'\$([\d.]+)', line)
@@ -307,13 +341,18 @@ class HeroAnalysisParser:
                         actions['total_contributed'] += amount
                         current_round += amount
                         
-                        # Check for continuation bets
-                        if current_street == 'flop':
-                            actions['cbet_flop'] = True
-                        elif current_street == 'turn':
-                            actions['cbet_turn'] = True
-                        elif current_street == 'river':
-                            actions['cbet_river'] = True
+                        # Check for continuation bets: must be first bet on street and Hero was prior street aggressor
+                        if current_street in ('flop', 'turn', 'river'):
+                            if not first_bet_made_by_street[current_street]:
+                                if current_street == 'flop' and actions['cbet_flop_opportunity']:
+                                    actions['cbet_flop'] = True
+                                elif current_street == 'turn' and actions['cbet_turn_opportunity']:
+                                    actions['cbet_turn'] = True
+                                elif current_street == 'river' and actions['cbet_river_opportunity']:
+                                    actions['cbet_river'] = True
+                                first_bet_made_by_street[current_street] = True
+                            # Any bet sets last aggressor for this street
+                            last_aggressor_by_street[current_street] = 'hero'
                 
                 elif "raises" in line:
                     actions['preflop_raised'] = True
@@ -326,9 +365,27 @@ class HeroAnalysisParser:
                             additional = 0
                         actions['total_contributed'] += additional
                         current_round = new_total
+                        # A raise is aggressive action; mark hero last aggressor on this street
+                        if current_street in last_aggressor_by_street:
+                            last_aggressor_by_street[current_street] = 'hero'
                 
                 elif "shows" in line or "showed" in line:
                     actions['went_to_showdown'] = True
+            
+            # Track any player's aggressive action to maintain last aggressor and first bet flags
+            # This runs after Hero action processing to avoid interfering with c-bet logic
+            generic_aggr = re.match(r'^[^:]+:\s+(bets|raises)\b', line, re.IGNORECASE)
+            if generic_aggr and current_street in ('preflop', 'flop', 'turn', 'river'):
+                # Only track non-Hero players to avoid interfering with Hero's c-bet logic
+                is_hero_actor = bool(hero_pattern.match(line))
+                if not is_hero_actor:
+                    # Mark first bet on street for non-Hero players
+                    if generic_aggr.group(1).lower() == 'bets':
+                        if current_street in ('flop', 'turn', 'river') and not first_bet_made_by_street[current_street]:
+                            first_bet_made_by_street[current_street] = True
+                    
+                    # Update last aggressor for non-Hero players
+                    last_aggressor_by_street[current_street] = 'villain'
             
             # Handle uncalled bet returns FIRST (before Hero action processing)
             # This covers scenarios where Hero bets and villain folds
@@ -372,6 +429,13 @@ class HeroAnalysisParser:
         # Determine if won when saw flop
         actions['won_when_saw_flop'] = actions['saw_flop'] and actions['net_profit'] > 0
         
+        # Check for multi-player showdown (W$SD only counts when 2+ players show cards)
+        if actions['went_to_showdown']:
+            multi_player_showdown = self.detect_multi_player_showdown(hand_text)
+            # W$SD only counts if there was a multi-player showdown AND Hero won money
+            if multi_player_showdown and actions['total_collected'] > 0:
+                actions['won_at_showdown'] = True  # W$SD - Hero won at multi-player showdown
+        
         return actions
 
     def analyze_hero_actions_debug(self, hand_text: str) -> Dict[str, Any]:
@@ -392,8 +456,11 @@ class HeroAnalysisParser:
             'cbet_flop': False,
             'cbet_turn': False,
             'cbet_river': False,
+            'cbet_flop_opportunity': False,  # Hero was aggressor on previous street
+            'cbet_turn_opportunity': False,
+            'cbet_river_opportunity': False,
             'went_to_showdown': False,
-            'won_money_at_showdown': 0.0,
+            'won_at_showdown': False,  # W$SD - Won at Showdown (boolean)
             'saw_flop': False,
             'rake_amount': 0.0,
             'total_pot_size': 0.0,
@@ -403,6 +470,10 @@ class HeroAnalysisParser:
         current_street = 'preflop'
         current_round = 0.0
         hero_actions_count = 0
+        
+        # C-bet tracking variables
+        last_aggressor_by_street = {'preflop': '', 'flop': '', 'turn': '', 'river': ''}
+        first_bet_made_by_street = {'flop': False, 'turn': False, 'river': False}
         
         print(f"\n COMPREHENSIVE DEBUGGING - PROFIT CALCULATION")
         print(f"{'='*60}")
@@ -427,10 +498,19 @@ class HeroAnalysisParser:
                     # Normalize street names
                     if 'flop' in street_line.lower():
                         current_street = 'flop'
+                        # C-bet opportunity on flop if Hero was last aggressor on preflop
+                        actions['cbet_flop_opportunity'] = (last_aggressor_by_street.get('preflop') == 'hero')
+                        print(f"   C-Bet Flop Opportunity: {actions['cbet_flop_opportunity']} (Hero was preflop aggressor: {last_aggressor_by_street.get('preflop') == 'hero'})")
                     elif 'turn' in street_line.lower():
                         current_street = 'turn'
+                        # C-bet opportunity on turn if Hero was last aggressor on flop
+                        actions['cbet_turn_opportunity'] = (last_aggressor_by_street.get('flop') == 'hero')
+                        print(f"   C-Bet Turn Opportunity: {actions['cbet_turn_opportunity']} (Hero was flop aggressor: {last_aggressor_by_street.get('flop') == 'hero'})")
                     elif 'river' in street_line.lower():
                         current_street = 'river'
+                        # C-bet opportunity on river if Hero was last aggressor on turn
+                        actions['cbet_river_opportunity'] = (last_aggressor_by_street.get('turn') == 'hero')
+                        print(f"   C-Bet River Opportunity: {actions['cbet_river_opportunity']} (Hero was turn aggressor: {last_aggressor_by_street.get('turn') == 'hero'})")
                     elif 'showdown' in street_line.lower():
                         current_street = 'showdown'
                     else:
@@ -440,6 +520,20 @@ class HeroAnalysisParser:
                     print(f"\n📍 STREET CHANGE: {old_street.upper()} → {current_street.upper()}")
                     print(f"   Round total reset to: ${current_round:.2f}")
                 continue
+            
+            # Track any player's aggressive action to maintain last aggressor and first bet flags
+            generic_aggr = re.match(r'^[^:]+:\s+(bets|raises)\b', line, re.IGNORECASE)
+            if generic_aggr and current_street in ('preflop', 'flop', 'turn', 'river'):
+                # Mark first bet on street regardless of actor
+                if generic_aggr.group(1).lower() == 'bets':
+                    if current_street in ('flop', 'turn', 'river') and not first_bet_made_by_street[current_street]:
+                        first_bet_made_by_street[current_street] = True
+                        print(f"   🎯 FIRST BET on {current_street.upper()} by {line.split(':')[0]}")
+                
+                # Update last aggressor by actor identity
+                is_hero_actor = bool(hero_pattern.match(line))
+                last_aggressor_by_street[current_street] = 'hero' if is_hero_actor else 'villain'
+                print(f"   🎯 Last aggressor on {current_street.upper()}: {last_aggressor_by_street[current_street]}")
             
             if hero_pattern.search(line):
                 hero_actions_count += 1
@@ -475,12 +569,12 @@ class HeroAnalysisParser:
                     if m:
                         amount = float(m.group(1))
                         actions['total_collected'] += amount
-                        actions['won_money_at_showdown'] += amount
+                        actions['won_at_showdown'] = True  # W$SD - Hero won at showdown
                         action_detail['amount'] = amount
                         action_detail['type'] = 'collection'
                         print(f"   💰 COLLECTED: ${amount:.2f}")
                         print(f"   📊 Running total collected: ${actions['total_collected']:.2f}")
-                        print(f"   🏆 Won at showdown: ${actions['won_money_at_showdown']:.2f}")
+                        print(f"   🏆 Won at showdown: {actions['won_at_showdown']}")
                 
                 elif "posts" in line:
                     m = re.search(r'\$([\d.]+)', line)
@@ -523,16 +617,25 @@ class HeroAnalysisParser:
                         print(f"   📊 Total contributed: ${actions['total_contributed']:.2f}")
                         print(f"   🎯 VPIP: {actions['vpip']}")
                         
-                        # Check for continuation bets
-                        if current_street == 'flop':
-                            actions['cbet_flop'] = True
-                            print(f"   🔄 C-BET FLOP detected!")
-                        elif current_street == 'turn':
-                            actions['cbet_turn'] = True
-                            print(f"   🔄 C-BET TURN detected!")
-                        elif current_street == 'river':
-                            actions['cbet_river'] = True
-                            print(f"   🔄 C-BET RIVER detected!")
+                        # Check for continuation bets: must be first bet on street and Hero was prior street aggressor
+                        if current_street in ('flop', 'turn', 'river'):
+                            if not first_bet_made_by_street[current_street]:
+                                if current_street == 'flop' and actions['cbet_flop_opportunity']:
+                                    actions['cbet_flop'] = True
+                                    print(f"   🔄 C-BET FLOP detected! (Hero was preflop aggressor)")
+                                elif current_street == 'turn' and actions['cbet_turn_opportunity']:
+                                    actions['cbet_turn'] = True
+                                    print(f"   🔄 C-BET TURN detected! (Hero was flop aggressor)")
+                                elif current_street == 'river' and actions['cbet_river_opportunity']:
+                                    actions['cbet_river'] = True
+                                    print(f"   🔄 C-BET RIVER detected! (Hero was turn aggressor)")
+                                else:
+                                    print(f"   ❌ Not a c-bet on {current_street.upper()} (no opportunity or not first bet)")
+                                first_bet_made_by_street[current_street] = True
+                            else:
+                                print(f"   ❌ Not a c-bet on {current_street.upper()} (not first bet on street)")
+                            # Any bet sets last aggressor for this street
+                            last_aggressor_by_street[current_street] = 'hero'
                 
                 elif "raises" in line:
                     actions['preflop_raised'] = True
@@ -550,6 +653,10 @@ class HeroAnalysisParser:
                         print(f"   📈 RAISE: Additional ${additional:.2f}")
                         print(f"   📊 New round total: ${new_total:.2f}")
                         print(f"   📊 Total contributed: ${actions['total_contributed']:.2f}")
+                        # A raise is aggressive action; mark hero last aggressor on this street
+                        if current_street in last_aggressor_by_street:
+                            last_aggressor_by_street[current_street] = 'hero'
+                            print(f"   🎯 Hero is now last aggressor on {current_street.upper()}")
                 
                 elif "folds" in line:
                     action_detail['type'] = 'fold'
@@ -568,6 +675,23 @@ class HeroAnalysisParser:
                     print(f"   ❓ UNKNOWN ACTION: {line}")
                 
                 actions['action_details'].append(action_detail)
+            
+            # Track any player's aggressive action to maintain last aggressor and first bet flags
+            # This runs after Hero action processing to avoid interfering with c-bet logic
+            generic_aggr = re.match(r'^[^:]+:\s+(bets|raises)\b', line, re.IGNORECASE)
+            if generic_aggr and current_street in ('preflop', 'flop', 'turn', 'river'):
+                # Only track non-Hero players to avoid interfering with Hero's c-bet logic
+                is_hero_actor = bool(hero_pattern.match(line))
+                if not is_hero_actor:
+                    # Mark first bet on street for non-Hero players
+                    if generic_aggr.group(1).lower() == 'bets':
+                        if current_street in ('flop', 'turn', 'river') and not first_bet_made_by_street[current_street]:
+                            first_bet_made_by_street[current_street] = True
+                            print(f"   🎯 FIRST BET on {current_street.upper()} by {line.split(':')[0]}")
+                    
+                    # Update last aggressor for non-Hero players
+                    last_aggressor_by_street[current_street] = 'villain'
+                    print(f"   🎯 Last aggressor on {current_street.upper()}: {last_aggressor_by_street[current_street]}")
             
             # Handle uncalled bet returns (not necessarily Hero's line)
             elif "uncalled bet" in line and "returned to Hero" in line:
@@ -614,18 +738,32 @@ class HeroAnalysisParser:
         print(f"📊 Total Pot Size:    ${actions['total_pot_size']:.2f}")
         print(f"🚀 Profit Before Rake: ${actions['net_profit_before_rake']:.2f}")
         print(f"🏆 Went to Showdown:  {actions['went_to_showdown']}")
-        print(f"💵 Won at Showdown:   ${actions['won_money_at_showdown']:.2f}")
+        print(f"💵 Won at Showdown:   {actions['won_at_showdown']} (W$SD - Multi-player only)")
         print(f"👀 Saw Flop:          {actions['saw_flop']}")
         print(f"🎉 Won When Saw Flop: {actions['won_when_saw_flop']}")
         print(f"🎯 VPIP:              {actions['vpip']}")
         print(f"📊 Street Actions:    PF:{actions['preflop_actions']} F:{actions['flop_actions']} T:{actions['turn_actions']} R:{actions['river_actions']}")
-        print(f" C-Bets:            F:{actions['cbet_flop']} T:{actions['cbet_turn']} R:{actions['cbet_river']}")
+        print(f" C-Bet Opportunities: F:{actions['cbet_flop_opportunity']} T:{actions['cbet_turn_opportunity']} R:{actions['cbet_river_opportunity']}")
+        print(f" C-Bets Made:        F:{actions['cbet_flop']} T:{actions['cbet_turn']} R:{actions['cbet_river']}")
         print(f" Preflop:           Raised:{actions['preflop_raised']} Called:{actions['preflop_called']}")
         
         print(f"\n📋 DETAILED ACTION BREAKDOWN:")
         print(f"{'='*60}")
         for i, action in enumerate(actions['action_details'], 1):
             print(f"{i:2d}. {action['street'].upper():8} | {action['type'].upper():8} | ${action['amount']:6.2f} | Line {action['line_num']:3d}")
+        
+        # Check for multi-player showdown (W$SD only counts when 2+ players show cards)
+        if actions['went_to_showdown']:
+            multi_player_showdown = self.detect_multi_player_showdown(hand_text)
+            print(f"\n🎯 MULTI-PLAYER SHOWDOWN CHECK:")
+            print(f"   Multi-player showdown detected: {multi_player_showdown}")
+            print(f"   Hero collected money: {actions['total_collected'] > 0}")
+            # W$SD only counts if there was a multi-player showdown AND Hero won money
+            if multi_player_showdown and actions['total_collected'] > 0:
+                actions['won_at_showdown'] = True  # W$SD - Hero won at multi-player showdown
+                print(f"   ✅ W$SD = True (Hero won at multi-player showdown)")
+            else:
+                print(f"   ❌ W$SD = False (Not a multi-player showdown or Hero didn't win)")
         
         return actions
     
@@ -656,7 +794,7 @@ class HeroAnalysisParser:
                 position=position,
                 hole_cards=hole_cards,
                 went_to_showdown=action_data['went_to_showdown'],
-                won_money_at_showdown=action_data['won_money_at_showdown'],
+                won_at_showdown=action_data['won_at_showdown'],
                 won_when_saw_flop=action_data['won_when_saw_flop'],
                 saw_flop=action_data['saw_flop'],
                 total_contributed=action_data['total_contributed'],
@@ -677,7 +815,10 @@ class HeroAnalysisParser:
                 vpip=action_data['vpip'],
                 cbet_flop=action_data['cbet_flop'],
                 cbet_turn=action_data['cbet_turn'],
-                cbet_river=action_data['cbet_river']
+                cbet_river=action_data['cbet_river'],
+                cbet_flop_opportunity=action_data['cbet_flop_opportunity'],
+                cbet_turn_opportunity=action_data['cbet_turn_opportunity'],
+                cbet_river_opportunity=action_data['cbet_river_opportunity']
             )
             
         except Exception as e:
@@ -749,7 +890,7 @@ class HeroAnalysisParser:
                     'Position': hand.position,
                     'Hole_Cards': ' '.join(hand.hole_cards),
                     'Went_to_Showdown': hand.went_to_showdown,
-                    'Won_Money_at_Showdown': hand.won_money_at_showdown,
+                    'Won_at_Showdown': hand.won_at_showdown,
                     'Won_When_Saw_Flop': hand.won_when_saw_flop,
                     'Saw_Flop': hand.saw_flop,
                     'Total_Contributed': hand.total_contributed,
@@ -770,7 +911,10 @@ class HeroAnalysisParser:
                     'VPIP': hand.vpip,
                     'CBet_Flop': hand.cbet_flop,
                     'CBet_Turn': hand.cbet_turn,
-                    'CBet_River': hand.cbet_river
+                    'CBet_River': hand.cbet_river,
+                    'CBet_Flop_Opportunity': hand.cbet_flop_opportunity,
+                    'CBet_Turn_Opportunity': hand.cbet_turn_opportunity,
+                    'CBet_River_Opportunity': hand.cbet_river_opportunity
                 })
             
             df = pd.DataFrame(data)
