@@ -20,7 +20,7 @@ if os.path.exists(file_path):
     # Test 2: Try to import parser
     try:
         from src.hero_analysis_parser import HeroAnalysisParser
-        from src.hero_data_analysis import HeroDataAnalyzer
+        from streamlit_app import HeroDataAnalyzer
         print("✅ Parser and analyzer imported successfully!")
         
         parser = HeroAnalysisParser()
