@@ -1143,43 +1143,46 @@ class HeroAnalysisParser:
 
 def main():
     """Main function for testing the parser"""
-    parser = HeroAnalysisParser()
 
-    # Process files
-    df = parser.process_files("hand_histories")
+    pass
 
-    if not df.empty:
-        print(f"Processed {len(df)} hands")
-        print("\nSample data:")
-        print(df.head())
+    # parser = HeroAnalysisParser()
 
-        print("\nSummary statistics:")
-        print(f"Total hands: {len(df)}")
-        print(f"Total profit (after rake): ${df['Net_Profit'].sum():.2f}")
-        print(f"Total profit (before rake): ${df['Net_Profit_Before_Rake'].sum():.2f}")
-        print(f"Total rake paid: ${df['Rake_Amount'].sum():.2f}")
-        print(f"Average rake per hand: ${df['Rake_Amount'].mean():.2f}")
-        print(
-            f"Rake percentage: {(df['Rake_Amount'].sum() / df['Total_Pot_Size'].sum() * 100):.2f}%"
-        )
-        print(
-            f"Went to showdown: {df['Went_to_Showdown'].sum()} ({df['Went_to_Showdown'].mean()*100:.1f}%)"
-        )
-        print(
-            f"Won when saw flop: {df['Won_When_Saw_Flop'].sum()} ({df['Won_When_Saw_Flop'].mean()*100:.1f}%)"
-        )
-        print(f"VPIP: {df['VPIP'].sum()} ({df['VPIP'].mean()*100:.1f}%)")
-        print(f"Average profit per hand (after rake): ${df['Net_Profit'].mean():.2f}")
-        print(
-            f"Average profit per hand (before rake): ${df['Net_Profit_Before_Rake'].mean():.2f}"
-        )
+    # # Process files
+    # df = parser.process_files("hand_histories")
 
-        # Save to CSV
-        output_file = "hero_analysis_data.csv"
-        df.to_csv(output_file, index=False)
-        print(f"\nData saved to {output_file}")
-    else:
-        print("No data processed")
+    # if not df.empty:
+    #     print(f"Processed {len(df)} hands")
+    #     print("\nSample data:")
+    #     print(df.head())
+
+    #     print("\nSummary statistics:")
+    #     print(f"Total hands: {len(df)}")
+    #     print(f"Total profit (after rake): ${df['Net_Profit'].sum():.2f}")
+    #     print(f"Total profit (before rake): ${df['Net_Profit_Before_Rake'].sum():.2f}")
+    #     print(f"Total rake paid: ${df['Rake_Amount'].sum():.2f}")
+    #     print(f"Average rake per hand: ${df['Rake_Amount'].mean():.2f}")
+    #     print(
+    #         f"Rake percentage: {(df['Rake_Amount'].sum() / df['Total_Pot_Size'].sum() * 100):.2f}%"
+    #     )
+    #     print(
+    #         f"Went to showdown: {df['Went_to_Showdown'].sum()} ({df['Went_to_Showdown'].mean()*100:.1f}%)"
+    #     )
+    #     print(
+    #         f"Won when saw flop: {df['Won_When_Saw_Flop'].sum()} ({df['Won_When_Saw_Flop'].mean()*100:.1f}%)"
+    #     )
+    #     print(f"VPIP: {df['VPIP'].sum()} ({df['VPIP'].mean()*100:.1f}%)")
+    #     print(f"Average profit per hand (after rake): ${df['Net_Profit'].mean():.2f}")
+    #     print(
+    #         f"Average profit per hand (before rake): ${df['Net_Profit_Before_Rake'].mean():.2f}"
+    #     )
+
+    #     # Save to CSV
+    #     output_file = "hero_analysis_data.csv"
+    #     df.to_csv(output_file, index=False)
+    #     print(f"\nData saved to {output_file}")
+    # else:
+    #     print("No data processed")
 
 
 if __name__ == "__main__":
