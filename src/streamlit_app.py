@@ -51,10 +51,10 @@ class HeroDataAnalyzer:
         self.parser = HeroAnalysisParser()
         self.df = None
     
-    def load_data(self, folder_path: str):
+    def load_data(self, folder_path: str, currency: str, username: str):
         """Load and process hand history data"""
         with st.spinner("Loading and analyzing hand histories..."):
-            self.df = self.parser.process_files(folder_path)
+            self.df = self.parser.process_files(folder_path, currency, username)
         return not self.df.empty
     
     def calculate_key_metrics(self):
@@ -390,6 +390,8 @@ def main():
     st.title("📊 Hero Poker Data Analysis")
     st.markdown("Streamlined poker data analysis focused on Hero performance metrics")
     
+    
+
     # Initialize analyzer
     if 'analyzer' not in st.session_state:
         st.session_state.analyzer = HeroDataAnalyzer()
@@ -400,15 +402,27 @@ def main():
     with st.sidebar:
         st.header("📁 Data Controls")
         
-        folder_path = st.text_input("Hand History Folder:", "hand_histories")
+        folder_path = st.text_input("Hand History Folder:", "hand_ps")
 
         folder_path = f"data/{folder_path}"
+
+        # files = st.file_uploader("📤 Upload file",  accept_multiple_files=True)
+        # print(files)        
+
+        currency = st.text_input("currency", "€")
+        username = st.text_input("Your username", "caduceus369")
         
         if st.button("🔄 Load Data"):
-            if analyzer.load_data(folder_path):
+            # for file in files:
+                # print(file.getvalue().decode())
+                # analyzer.parser.parse_file(file.getvalue().decode())
+
+            if analyzer.load_data(folder_path, currency, username):
                 st.success(f"Loaded {len(analyzer.df)} hands")
             else:
                 st.error("No data found. Please check the folder path.")
+
+        # print(analyzer.df)
         
         st.header("📊 Analysis Options")
         
@@ -416,9 +430,9 @@ def main():
         show_profit_chart = st.checkbox("Profit Chart", value=True)
         show_rake_analysis = st.checkbox("Rake Analysis", value=True)
         show_position_analysis = st.checkbox("Position Analysis", value=True)
-        show_stakes_analysis = st.checkbox("Stakes Analysis", value=False)
+        show_stakes_analysis = st.checkbox("Stakes Analysis", value=True)
         show_hand_analysis = st.checkbox("Hand Type Analysis", value=False)
-        show_detailed_data = st.checkbox("Detailed Data", value=False)
+        show_detailed_data = st.checkbox("Detailed Data", value=True)
     
     # Main content
     if analyzer.df is not None and not analyzer.df.empty:
