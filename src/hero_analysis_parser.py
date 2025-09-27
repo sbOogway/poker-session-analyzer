@@ -1030,7 +1030,12 @@ class HeroAnalysisParser:
             # TODO FIXME BRUV HOT FIX FOR DEBUG
             # FIXME
             # FIXME
-            hands = re.split(r"(?=PokerStars Zoom Hand #)", text)
+
+            if currency == "$":
+                hands = re.split(r"(?=Poker Hand #)", text)
+            else:
+                hands = re.split(r"(?=PokerStars Zoom Hand #)", text)
+
             # FIXME
             # FIXME
             # FIXME
