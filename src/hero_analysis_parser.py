@@ -15,16 +15,16 @@ logger.setLevel(logging.DEBUG)
 
 log_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
-file_handler = logging.FileHandler(f"logs/{datetime.now().isoformat()}.log")
-file_handler.setLevel(logging.INFO)
-file_handler.setFormatter(log_format)
+# file_handler = logging.FileHandler(f"logs/{datetime.now().isoformat()}.log")
+# file_handler.setLevel(logging.INFO)
+# file_handler.setFormatter(log_format)
 
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.DEBUG)
 console_handler.setFormatter(log_format)
 
 
-logger.addHandler(file_handler)
+# logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
 
