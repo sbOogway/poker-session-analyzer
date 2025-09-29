@@ -541,10 +541,10 @@ class HeroAnalysisParser:
         # Calculate net profit after rake (only add rake back if Hero collected money)
         if actions["total_collected"] > 0:
             # Hero won money, so rake was taken from their winnings
-            actions["net_profit_after_rake"] = actions["net_profit"] - rake_amount
+            actions["net_profit_before_rake"] = actions["net_profit"] + rake_amount
         else:
             # Hero lost, so rake was taken from other players, not from Hero
-            actions["net_profit_after_rake"] = actions["net_profit"]
+            actions["net_profit_before_rake"] = actions["net_profit"]
             actions["rake_amount"] = 0
 
         # Determine if won when saw flop
@@ -599,8 +599,8 @@ class HeroAnalysisParser:
                 total_collected=action_data["total_collected"],
                 net_profit=action_data["net_profit"],
                 rake_amount=action_data["rake_amount"],
-                # net_profit_before_rake=action_data["net_profit_before_rake"],
-                net_profit_after_rake=action_data["net_profit_after_rake"],
+                net_profit_before_rake=action_data["net_profit_before_rake"],
+                # net_profit_after_rake=action_data["net_profit_after_rake"],
                 total_pot_size=action_data["total_pot_size"],
                 preflop_actions=action_data["preflop_actions"],
                 flop_actions=action_data["flop_actions"],

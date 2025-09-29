@@ -73,7 +73,7 @@ class HeroDataAnalyzer:
         total_hands = len(self.df)
         total_profit = self.df['Net_Profit'].sum()
         total_profit_before_rake = self.df['Net_Profit_Before_Rake'].sum()
-        total_profit_after_rake = self.df["Net_Profit_After_Rake"].sum()
+        # total_profit_after_rake = self.df["Net_Profit_After_Rake"].sum()
         total_rake = self.df['Rake_Amount'].sum()
         # total_rake_new = self.df.loc[self.df["Total_Collected"] > 0, 'Rake_Amount'].sum()
         avg_profit = self.df['Net_Profit'].mean()
@@ -84,7 +84,7 @@ class HeroDataAnalyzer:
 
         print("total rake old", total_rake)
         print("total rake new", total_rake)
-        print(total_profit_after_rake) 
+        # print(total_profit_after_rake) 
 
         # VPIP metrics (separate from PFR)
         vpip_hands = self.df['VPIP'].sum()
@@ -121,7 +121,7 @@ class HeroDataAnalyzer:
             'total_hands': total_hands,
             'total_profit': total_profit,
             'total_profit_before_rake': total_profit_before_rake,
-            'total_profit_after_rake': total_profit_after_rake,
+            # 'total_profit_after_rake': total_profit_after_rake,
             'total_rake': total_rake,
             'avg_profit': avg_profit,
             'avg_profit_before_rake': avg_profit_before_rake,
@@ -153,7 +153,7 @@ class HeroDataAnalyzer:
         with col1:
             st.metric("Total Hands", f"{metrics['total_hands']:,}")
             st.metric("Total Profit ", f"${metrics['total_profit']:.2f}")
-            st.metric("Total Profit (After Rake)", f"${metrics['total_profit_after_rake']:.2f}")
+            st.metric("Total Profit (Before Rake)", f"${metrics['total_profit_before_rake']:.2f}")
         
         with col2:
             st.metric("Avg Profit/Hand (After Rake)", f"${metrics['avg_profit']:.2f}")
