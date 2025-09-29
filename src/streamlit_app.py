@@ -411,11 +411,8 @@ class HeroDataAnalyzer:
 
         range_html = range_template.render({"hands": hands_bucket})
 
-            # if [""]
-
-        pprint(self.df)
-        pprint(hands_bucket)
-# 
+        # pprint(self.df)
+        # pprint(hands_bucket)
         # range visualizer
         components.html(html=range_html, height=700)
 
