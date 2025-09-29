@@ -20,7 +20,7 @@ file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(log_format)
 
 console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
+console_handler.setLevel(logging.DEBUG)
 console_handler.setFormatter(log_format)
 
 
@@ -71,6 +71,7 @@ class HeroData:
     # Hand strength indicators
     preflop_raised: bool = False
     preflop_called: bool = False
+    preflop_folded: bool = False
     vpip: bool = False  # Voluntarily Put money In Pot (excluding blinds)
     cbet_flop: bool = False
     cbet_turn: bool = False
@@ -78,6 +79,15 @@ class HeroData:
     cbet_flop_opportunity: bool = False  # Hero was aggressor on previous street
     cbet_turn_opportunity: bool = False
     cbet_river_opportunity: bool = False
+
+    limped: bool = False
+    called: bool = False
+    serial_caller: bool = False
+
+    single_raised_pot: bool = False
+    three_bet: bool = False
+    four_bet: bool = False
+    five_bet: bool = False
 
 
 class HeroAnalysisParser:
@@ -266,7 +276,7 @@ class HeroAnalysisParser:
                 r"Total pot\s*\$([\d.]+)",
                 r"Pot size\s*\$([\d.]+)",
                 r"Total\s*\$([\d.]+)",
-                r"Total pot " + currency + r"([\d.]+)"
+                r"Total pot " + currency + r"([\d.]+)",
             ]
 
             for pattern in pot_patterns:
@@ -300,10 +310,13 @@ class HeroAnalysisParser:
 
         return showdown_players >= 2
 
-    def analyze_hero_actions(self, hand_text: str, username: str, currency: str) -> Dict[str, Any]:
+    def analyze_hero_actions(
+        self, hand_text: str, username: str, currency: str
+    ) -> Dict[str, Any]:
         """Clean version of analyze_hero_actions without debug output"""
         hero_pattern = re.compile(
-            username + r": |^(?:" + username + r"\b|Seat\s+\d+:\s*" + username + r"\b)", re.IGNORECASE
+            username + r": |^(?:" + username + r"\b|Seat\s+\d+:\s*" + username + r"\b)",
+            re.IGNORECASE,
         )
         street_marker = re.compile(r"^\*\*\*")
 
@@ -316,6 +329,7 @@ class HeroAnalysisParser:
             "river_actions": 0,
             "preflop_raised": False,
             "preflop_called": False,
+            "preflop_folded": False,
             "vpip": False,  # Voluntarily Put money In Pot (excluding blinds)
             "cbet_flop": False,
             "cbet_turn": False,
@@ -328,6 +342,13 @@ class HeroAnalysisParser:
             "saw_flop": False,
             "rake_amount": 0.0,
             "total_pot_size": 0.0,
+            "limped": False,
+            "called": False,
+            "serial_caller": False,
+            "single_raised_pot": False,
+            "three_bet": False,
+            "four_bet": False,
+            "five_bet": False,
         }
 
         current_street = "preflop"
@@ -337,12 +358,21 @@ class HeroAnalysisParser:
         last_aggressor_by_street = {"preflop": "", "flop": "", "turn": "", "river": ""}
         first_bet_made_by_street = {"flop": False, "turn": False, "river": False}
 
+        preflop_history = hand_text.split("*** HOLE CARDS ***")[1].split("***")[0]
+
+        preflop_bets = preflop_history.count("raises")
+        folded_preflop = preflop_history.count(username + ": folds") == 1
+
+        logger.debug(f"preflop bets => {preflop_bets}")
         for line in hand_text.splitlines():
 
             line = line.strip()
+            
             logger.debug(f"line => {line}")
             if not line:
                 continue
+
+
 
             # Detect street changes
             if street_marker.match(line):
@@ -395,7 +425,11 @@ class HeroAnalysisParser:
                     m = re.search(r"collected\s*\(?\$([\d.]+)\)?", line, re.IGNORECASE)
 
                     if currency != "$":
-                        m = re.search(r"collected\s*" + currency+ r"([\d.]+)", line, re.IGNORECASE)
+                        m = re.search(
+                            r"collected\s*" + currency + r"([\d.]+)",
+                            line,
+                            re.IGNORECASE,
+                        )
 
                     if m:
                         amount = float(m.group(1))
@@ -407,7 +441,7 @@ class HeroAnalysisParser:
                     m = re.search(r"\$([\d.]+)", line)
 
                     if currency != "$":
-                        m = re.search(currency+ r"([\d.]+)", line, re.IGNORECASE)
+                        m = re.search(currency + r"([\d.]+)", line, re.IGNORECASE)
 
                     if m:
                         amount = float(m.group(1))
@@ -415,11 +449,22 @@ class HeroAnalysisParser:
                         current_round += amount
 
                 elif "calls" in line:
-                    actions["preflop_called"] = True
+                    if current_street == "preflop" :
+                        actions["preflop_called"] = True
+
+                    if current_street == "preflop"  and preflop_bets == 0:
+                        actions["limped"] = True
+
+                    if current_street == "preflop" and preflop_bets == 1:
+                        actions["called"] = True
+
+                    if current_street == "preflop" and preflop_bets > 1:
+                        actions["serial_caller"] = True
+
                     actions["vpip"] = True  # VPIP: voluntarily put money in pot
                     m = re.search(r"\$([\d.]+)", line)
                     if currency != "$":
-                        m = re.search(currency+ r"([\d.]+)", line, re.IGNORECASE)
+                        m = re.search(currency + r"([\d.]+)", line, re.IGNORECASE)
                     if m:
                         amount = float(m.group(1))
                         actions["total_contributed"] += amount
@@ -429,7 +474,7 @@ class HeroAnalysisParser:
                     actions["vpip"] = True  # VPIP: voluntarily put money in pot
                     m = re.search(r"\$([\d.]+)", line)
                     if currency != "$":
-                        m = re.search(currency+ r"([\d.]+)", line, re.IGNORECASE)
+                        m = re.search(currency + r"([\d.]+)", line, re.IGNORECASE)
                     if m:
                         amount = float(m.group(1))
                         actions["total_contributed"] += amount
@@ -458,11 +503,27 @@ class HeroAnalysisParser:
                             last_aggressor_by_street[current_street] = username
 
                 elif "raises" in line:
-                    actions["preflop_raised"] = True
+                    if current_street == "preflop":
+                        actions["preflop_raised"] = True
+
+                    if current_street == "preflop" and preflop_bets == 1:
+                        actions["single_raised_pot"] = True
+                        
+                    if current_street == "preflop" and preflop_bets == 2:
+                        actions["three_bet"] = True
+
+                    if current_street == "preflop" and preflop_bets == 3:
+                        actions["four_bet"] = True
+
+                    if current_street == "preflop" and preflop_bets == 4:
+                        actions["five_bet"] = True
+
                     actions["vpip"] = True  # VPIP: voluntarily put money in pot
                     m = re.search(r"to\s*\$([\d.]+)", line, re.IGNORECASE)
                     if currency != "$":
-                        m = re.search(r"to " +currency+ r"([\d.]+)", line, re.IGNORECASE)
+                        m = re.search(
+                            r"to " + currency + r"([\d.]+)", line, re.IGNORECASE
+                        )
                     if m:
                         new_total = float(m.group(1))
                         additional = new_total - current_round
@@ -497,7 +558,10 @@ class HeroAnalysisParser:
 
             # Handle uncalled bet returns FIRST (before Hero action processing)
             # This covers scenarios where Hero bets and villain folds
-            elif "uncalled bet" in line.lower() and f"returned to {username}" in line.lower():
+            elif (
+                "uncalled bet" in line.lower()
+                and f"returned to {username}" in line.lower()
+            ):
                 # Multiple patterns to catch different formats
                 patterns = [
                     r"uncalled bet\s*\(?\$([\d.]+)\)?\s*returned to " + username,
@@ -509,8 +573,10 @@ class HeroAnalysisParser:
                     r"uncalled bet\s*\(?\$([\d.]+)\)?\s*returned to "
                     + username
                     + r"\s*$",
-
-                    r"Uncalled bet\s*\(?"+ currency + r"([\d.]+)\)?\s*returned to " + username,
+                    r"Uncalled bet\s*\(?"
+                    + currency
+                    + r"([\d.]+)\)?\s*returned to "
+                    + username,
                 ]
 
                 for pattern in patterns:
@@ -524,12 +590,21 @@ class HeroAnalysisParser:
         if not actions["went_to_showdown"]:
             actions["went_to_showdown"] = bool(
                 re.search(
-                    r"(?mi)^(?:" + username + r"\b|Seat\s+\d+:\s*" + username + r"\b).*?(shows|showed)|" + username + r": show", hand_text
+                    r"(?mi)^(?:"
+                    + username
+                    + r"\b|Seat\s+\d+:\s*"
+                    + username
+                    + r"\b).*?(shows|showed)|"
+                    + username
+                    + r": show",
+                    hand_text,
                 )
             )
 
         # Extract rake information
-        rake_amount, total_pot_size = self.extract_rake_info(hand_text, currency=currency)
+        rake_amount, total_pot_size = self.extract_rake_info(
+            hand_text, currency=currency
+        )
         actions["rake_amount"] = rake_amount
         actions["total_pot_size"] = total_pot_size
 
@@ -552,12 +627,16 @@ class HeroAnalysisParser:
 
         # Check for multi-player showdown (W$SD only counts when 2+ players show cards)
         if actions["went_to_showdown"]:
-            multi_player_showdown = self.detect_multi_player_showdown(hand_text, username=username)
+            multi_player_showdown = self.detect_multi_player_showdown(
+                hand_text, username=username
+            )
             # W$SD only counts if there was a multi-player showdown AND Hero won money
             if multi_player_showdown and actions["total_collected"] > 0:
                 actions["won_at_showdown"] = (
                     True  # W$SD - Hero won at multi-player showdown
                 )
+
+        actions["preflop_folded"] = folded_preflop
 
         logger.debug(pformat(actions))
 
@@ -581,7 +660,9 @@ class HeroAnalysisParser:
             )
 
             # Analyze Hero's actions - USE CLEAN VERSION
-            action_data = self.analyze_hero_actions(hand_text, username=username, currency=currency)
+            action_data = self.analyze_hero_actions(
+                hand_text, username=username, currency=currency
+            )
 
             return HeroData(
                 hand_id=hand_id,
@@ -611,6 +692,7 @@ class HeroAnalysisParser:
                 river_card=river_card,
                 preflop_raised=action_data["preflop_raised"],
                 preflop_called=action_data["preflop_called"],
+                preflop_folded=action_data["preflop_folded"],
                 vpip=action_data["vpip"],
                 cbet_flop=action_data["cbet_flop"],
                 cbet_turn=action_data["cbet_turn"],
@@ -618,6 +700,15 @@ class HeroAnalysisParser:
                 cbet_flop_opportunity=action_data["cbet_flop_opportunity"],
                 cbet_turn_opportunity=action_data["cbet_turn_opportunity"],
                 cbet_river_opportunity=action_data["cbet_river_opportunity"],
+
+                limped=action_data["limped"],
+                called=action_data["called"],
+                serial_caller=action_data["serial_caller"],
+
+                single_raised_pot=action_data["single_raised_pot"],
+                three_bet=action_data["three_bet"],
+                four_bet=action_data["four_bet"],
+                five_bet=action_data["five_bet"],
             )
 
         except Exception as e:
@@ -725,6 +816,7 @@ class HeroAnalysisParser:
                         "River_Card": hand.river_card,
                         "Preflop_Raised": hand.preflop_raised,
                         "Preflop_Called": hand.preflop_called,
+                        "Preflop_Folded": hand.preflop_folded,
                         "VPIP": hand.vpip,
                         "CBet_Flop": hand.cbet_flop,
                         "CBet_Turn": hand.cbet_turn,
@@ -732,6 +824,15 @@ class HeroAnalysisParser:
                         "CBet_Flop_Opportunity": hand.cbet_flop_opportunity,
                         "CBet_Turn_Opportunity": hand.cbet_turn_opportunity,
                         "CBet_River_Opportunity": hand.cbet_river_opportunity,
+
+                        "Limped": hand.limped,
+                        "Called": hand.called,
+                        "Serial_Caller": hand.serial_caller,
+
+                        "Single_Raised_Pot": hand.single_raised_pot,
+                        "Three_Bet": hand.three_bet,
+                        "Four_Bet": hand.four_bet,
+                        "Five_Bet": hand.five_bet,
                     }
                 )
 
@@ -754,6 +855,7 @@ class HeroAnalysisParser:
 
 def main():
     """Main function for testing the parser"""
+
 
 if __name__ == "__main__":
     main()

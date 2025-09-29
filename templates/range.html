@@ -62,6 +62,14 @@
             frequency="{{ hand.raise_frequency}}"
             style="width: {{hand.raise_frequency}}%"
           ></div>
+
+          <div
+            id="{{ hand.name }}-free-flop"
+            class="bg-amber-400"
+            times="{{hand.free_flop}}"
+            frequency="{{ hand.free_flop_frequency}}"
+            style="width: {{ hand.free_flop_frequency}}%"
+          ></div>
           <div
             id="{{ hand.name }}-not-dealt"
             class="bg-gray-400"
@@ -79,7 +87,7 @@
 
     <div class="flex flex-col p-4 ml-auto">
       <div class="overflow-x-auto rounded">
-        <table class="min-w-full border-collapse ">
+        <table class="min-w-full border-collapse">
           <thead class="bg-gray-100">
             <tr class="bg-yellow-400">
               <th
@@ -127,6 +135,15 @@
                 <span id="vis-raise-freq"></span>
               </td>
             </tr>
+            <tr class="hover:bg-gray-50 bg-amber-400">
+              <td class="px-4 py-4 text-sm text-gray-800 border-b">check</td>
+              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
+                <span id="vis-free-flop-abs"></span>
+              </td>
+              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
+                <span id="vis-free-flop-freq"></span>
+              </td>
+            </tr>
             <tr class="hover:bg-gray-50 bg-purple-400">
               <td class="px-4 py-4 text-sm text-gray-800">total</td>
               <td class="px-4 py-4 text-sm text-gray-800 text-right">
@@ -151,8 +168,10 @@
         const fold = document.getElementById(`${name}-fold`);
         const call = document.getElementById(`${name}-call`);
         const raise = document.getElementById(`${name}-raise`);
-        console.debug(name);
-        console.debug(document.getElementById(`${name}-raise`));
+        const freeFlop = document.getElementById(`${name}-free-flop`);
+
+        // console.debug(name);
+        // console.debug(document.getElementById(`${name}-raise`));
         document.getElementById("vis-name").innerText = name;
         document.getElementById("vis-fold-abs").innerText =
           fold.getAttribute("times");
@@ -166,14 +185,21 @@
           raise.getAttribute("times");
         document.getElementById("vis-raise-freq").innerText =
           raise.getAttribute("frequency") + "%";
+        document.getElementById("vis-free-flop-abs").innerText =
+          freeFlop.getAttribute("times");
+        document.getElementById("vis-free-flop-freq").innerText =
+          freeFlop.getAttribute("frequency") + "%";
         document.getElementById("vis-total-abs").innerText =
           +fold.getAttribute("times") +
           +call.getAttribute("times") +
+          +freeFlop.getAttribute("times") +
           +raise.getAttribute("times");
         document.getElementById("vis-total-freq").innerText =
           +fold.getAttribute("frequency") +
           +call.getAttribute("frequency") +
-          +raise.getAttribute("frequency") + "%";
+          +freeFlop.getAttribute("frequency") +
+          +raise.getAttribute("frequency") +
+          "%";
       });
     });
   </script>

@@ -7,8 +7,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 's
 # Set up the environment to look for templates in the "templates" folder
 from config import HANDS
 env = Environment(loader=FileSystemLoader("templates"))
-
-# Load the specific template file
 template = env.get_template("range.html")
 
 hands_list = []

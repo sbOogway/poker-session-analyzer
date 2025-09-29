@@ -9,20 +9,19 @@ import glob
 from hero_analysis_parser import HeroAnalysisParser
 from datetime import datetime, timedelta
 import streamlit.components.v1 as components
-
-# from pathlib import Path
-# from jinja2 import Environment, FileSystemLoader
+import utils, config
+from jinja2 import Environment, FileSystemLoader
 
 # # Set up Jinja2
-# env = Environment(loader=FileSystemLoader("templates"))
-# template = env.get_template("base.html")
+env = Environment(loader=FileSystemLoader("templates"))
+range_template = env.get_template("range.html")
 
 # def render_html(content: str) -> str:
 #     """Render the HTML template with the given inner content."""
 #     return template.render(content=content)
 
-with open("templates/output.html", "r") as f:
-    range_html = f.read()
+# with open("templates/output.html", "r") as f:
+    # range_html = f.read()
 
 # html = render_html(range_html)
 
@@ -38,8 +37,9 @@ st.markdown(
     """
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-"""
-, unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 # Custom CSS
 st.markdown(
@@ -341,13 +341,83 @@ class HeroDataAnalyzer:
         st.subheader("Position Analysis")
         st.dataframe(position_stats, width="stretch")
 
-        hands_by_position = self.df.groupby("Position")
-        pprint(hands_by_position)
-        # range visualizer
-        components.html(
-            html=range_html,
-            height=500
+        self.df["Hand_Range_Bucket"] = self.df["Hole_Cards"].apply(
+            lambda x: utils.categorize_hand(x)
         )
+
+        hands_by_position = self.df.groupby("Position")
+
+        hands_bucket = {
+            hand: {
+                "name": hand,
+                "fold": 0,
+                "call": 0,
+                "raise": 0,
+                "free_flop": 0,
+                "fold_frequency": 0,
+                "call_frequency": 0,
+                "raise_frequency": 0,
+                "not_dealt_frequency": 0,
+                "total": 0,
+            }
+            for hand in config.HANDS
+        }
+
+        for idx, hand in self.df.iterrows():
+            if hand["Hand_Range_Bucket"] == "":
+                continue
+
+            hands_bucket[hand["Hand_Range_Bucket"]]["total"] += 1
+
+            if hand["Limped"] or hand["Called"] or hand["Serial_Caller"]:
+                hands_bucket[hand["Hand_Range_Bucket"]]["call"] += 1
+                continue
+
+            if (
+                hand["Single_Raised_Pot"]
+                or hand["Three_Bet"]
+                or hand["Four_Bet"]
+                or hand["Five_Bet"]
+            ):
+                hands_bucket[hand["Hand_Range_Bucket"]]["raise"] += 1
+                continue
+
+            if hand["Preflop_Folded"]:
+                hands_bucket[hand["Hand_Range_Bucket"]]["fold"] += 1
+                continue
+
+            hands_bucket[hand["Hand_Range_Bucket"]]["free_flop"] += 1
+
+
+        for name, hand  in hands_bucket.items():
+            if hand["total"] == 0:
+                hands_bucket[name]["not_dealt_frequency"] = 100
+                continue
+
+            hands_bucket[name]["fold_frequency"] = round(
+                hand["fold"] / hand["total"] * 100, 2
+            )
+            hands_bucket[name]["call_frequency"] = round(
+                hand["call"] / hand["total"] * 100, 2
+            )
+            hands_bucket[name]["raise_frequency"] = round(
+                hand["raise"] / hand["total"] * 100, 2
+            )
+            hands_bucket[name]["free_flop_frequency"] = round(
+                hand["free_flop"] / hand["total"] * 100, 2
+            )
+
+        hands_bucket = hands_bucket.values()
+
+        range_html = range_template.render({"hands": hands_bucket})
+
+            # if [""]
+
+        pprint(self.df)
+        pprint(hands_bucket)
+# 
+        # range visualizer
+        components.html(html=range_html, height=700)
 
         # st.table(self.df)
 
