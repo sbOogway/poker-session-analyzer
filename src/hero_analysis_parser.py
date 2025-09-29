@@ -20,7 +20,7 @@ file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(log_format)
 
 console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
+console_handler.setLevel(logging.INFO)
 console_handler.setFormatter(log_format)
 
 

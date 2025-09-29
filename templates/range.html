@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+  <style>
+    .rounded {
+      border-radius: 4px;
+    }
+    .grid-hand {
+    }
+
+    .grid-hand:hover {
+      cursor: pointer;
+      /* background-color: aqua; */
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Blur effect */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+      backdrop-filter: blur(10px); /* Blur effect */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+      /* border: 1px solid rgba(255, 255, 255, 0.5); Light border */
+    }
+  </style>
+
+  <div class="flex min-h-screen">
+    <div
+      class="grid grid-cols-13 grid-rows-13 w-5/12 gap-1 p-4"
+      style="
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      "
+    >
+      {% for hand in hands %}
+      <div class="grid-hand grid" style="aspect-ratio: 1">
+        <div
+          class="flex"
+          name="{{ hand.name }}"
+          total="{{ hand.total }}"
+          style="grid-area: 1 / 1"
+        >
+          <div
+            id="{{ hand.name }}-fold"
+            class="bg-blue-400"
+            times="{{hand.fold}}"
+            frequency="{{ hand.fold_frequency}}"
+            style="width: {{ hand.fold_frequency}}%"
+          ></div>
+          <div
+            id="{{ hand.name }}-call"
+            class="bg-green-400"
+            times="{{hand.call}}"
+            frequency="{{ hand.call_frequency}}"
+            style="width: {{ hand.call_frequency}}%"
+          ></div>
+          <div
+            id="{{ hand.name }}-raise"
+            class="bg-red-400"
+            times="{{ hand.raise }}"
+            frequency="{{ hand.raise_frequency}}"
+            style="width: {{hand.raise_frequency}}%"
+          ></div>
+          <div
+            id="{{ hand.name }}-not-dealt"
+            class="bg-gray-400"
+            frequency="{{ hand.not_dealt_frequency}}"
+            style="width: {{hand.not_dealt_frequency}}%"
+          ></div>
+        </div>
+
+        <div class="flex items-center justify-center" style="grid-area: 1 / 1">
+          <span class="text-2xl" name="{{hand.name}}">{{ hand.name }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="flex flex-col p-4 ml-auto">
+      <div class="overflow-x-auto rounded">
+        <table class="min-w-full border-collapse ">
+          <thead class="bg-gray-100">
+            <tr class="bg-yellow-400">
+              <th
+                class="px-4 py-8 text-left text-sm font-medium text-gray-700 border-b"
+              >
+                <h1><span id="vis-name" class="text-base"></span></h1>
+              </th>
+              <th
+                class="px-4 py-8 text-left text-sm font-medium text-gray-700 border-b"
+              >
+                times
+              </th>
+              <th
+                class="px-4 py-8 text-left text-sm font-medium text-gray-700 border-b"
+              >
+                frequency
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr class="hover:bg-gray-50 bg-blue-400 bg-blue-400">
+              <td class="px-4 py-4 border-b text-sm text-gray-800">fold</td>
+              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
+                <span id="vis-fold-abs"></span>
+              </td>
+              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
+                <span id="vis-fold-freq"></span>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-green-400">
+              <td class="px-4 py-4 border-b text-sm text-gray-800">call</td>
+              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
+                <span id="vis-call-abs"></span>
+              </td>
+              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
+                <span id="vis-call-freq"></span>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-red-400">
+              <td class="px-4 py-4 text-sm text-gray-800 border-b">raise</td>
+              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
+                <span id="vis-raise-abs"></span>
+              </td>
+              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
+                <span id="vis-raise-freq"></span>
+              </td>
+            </tr>
+            <tr class="hover:bg-gray-50 bg-purple-400">
+              <td class="px-4 py-4 text-sm text-gray-800">total</td>
+              <td class="px-4 py-4 text-sm text-gray-800 text-right">
+                <span id="vis-total-abs"></span>
+              </td>
+              <td class="px-4 py-4 text-sm text-gray-800 text-right">
+                <span id="vis-total-freq"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+    const gridHands = document.getElementsByClassName("grid-hand");
+    Array.from(gridHands).forEach((element) => {
+      element.addEventListener("click", (event) => {
+        console.debug(event.target);
+        const el = event.target;
+        const name = el.getAttribute("name");
+        const fold = document.getElementById(`${name}-fold`);
+        const call = document.getElementById(`${name}-call`);
+        const raise = document.getElementById(`${name}-raise`);
+        console.debug(name);
+        console.debug(document.getElementById(`${name}-raise`));
+        document.getElementById("vis-name").innerText = name;
+        document.getElementById("vis-fold-abs").innerText =
+          fold.getAttribute("times");
+        document.getElementById("vis-fold-freq").innerText =
+          fold.getAttribute("frequency") + "%";
+        document.getElementById("vis-call-abs").innerText =
+          call.getAttribute("times");
+        document.getElementById("vis-call-freq").innerText =
+          call.getAttribute("frequency") + "%";
+        document.getElementById("vis-raise-abs").innerText =
+          raise.getAttribute("times");
+        document.getElementById("vis-raise-freq").innerText =
+          raise.getAttribute("frequency") + "%";
+        document.getElementById("vis-total-abs").innerText =
+          +fold.getAttribute("times") +
+          +call.getAttribute("times") +
+          +raise.getAttribute("times");
+        document.getElementById("vis-total-freq").innerText =
+          +fold.getAttribute("frequency") +
+          +call.getAttribute("frequency") +
+          +raise.getAttribute("frequency") + "%";
+      });
+    });
+  </script>
+</body>
