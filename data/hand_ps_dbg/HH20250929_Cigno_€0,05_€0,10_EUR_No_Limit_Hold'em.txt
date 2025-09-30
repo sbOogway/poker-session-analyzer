@@ -1,0 +1,3126 @@
+﻿PokerStars Zoom Hand #257930970368:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:01:30 CET [2025/09/29 4:01:30 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€21.72 in chips) 
+Seat 2: 0nlymindset (€10.07 in chips) 
+Seat 3: caduceus369 (€10 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [7c 3c]
+TheDoctorBluff: raises €0.20 to €0.30
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.20) returned to TheDoctorBluff
+TheDoctorBluff collected €0.25 from pot
+TheDoctorBluff: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: TheDoctorBluff (button) collected (€0.25)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257930971039:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:01:41 CET [2025/09/29 4:01:41 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: workman75 (€9.11 in chips) 
+Seat 2: caduceus369 (€9.90 in chips) 
+Seat 3: tignanell001 (€6.80 in chips) 
+Seat 4: 0nlymindset (€15.86 in chips) 
+Seat 5: chiardiluna (€9.20 in chips) 
+caduceus369: posts small blind €0.05
+tignanell001: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [9d 9h]
+0nlymindset: raises €0.20 to €0.30
+chiardiluna: folds 
+workman75: folds 
+caduceus369: calls €0.25
+tignanell001: folds 
+*** FLOP *** [Qd Jh 3h]
+caduceus369: checks 
+0nlymindset: bets €0.47
+caduceus369: calls €0.47
+*** TURN *** [Qd Jh 3h] [Ks]
+caduceus369: bets €0.50
+0nlymindset: raises €1.02 to €1.52
+caduceus369: folds 
+Uncalled bet (€1.02) returned to 0nlymindset
+0nlymindset collected €2.50 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €2.64 | Rake €0.14 
+Board [Qd Jh 3h Ks]
+Seat 1: workman75 (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded on the Turn
+Seat 3: tignanell001 (big blind) folded before Flop
+Seat 4: 0nlymindset collected (€2.50)
+Seat 5: chiardiluna folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930973899:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:02:28 CET [2025/09/29 4:02:28 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.63 in chips) 
+Seat 2: luckyluglio (€5.64 in chips) 
+Seat 3: chiardiluna (€12.53 in chips) 
+Seat 4: chloe_more24 (€30.59 in chips) 
+luckyluglio: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jd Qc]
+chloe_more24: raises €0.17 to €0.27
+caduceus369: calls €0.27
+luckyluglio: raises €1.01 to €1.28
+chiardiluna: folds 
+chloe_more24: folds 
+caduceus369: folds 
+Uncalled bet (€1.01) returned to luckyluglio
+luckyluglio collected €0.91 from pot
+luckyluglio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.91 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop
+Seat 2: luckyluglio (small blind) collected (€0.91)
+Seat 3: chiardiluna (big blind) folded before Flop
+Seat 4: chloe_more24 folded before Flop
+
+
+
+PokerStars Zoom Hand #257930974931:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:02:45 CET [2025/09/29 4:02:45 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10 in chips) 
+Seat 2: georgatos86 (€7.27 in chips) 
+Seat 3: caduceus369 (€8.36 in chips) 
+Seat 4: chloe_more24 (€30.32 in chips) 
+georgatos86: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Kh 6c]
+chloe_more24: folds 
+0nlymindset: raises €0.20 to €0.30
+georgatos86: folds 
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) collected (€0.25)
+Seat 2: georgatos86 (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+Seat 4: chloe_more24 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930975773:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:02:59 CET [2025/09/29 4:02:59 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: tignanell001 (€6.35 in chips) 
+Seat 2: caduceus369 (€8.26 in chips) 
+Seat 3: 0nlymindset (€10.10 in chips) 
+Seat 4: chiardiluna (€12.38 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [9c 9d]
+chiardiluna: folds 
+tignanell001: folds 
+caduceus369: calls €0.05
+0nlymindset: raises €0.30 to €0.40
+caduceus369: raises €1.40 to €1.80
+0nlymindset: folds 
+Uncalled bet (€1.40) returned to caduceus369
+caduceus369 collected €0.80 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.80 | Rake €0 
+Seat 1: tignanell001 (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) collected (€0.80)
+Seat 3: 0nlymindset (big blind) folded before Flop
+Seat 4: chiardiluna folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930977061:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:03:20 CET [2025/09/29 4:03:20 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.66 in chips) 
+Seat 2: tignanell001 (€6.40 in chips) 
+Seat 3: 0nlymindset (€17.19 in chips) 
+Seat 4: chiardiluna (€10 in chips) 
+tignanell001: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ah Kc]
+chiardiluna: folds 
+caduceus369: raises €0.10 to €0.20
+tignanell001: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: tignanell001 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+Seat 4: chiardiluna folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930978084:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:03:37 CET [2025/09/29 4:03:37 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.90 in chips) 
+Seat 2: chiardiluna (€12.28 in chips) 
+Seat 3: caduceus369 (€8.81 in chips) 
+Seat 4: tignanell001 (€6.35 in chips) 
+chiardiluna: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2s 3c]
+tignanell001: raises €0.25 to €0.35
+0nlymindset: folds 
+chiardiluna: folds 
+caduceus369: folds 
+Uncalled bet (€0.25) returned to tignanell001
+tignanell001 collected €0.25 from pot
+tignanell001: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+Seat 4: tignanell001 collected (€0.25)
+
+
+
+PokerStars Zoom Hand #257930979770:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:04:06 CET [2025/09/29 4:04:06 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chiardiluna (€12.13 in chips) 
+Seat 2: TheDoctorBluff (€22.24 in chips) 
+Seat 3: 0nlymindset (€10 in chips) 
+Seat 4: caduceus369 (€8.66 in chips) 
+TheDoctorBluff: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2c 3d]
+caduceus369: folds 
+chiardiluna: folds 
+TheDoctorBluff: raises €0.15 to €0.25
+0nlymindset: folds 
+Uncalled bet (€0.15) returned to TheDoctorBluff
+TheDoctorBluff collected €0.20 from pot
+TheDoctorBluff: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: chiardiluna (button) folded before Flop (didn't bet)
+Seat 2: TheDoctorBluff (small blind) collected (€0.20)
+Seat 3: 0nlymindset (big blind) folded before Flop
+Seat 4: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930978900:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:03:52 CET [2025/09/29 4:03:52 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.10 in chips) 
+Seat 2: caduceus369 (€8.71 in chips) 
+Seat 3: chiardiluna (€12.23 in chips) 
+Seat 4: workman75 (€17.16 in chips) 
+Seat 5: cucciolo68 (€20.12 in chips) 
+caduceus369: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [9h 6h]
+workman75: raises €0.10 to €0.20
+cucciolo68: raises €0.70 to €0.90
+0nlymindset: folds 
+caduceus369: folds 
+chiardiluna: folds 
+workman75: calls €0.70
+*** FLOP *** [2s 6c 2d]
+workman75: checks 
+cucciolo68: bets €0.90
+workman75: folds 
+Uncalled bet (€0.90) returned to cucciolo68
+cucciolo68 collected €1.85 from pot
+cucciolo68: doesn't show hand 
+*** SUMMARY ***
+Total pot €1.95 | Rake €0.10 
+Board [2s 6c 2d]
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: chiardiluna (big blind) folded before Flop
+Seat 4: workman75 folded on the Flop
+Seat 5: cucciolo68 collected (€1.85)
+
+
+
+PokerStars Zoom Hand #257930980096:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:04:11 CET [2025/09/29 4:04:11 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheLoneDigger27 (€18.62 in chips) 
+Seat 2: 0nlymindset (€10.80 in chips) 
+Seat 3: caduceus369 (€8.66 in chips) 
+Seat 4: chiardiluna (€12.13 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8d 4h]
+chiardiluna: folds 
+TheLoneDigger27: folds 
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.20 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: TheLoneDigger27 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) collected (€0.20)
+Seat 3: caduceus369 (big blind) folded before Flop
+Seat 4: chiardiluna folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930980762:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:04:22 CET [2025/09/29 4:04:22 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: cucciolo68 (€21.07 in chips) 
+Seat 2: caduceus369 (€8.56 in chips) 
+Seat 3: TheDoctorBluff (€22.34 in chips) 
+Seat 4: 0nlymindset (€16.54 in chips) 
+caduceus369: posts small blind €0.05
+TheDoctorBluff: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jc 5s]
+0nlymindset: folds 
+cucciolo68: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to TheDoctorBluff
+TheDoctorBluff collected €0.10 from pot
+TheDoctorBluff: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: cucciolo68 (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: TheDoctorBluff (big blind) collected (€0.10)
+Seat 4: 0nlymindset folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930981085:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:04:27 CET [2025/09/29 4:04:27 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.51 in chips) 
+Seat 2: chloe_more24 (€42.74 in chips) 
+Seat 3: cucciolo68 (€21.07 in chips) 
+Seat 4: chiardiluna (€10 in chips) 
+chloe_more24: posts small blind €0.05
+cucciolo68: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Kd Tc]
+chiardiluna: raises €0.20 to €0.30
+caduceus369: folds 
+chloe_more24: folds 
+cucciolo68: folds 
+Uncalled bet (€0.20) returned to chiardiluna
+chiardiluna collected €0.25 from pot
+chiardiluna: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: chloe_more24 (small blind) folded before Flop
+Seat 3: cucciolo68 (big blind) folded before Flop
+Seat 4: chiardiluna collected (€0.25)
+
+
+
+PokerStars Zoom Hand #257930981917:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:04:40 CET [2025/09/29 4:04:40 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€22.34 in chips) 
+Seat 2: caduceus369 (€8.51 in chips) 
+Seat 3: 0nlymindset (€10.90 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5s Jc]
+TheDoctorBluff: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: TheDoctorBluff (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930982357:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:04:48 CET [2025/09/29 4:04:48 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€22.34 in chips) 
+Seat 2: 0nlymindset (€10.25 in chips) 
+Seat 3: caduceus369 (€8.46 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Js 7h]
+TheDoctorBluff: folds 
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.20 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: TheDoctorBluff (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) collected (€0.20)
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257930981671:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:04:36 CET [2025/09/29 4:04:36 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.51 in chips) 
+Seat 2: cucciolo68 (€20.97 in chips) 
+Seat 3: 0nlymindset (€10 in chips) 
+cucciolo68: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4h 8s]
+caduceus369: folds 
+cucciolo68: raises €0.15 to €0.25
+0nlymindset: calls €0.15
+*** FLOP *** [Ah Qh Kh]
+cucciolo68: bets €0.26
+0nlymindset: calls €0.26
+*** TURN *** [Ah Qh Kh] [8c]
+cucciolo68: checks 
+0nlymindset: checks 
+*** RIVER *** [Ah Qh Kh 8c] [4c]
+cucciolo68: checks 
+0nlymindset: checks 
+*** SHOW DOWN ***
+cucciolo68: shows [3c 3d] (a pair of Threes)
+0nlymindset: shows [As 3h] (a pair of Aces)
+0nlymindset collected €0.97 from pot
+*** SUMMARY ***
+Total pot €1.02 | Rake €0.05 
+Board [Ah Qh Kh 8c 4c]
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: cucciolo68 (small blind) showed [3c 3d] and lost with a pair of Threes
+Seat 3: 0nlymindset (big blind) showed [As 3h] and won (€0.97) with a pair of Aces
+
+
+
+PokerStars Zoom Hand #257930983513:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:05:06 CET [2025/09/29 4:05:06 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.36 in chips) 
+Seat 2: workman75 (€11.36 in chips) 
+Seat 3: 0nlymindset (€10.35 in chips) 
+workman75: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8c 3h]
+caduceus369: folds 
+workman75: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: workman75 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930983711:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:05:09 CET [2025/09/29 4:05:09 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: cucciolo68 (€20.46 in chips) 
+Seat 2: 0nlymindset (€16.39 in chips) 
+Seat 3: caduceus369 (€8.36 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8d 3c]
+cucciolo68: folds 
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.20 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: cucciolo68 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) collected (€0.20)
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257930984308:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:05:19 CET [2025/09/29 4:05:19 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.40 in chips) 
+Seat 2: caduceus369 (€8.26 in chips) 
+Seat 3: tignanell001 (€11.67 in chips) 
+caduceus369: posts small blind €0.05
+tignanell001: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [7c 9c]
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+tignanell001: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) collected (€0.25)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: tignanell001 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257930984883:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:05:28 CET [2025/09/29 4:05:28 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.21 in chips) 
+Seat 2: chiardiluna (€9.73 in chips) 
+Seat 3: 0nlymindset (€16.49 in chips) 
+chiardiluna: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5d Qc]
+caduceus369: folds 
+chiardiluna: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930985157:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:05:32 CET [2025/09/29 4:05:32 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheLoneDigger27 (€17.85 in chips) 
+Seat 2: caduceus369 (€8.21 in chips) 
+Seat 3: 0nlymindset (€10.55 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [3c 8h]
+TheLoneDigger27: raises €0.10 to €0.20
+caduceus369: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to TheLoneDigger27
+TheLoneDigger27 collected €0.25 from pot
+TheLoneDigger27: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: TheLoneDigger27 (button) collected (€0.25)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257930985340:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:05:35 CET [2025/09/29 4:05:35 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: cucciolo68 (€20.21 in chips) 
+Seat 2: workman75 (€11.26 in chips) 
+Seat 3: chiardiluna (€9.68 in chips) 
+Seat 4: caduceus369 (€8.16 in chips) 
+workman75: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [6c Kc]
+caduceus369: folds 
+cucciolo68: folds 
+workman75: folds 
+Uncalled bet (€0.05) returned to chiardiluna
+chiardiluna collected €0.10 from pot
+chiardiluna: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: cucciolo68 (button) folded before Flop (didn't bet)
+Seat 2: workman75 (small blind) folded before Flop
+Seat 3: chiardiluna (big blind) collected (€0.10)
+Seat 4: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930985518:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:05:38 CET [2025/09/29 4:05:38 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: workman75 (€11.21 in chips) 
+Seat 2: 0nlymindset (€16.54 in chips) 
+Seat 3: caduceus369 (€8.16 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ks Ac]
+workman75: folds 
+0nlymindset: raises €0.20 to €0.30
+caduceus369: calls €0.20
+*** FLOP *** [3c Td 8s]
+0nlymindset: checks 
+caduceus369: checks 
+*** TURN *** [3c Td 8s] [Ts]
+0nlymindset: checks 
+caduceus369: bets €0.10
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.57 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.60 | Rake €0.03 
+Board [3c Td 8s Ts]
+Seat 1: workman75 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) folded on the Turn
+Seat 3: caduceus369 (big blind) collected (€0.57)
+
+
+
+PokerStars Zoom Hand #257930987409:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:06:09 CET [2025/09/29 4:06:09 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chloe_more24 (€43.63 in chips) 
+Seat 2: caduceus369 (€8.43 in chips) 
+Seat 3: 0nlymindset (€11.03 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [3h 4c]
+chloe_more24: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: chloe_more24 (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930987725:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:06:14 CET [2025/09/29 4:06:14 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€16.24 in chips) 
+Seat 2: caduceus369 (€8.38 in chips) 
+Seat 3: chloe_more24 (€43.63 in chips) 
+caduceus369: posts small blind €0.05
+chloe_more24: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8h 5s]
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to chloe_more24
+chloe_more24 collected €0.10 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: chloe_more24 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930987911:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:06:17 CET [2025/09/29 4:06:17 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.33 in chips) 
+Seat 2: cucciolo68 (€19.81 in chips) 
+Seat 3: chiardiluna (€9.48 in chips) 
+cucciolo68: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Td 6s]
+caduceus369: folds 
+cucciolo68: folds 
+Uncalled bet (€0.05) returned to chiardiluna
+chiardiluna collected €0.10 from pot
+chiardiluna: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: cucciolo68 (small blind) folded before Flop
+Seat 3: chiardiluna (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930988220:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:06:22 CET [2025/09/29 4:06:22 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chloe_more24 (€43.68 in chips) 
+Seat 2: 0nlymindset (€11.08 in chips) 
+Seat 3: caduceus369 (€8.33 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2h 3d]
+chloe_more24: raises €0.17 to €0.27
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.17) returned to chloe_more24
+chloe_more24 collected €0.25 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: chloe_more24 (button) collected (€0.25)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257930988525:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:06:27 CET [2025/09/29 4:06:27 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: cucciolo68 (€19.76 in chips) 
+Seat 2: caduceus369 (€8.23 in chips) 
+Seat 3: chiardiluna (€12.47 in chips) 
+caduceus369: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4d 6d]
+cucciolo68: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to chiardiluna
+chiardiluna collected €0.10 from pot
+chiardiluna: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: cucciolo68 (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: chiardiluna (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930989169:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:06:37 CET [2025/09/29 4:06:37 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.18 in chips) 
+Seat 2: chiardiluna (€12.52 in chips) 
+Seat 3: 0nlymindset (€11.03 in chips) 
+chiardiluna: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Js 8d]
+caduceus369: raises €0.10 to €0.20
+chiardiluna: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257930990138:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:06:52 CET [2025/09/29 4:06:52 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.40 in chips) 
+Seat 2: cucciolo68 (€19.81 in chips) 
+Seat 3: caduceus369 (€8.33 in chips) 
+cucciolo68: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2h 2s]
+0nlymindset: folds 
+cucciolo68: raises €0.15 to €0.25
+caduceus369: calls €0.15
+*** FLOP *** [Jd Ts Th]
+cucciolo68: bets €0.16
+caduceus369: calls €0.16
+*** TURN *** [Jd Ts Th] [5d]
+cucciolo68: checks 
+caduceus369: bets €0.30
+cucciolo68: calls €0.30
+*** RIVER *** [Jd Ts Th 5d] [6s]
+cucciolo68: checks 
+caduceus369: bets €0.78
+cucciolo68: calls €0.78
+*** SHOW DOWN ***
+caduceus369: shows [2h 2s] (two pair, Tens and Deuces)
+cucciolo68: mucks hand 
+caduceus369 collected €2.82 from pot
+*** SUMMARY ***
+Total pot €2.98 | Rake €0.16 
+Board [Jd Ts Th 5d 6s]
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: cucciolo68 (small blind) mucked [Ah Kc]
+Seat 3: caduceus369 (big blind) showed [2h 2s] and won (€2.82) with two pair, Tens and Deuces
+
+
+
+PokerStars Zoom Hand #257930993601:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:07:47 CET [2025/09/29 4:07:47 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.61 in chips) 
+Seat 2: cucciolo68 (€18.22 in chips) 
+Seat 3: chiardiluna (€11.71 in chips) 
+Seat 4: workman75 (€10.19 in chips) 
+cucciolo68: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4h 9d]
+workman75: folds 
+caduceus369: folds 
+cucciolo68: folds 
+Uncalled bet (€0.05) returned to chiardiluna
+chiardiluna collected €0.10 from pot
+chiardiluna: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: cucciolo68 (small blind) folded before Flop
+Seat 3: chiardiluna (big blind) collected (€0.10)
+Seat 4: workman75 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930992943:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:07:37 CET [2025/09/29 4:07:37 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.66 in chips) 
+Seat 2: tignanell001 (€11.42 in chips) 
+Seat 3: 0nlymindset (€10.40 in chips) 
+Seat 4: cucciolo68 (€18.32 in chips) 
+tignanell001: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [9h 4h]
+cucciolo68: folds 
+caduceus369: folds 
+tignanell001: raises €0.20 to €0.30
+0nlymindset: calls €0.20
+*** FLOP *** [Qs Ts 3s]
+tignanell001: bets €11.12 and is all-in
+0nlymindset: folds 
+Uncalled bet (€11.12) returned to tignanell001
+tignanell001 collected €0.57 from pot
+tignanell001: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.60 | Rake €0.03 
+Board [Qs Ts 3s]
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: tignanell001 (small blind) collected (€0.57)
+Seat 3: 0nlymindset (big blind) folded on the Flop
+Seat 4: cucciolo68 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257930993195:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:07:41 CET [2025/09/29 4:07:41 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€17.03 in chips) 
+Seat 2: caduceus369 (€9.66 in chips) 
+Seat 3: cucciolo68 (€18.32 in chips) 
+Seat 4: chloe_more24 (€41.33 in chips) 
+caduceus369: posts small blind €0.05
+cucciolo68: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5s 9c]
+chloe_more24: raises €0.17 to €0.27
+0nlymindset: raises €0.69 to €0.96
+caduceus369: folds 
+cucciolo68: folds 
+chloe_more24: calls €0.69
+*** FLOP *** [3c 6d 7c]
+chloe_more24: checks 
+0nlymindset: checks 
+*** TURN *** [3c 6d 7c] [5h]
+chloe_more24: bets €1.47
+0nlymindset: calls €1.47
+*** RIVER *** [3c 6d 7c 5h] [4c]
+chloe_more24: checks 
+0nlymindset: bets €2
+chloe_more24: calls €2
+*** SHOW DOWN ***
+0nlymindset: shows [8h Ah] (a straight, Four to Eight)
+chloe_more24: mucks hand 
+0nlymindset collected €8.52 from pot
+*** SUMMARY ***
+Total pot €9.01 | Rake €0.49 
+Board [3c 6d 7c 5h 4c]
+Seat 1: 0nlymindset (button) showed [8h Ah] and won (€8.52) with a straight, Four to Eight
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: cucciolo68 (big blind) folded before Flop
+Seat 4: chloe_more24 mucked [Td 7d]
+
+
+
+PokerStars Zoom Hand #257930993792:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:07:50 CET [2025/09/29 4:07:50 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: workman75 (€10.19 in chips) 
+Seat 2: 0nlymindset (€10.75 in chips) 
+Seat 3: caduceus369 (€9.61 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Qh Td]
+workman75: folds 
+0nlymindset: raises €0.20 to €0.30
+caduceus369: calls €0.20
+*** FLOP *** [4h Ad 6c]
+0nlymindset: checks 
+caduceus369: bets €0.20
+0nlymindset: calls €0.20
+*** TURN *** [4h Ad 6c] [Ks]
+0nlymindset: checks 
+caduceus369: bets €0.55
+0nlymindset: calls €0.55
+*** RIVER *** [4h Ad 6c Ks] [4s]
+0nlymindset: checks 
+caduceus369: bets €0.50
+0nlymindset: raises €1.50 to €2
+caduceus369: folds 
+Uncalled bet (€1.50) returned to 0nlymindset
+0nlymindset collected €2.93 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €3.10 | Rake €0.17 
+Board [4h Ad 6c Ks 4s]
+Seat 1: workman75 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) collected (€2.93)
+Seat 3: caduceus369 (big blind) folded on the River
+
+
+
+PokerStars Zoom Hand #257930998698:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:09:09 CET [2025/09/29 4:09:09 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.06 in chips) 
+Seat 2: tignanell001 (€10.97 in chips) 
+Seat 3: chloe_more24 (€36.70 in chips) 
+Seat 4: 0nlymindset (€10.68 in chips) 
+tignanell001: posts small blind €0.05
+chloe_more24: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ah 4c]
+0nlymindset: raises €0.10 to €0.20
+caduceus369: folds 
+tignanell001: folds 
+chloe_more24: folds 
+Uncalled bet (€0.10) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: tignanell001 (small blind) folded before Flop
+Seat 3: chloe_more24 (big blind) folded before Flop
+Seat 4: 0nlymindset collected (€0.25)
+
+
+
+PokerStars Zoom Hand #257930999107:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:09:15 CET [2025/09/29 4:09:15 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: tignanell001 (€10.92 in chips) 
+Seat 2: caduceus369 (€8.06 in chips) 
+Seat 3: cucciolo68 (€17.66 in chips) 
+caduceus369: posts small blind €0.05
+cucciolo68: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ts 5c]
+tignanell001: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to cucciolo68
+cucciolo68 collected €0.10 from pot
+cucciolo68: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: tignanell001 (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: cucciolo68 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257930999944:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:09:28 CET [2025/09/29 4:09:28 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€23.04 in chips) 
+Seat 2: 0nlymindset (€10.78 in chips) 
+Seat 3: caduceus369 (€8.01 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Td 2d]
+TheDoctorBluff: folds 
+0nlymindset: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: TheDoctorBluff (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931000574:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:09:38 CET [2025/09/29 4:09:38 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.73 in chips) 
+Seat 2: caduceus369 (€8.06 in chips) 
+Seat 3: cucciolo68 (€17.71 in chips) 
+caduceus369: posts small blind €0.05
+cucciolo68: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4h 5s]
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to cucciolo68
+cucciolo68 collected €0.10 from pot
+cucciolo68: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: cucciolo68 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931000882:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:09:43 CET [2025/09/29 4:09:43 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.01 in chips) 
+Seat 2: superbaccio (€9.70 in chips) 
+Seat 3: 0nlymindset (€11.78 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Qh 2s]
+caduceus369: folds 
+superbaccio: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931001128:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:09:47 CET [2025/09/29 4:09:47 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.01 in chips) 
+Seat 2: cucciolo68 (€17.76 in chips) 
+Seat 3: 0nlymindset (€10.73 in chips) 
+cucciolo68: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ac Kd]
+caduceus369: raises €0.10 to €0.20
+cucciolo68: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: cucciolo68 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931001764:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:09:57 CET [2025/09/29 4:09:57 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.63 in chips) 
+Seat 2: cucciolo68 (€17.71 in chips) 
+Seat 3: caduceus369 (€8.16 in chips) 
+cucciolo68: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2d Kc]
+0nlymindset: raises €0.20 to €0.30
+cucciolo68: folds 
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) collected (€0.25)
+Seat 2: cucciolo68 (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931002462:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:10:08 CET [2025/09/29 4:10:08 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.35 in chips) 
+Seat 2: caduceus369 (€8.06 in chips) 
+Seat 3: cucciolo68 (€17.66 in chips) 
+Seat 4: 0nlymindset (€10.78 in chips) 
+caduceus369: posts small blind €0.05
+cucciolo68: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Qc Kd]
+0nlymindset: raises €0.20 to €0.30
+superbaccio: folds 
+caduceus369: calls €0.25
+cucciolo68: calls €0.20
+*** FLOP *** [Ts 2d 6h]
+caduceus369: checks 
+cucciolo68: checks 
+0nlymindset: bets €0.60
+caduceus369: folds 
+cucciolo68: calls €0.60
+*** TURN *** [Ts 2d 6h] [9c]
+cucciolo68: checks 
+0nlymindset: checks 
+*** RIVER *** [Ts 2d 6h 9c] [3d]
+cucciolo68: checks 
+0nlymindset: bets €1.99
+cucciolo68: calls €1.99
+*** SHOW DOWN ***
+0nlymindset: shows [As Ac] (a pair of Aces)
+cucciolo68: mucks hand 
+0nlymindset collected €5.75 from pot
+*** SUMMARY ***
+Total pot €6.08 | Rake €0.33 
+Board [Ts 2d 6h 9c 3d]
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded on the Flop
+Seat 3: cucciolo68 (big blind) mucked [8h 8d]
+Seat 4: 0nlymindset showed [As Ac] and won (€5.75) with a pair of Aces
+
+
+
+PokerStars Zoom Hand #257931004793:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:10:44 CET [2025/09/29 4:10:44 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.30 in chips) 
+Seat 2: Georgata92 (€11.07 in chips) 
+Seat 3: 0nlymindset (€18.17 in chips) 
+Seat 4: caduceus369 (€7.76 in chips) 
+Georgata92: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ac 8d]
+caduceus369: raises €0.10 to €0.20
+superbaccio: calls €0.20
+Georgata92: folds 
+0nlymindset: folds 
+*** FLOP *** [4h Ks 5s]
+caduceus369: checks 
+superbaccio: bets €0.26
+caduceus369: calls €0.26
+*** TURN *** [4h Ks 5s] [Qd]
+caduceus369: checks 
+superbaccio: bets €0.34
+caduceus369: raises €0.64 to €0.98
+superbaccio: folds 
+Uncalled bet (€0.64) returned to caduceus369
+caduceus369 collected €1.66 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €1.75 | Rake €0.09 
+Board [4h Ks 5s Qd]
+Seat 1: superbaccio (button) folded on the Turn
+Seat 2: Georgata92 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+Seat 4: caduceus369 collected (€1.66)
+
+
+
+PokerStars Zoom Hand #257931009199:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:11:54 CET [2025/09/29 4:11:54 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: Georgata92 (€12.45 in chips) 
+Seat 2: chiardiluna (€11.15 in chips) 
+Seat 3: 0nlymindset (€22.19 in chips) 
+Seat 4: caduceus369 (€8.62 in chips) 
+chiardiluna: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2c Tc]
+caduceus369: folds 
+Georgata92: folds 
+chiardiluna: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: Georgata92 (button) folded before Flop (didn't bet)
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+Seat 4: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931010178:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:12:09 CET [2025/09/29 4:12:09 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€22.24 in chips) 
+Seat 2: chiardiluna (€11.05 in chips) 
+Seat 3: caduceus369 (€8.57 in chips) 
+chiardiluna: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5d Kc]
+0nlymindset: folds 
+chiardiluna: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931009515:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:11:59 CET [2025/09/29 4:11:59 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€18.24 in chips) 
+Seat 2: caduceus369 (€8.62 in chips) 
+Seat 3: Georgata92 (€12.45 in chips) 
+caduceus369: posts small blind €0.05
+Georgata92: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8d 6s]
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+Georgata92: calls €0.20
+*** FLOP *** [9s Ah Tc]
+Georgata92: checks 
+0nlymindset: bets €0.25
+Georgata92: calls €0.25
+*** TURN *** [9s Ah Tc] [Ts]
+Georgata92: checks 
+0nlymindset: bets €0.76
+Georgata92: folds 
+Uncalled bet (€0.76) returned to 0nlymindset
+0nlymindset collected €1.09 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €1.15 | Rake €0.06 
+Board [9s Ah Tc Ts]
+Seat 1: 0nlymindset (button) collected (€1.09)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: Georgata92 (big blind) folded on the Turn
+
+
+
+PokerStars Zoom Hand #257931011268:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:12:26 CET [2025/09/29 4:12:26 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.62 in chips) 
+Seat 2: chloe_more24 (€42.99 in chips) 
+Seat 3: 0nlymindset (€14.42 in chips) 
+Seat 4: chiardiluna (€11 in chips) 
+chloe_more24: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jd Ts]
+chiardiluna: folds 
+caduceus369: raises €0.10 to €0.20
+chloe_more24: raises €0.50 to €0.70
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.50) returned to chloe_more24
+chloe_more24 collected €0.50 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.50 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop
+Seat 2: chloe_more24 (small blind) collected (€0.50)
+Seat 3: 0nlymindset (big blind) folded before Flop
+Seat 4: chiardiluna folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931012493:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:12:45 CET [2025/09/29 4:12:45 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€18.78 in chips) 
+Seat 2: cucciolo68 (€15.07 in chips) 
+Seat 3: caduceus369 (€8.42 in chips) 
+cucciolo68: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Js 9h]
+0nlymindset: folds 
+cucciolo68: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: cucciolo68 (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931013684:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:13:03 CET [2025/09/29 4:13:03 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.42 in chips) 
+Seat 2: 0nlymindset (€11.55 in chips) 
+Seat 3: cucciolo68 (€15.02 in chips) 
+0nlymindset: posts small blind €0.05
+cucciolo68: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Qh 6c]
+caduceus369: folds 
+0nlymindset: raises €0.20 to €0.30
+cucciolo68: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.20 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) collected (€0.20)
+Seat 3: cucciolo68 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931013202:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:12:56 CET [2025/09/29 4:12:56 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chiardiluna (€11.05 in chips) 
+Seat 2: caduceus369 (€8.47 in chips) 
+Seat 3: 0nlymindset (€14.27 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4c Qd]
+chiardiluna: raises €0.20 to €0.30
+caduceus369: folds 
+0nlymindset: calls €0.20
+*** FLOP *** [Kh Jc Ks]
+0nlymindset: checks 
+chiardiluna: bets €0.31
+0nlymindset: folds 
+Uncalled bet (€0.31) returned to chiardiluna
+chiardiluna collected €0.62 from pot
+chiardiluna: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.65 | Rake €0.03 
+Board [Kh Jc Ks]
+Seat 1: chiardiluna (button) collected (€0.62)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded on the Flop
+
+
+
+PokerStars Zoom Hand #257931014340:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:13:13 CET [2025/09/29 4:13:13 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€8.42 in chips) 
+Seat 2: Georgata92 (€11.85 in chips) 
+Seat 3: chiardiluna (€22.72 in chips) 
+Georgata92: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4c 2d]
+caduceus369: folds 
+Georgata92: raises €0.15 to €0.25
+chiardiluna: folds 
+Uncalled bet (€0.15) returned to Georgata92
+Georgata92 collected €0.20 from pot
+Georgata92: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: Georgata92 (small blind) collected (€0.20)
+Seat 3: chiardiluna (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931014722:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:13:19 CET [2025/09/29 4:13:19 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€11.65 in chips) 
+Seat 2: cucciolo68 (€14.92 in chips) 
+Seat 3: caduceus369 (€8.42 in chips) 
+cucciolo68: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jc 8s]
+0nlymindset: folds 
+cucciolo68: raises €0.18 to €0.28
+caduceus369: folds 
+Uncalled bet (€0.18) returned to cucciolo68
+cucciolo68 collected €0.20 from pot
+cucciolo68: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: cucciolo68 (small blind) collected (€0.20)
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931015414:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:13:29 CET [2025/09/29 4:13:29 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: Georgata92 (€11.95 in chips) 
+Seat 2: caduceus369 (€8.32 in chips) 
+Seat 3: 0nlymindset (€19.43 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [As Qh]
+Georgata92: raises €0.15 to €0.25
+caduceus369: calls €0.20
+0nlymindset: raises €0.95 to €1.20
+Georgata92: folds 
+caduceus369: raises €2.20 to €3.40
+0nlymindset: folds 
+Uncalled bet (€2.20) returned to caduceus369
+caduceus369 collected €2.65 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €2.65 | Rake €0 
+Seat 1: Georgata92 (button) folded before Flop
+Seat 2: caduceus369 (small blind) collected (€2.65)
+Seat 3: 0nlymindset (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931018169:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:14:11 CET [2025/09/29 4:14:11 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.77 in chips) 
+Seat 2: 0nlymindset (€13.92 in chips) 
+Seat 3: chloe_more24 (€43.28 in chips) 
+0nlymindset: posts small blind €0.05
+chloe_more24: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [6c 3c]
+caduceus369: folds 
+0nlymindset: folds 
+Uncalled bet (€0.05) returned to chloe_more24
+chloe_more24 collected €0.10 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: chloe_more24 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931018485:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:14:16 CET [2025/09/29 4:14:16 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€18.23 in chips) 
+Seat 2: superbaccio (€8.20 in chips) 
+Seat 3: caduceus369 (€9.77 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Td 3h]
+0nlymindset: raises €0.20 to €0.30
+superbaccio: folds 
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) collected (€0.25)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931019252:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:14:28 CET [2025/09/29 4:14:28 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.67 in chips) 
+Seat 2: chiardiluna (€22.70 in chips) 
+Seat 3: superbaccio (€8.15 in chips) 
+chiardiluna: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Td 6d]
+caduceus369: raises €0.10 to €0.20
+chiardiluna: folds 
+superbaccio: raises €0.75 to €0.95
+caduceus369: folds 
+Uncalled bet (€0.75) returned to superbaccio
+superbaccio collected €0.45 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.45 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: superbaccio (big blind) collected (€0.45)
+
+
+
+PokerStars Zoom Hand #257931020294:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:14:44 CET [2025/09/29 4:14:44 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.47 in chips) 
+Seat 2: superbaccio (€9.90 in chips) 
+Seat 3: 0nlymindset (€11.25 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [As 9d]
+caduceus369: raises €0.10 to €0.20
+superbaccio: folds 
+0nlymindset: calls €0.10
+*** FLOP *** [6d 5d 3d]
+0nlymindset: checks 
+caduceus369: bets €0.10
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.43 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.45 | Rake €0.02 
+Board [6d 5d 3d]
+Seat 1: caduceus369 (button) collected (€0.43)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded on the Flop
+
+
+
+PokerStars Zoom Hand #257931021297:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:15:01 CET [2025/09/29 4:15:01 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chloe_more24 (€43.55 in chips) 
+Seat 2: chiardiluna (€22.65 in chips) 
+Seat 3: caduceus369 (€9.70 in chips) 
+chiardiluna: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4s 3c]
+chloe_more24: raises €0.17 to €0.27
+chiardiluna: folds 
+caduceus369: folds 
+Uncalled bet (€0.17) returned to chloe_more24
+chloe_more24 collected €0.25 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: chloe_more24 (button) collected (€0.25)
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931021704:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:15:07 CET [2025/09/29 4:15:07 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.75 in chips) 
+Seat 2: caduceus369 (€9.60 in chips) 
+Seat 3: chiardiluna (€10.52 in chips) 
+Seat 4: 0nlymindset (€18.58 in chips) 
+caduceus369: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [7s Ad]
+0nlymindset: folds 
+superbaccio: raises €0.25 to €0.35
+caduceus369: folds 
+chiardiluna: folds 
+Uncalled bet (€0.25) returned to superbaccio
+superbaccio collected €0.25 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: superbaccio (button) collected (€0.25)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: chiardiluna (big blind) folded before Flop
+Seat 4: 0nlymindset folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931022924:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:15:25 CET [2025/09/29 4:15:25 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chiardiluna (€10.42 in chips) 
+Seat 2: superbaccio (€9.70 in chips) 
+Seat 3: caduceus369 (€9.55 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [6h Jh]
+chiardiluna: folds 
+superbaccio: raises €0.20 to €0.30
+caduceus369: calls €0.20
+*** FLOP *** [4c 7s 7h]
+superbaccio: bets €0.43
+caduceus369: folds 
+Uncalled bet (€0.43) returned to superbaccio
+superbaccio collected €0.57 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.60 | Rake €0.03 
+Board [4c 7s 7h]
+Seat 1: chiardiluna (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) collected (€0.57)
+Seat 3: caduceus369 (big blind) folded on the Flop
+
+
+
+PokerStars Zoom Hand #257931025232:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:16:00 CET [2025/09/29 4:16:00 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 88linguaccia (€9.96 in chips) 
+Seat 2: superbaccio (€9.40 in chips) 
+Seat 3: 0nlymindset (€18.88 in chips) 
+Seat 4: caduceus369 (€9.25 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2s Qc]
+caduceus369: folds 
+88linguaccia: folds 
+superbaccio: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 88linguaccia (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+Seat 4: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931025552:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:16:05 CET [2025/09/29 4:16:05 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.97 in chips) 
+Seat 2: caduceus369 (€9.25 in chips) 
+Seat 3: 0nlymindset (€14.09 in chips) 
+Seat 4: 88linguaccia (€9.96 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ah As]
+88linguaccia: folds 
+superbaccio: folds 
+caduceus369: calls €0.05
+0nlymindset: checks 
+*** FLOP *** [2s 6h Jd]
+caduceus369: checks 
+0nlymindset: checks 
+*** TURN *** [2s 6h Jd] [5h]
+caduceus369: bets €0.19
+0nlymindset: folds 
+Uncalled bet (€0.19) returned to caduceus369
+caduceus369 collected €0.19 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0.01 
+Board [2s 6h Jd 5h]
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) collected (€0.19)
+Seat 3: 0nlymindset (big blind) folded on the Turn
+Seat 4: 88linguaccia folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931027905:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:16:40 CET [2025/09/29 4:16:40 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€18.83 in chips) 
+Seat 2: caduceus369 (€9.34 in chips) 
+Seat 3: superbaccio (€10 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8d Jc]
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to superbaccio
+superbaccio collected €0.10 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931028379:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:16:47 CET [2025/09/29 4:16:47 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.29 in chips) 
+Seat 2: superbaccio (€9.97 in chips) 
+Seat 3: 0nlymindset (€18.83 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jd 8c]
+caduceus369: raises €0.10 to €0.20
+superbaccio: folds 
+0nlymindset: calls €0.10
+*** FLOP *** [3h 9s Kh]
+0nlymindset: checks 
+caduceus369: bets €0.15
+0nlymindset: raises €0.51 to €0.66
+caduceus369: folds 
+Uncalled bet (€0.51) returned to 0nlymindset
+0nlymindset collected €0.71 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.75 | Rake €0.04 
+Board [3h 9s Kh]
+Seat 1: caduceus369 (button) folded on the Flop
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.71)
+
+
+
+PokerStars Zoom Hand #257931030684:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:17:22 CET [2025/09/29 4:17:22 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€19.19 in chips) 
+Seat 2: chiardiluna (€22.50 in chips) 
+Seat 3: caduceus369 (€8.94 in chips) 
+chiardiluna: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ad 9s]
+0nlymindset: folds 
+chiardiluna: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: chiardiluna (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931031292:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:17:31 CET [2025/09/29 4:17:31 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€14.29 in chips) 
+Seat 2: caduceus369 (€8.99 in chips) 
+Seat 3: chiardiluna (€9.10 in chips) 
+caduceus369: posts small blind €0.05
+chiardiluna: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jh Qs]
+0nlymindset: raises €0.20 to €0.30
+caduceus369: calls €0.25
+chiardiluna: folds 
+*** FLOP *** [2d 7d 9s]
+caduceus369: checks 
+0nlymindset: checks 
+*** TURN *** [2d 7d 9s] [4h]
+caduceus369: bets €0.20
+0nlymindset: calls €0.20
+*** RIVER *** [2d 7d 9s 4h] [3d]
+caduceus369: bets €0.84
+0nlymindset: folds 
+Uncalled bet (€0.84) returned to caduceus369
+caduceus369 collected €1.04 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €1.10 | Rake €0.06 
+Board [2d 7d 9s 4h 3d]
+Seat 1: 0nlymindset (button) folded on the River
+Seat 2: caduceus369 (small blind) collected (€1.04)
+Seat 3: chiardiluna (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931034157:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:18:15 CET [2025/09/29 4:18:15 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.95 in chips) 
+Seat 2: 88linguaccia (€11.54 in chips) 
+Seat 3: 0nlymindset (€19.14 in chips) 
+Seat 4: caduceus369 (€9.53 in chips) 
+88linguaccia: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [9h Ah]
+caduceus369: raises €0.10 to €0.20
+superbaccio: folds 
+88linguaccia: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: 88linguaccia (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+Seat 4: caduceus369 collected (€0.25)
+
+
+
+PokerStars Zoom Hand #257931034967:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:18:27 CET [2025/09/29 4:18:27 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.68 in chips) 
+Seat 2: superbaccio (€9.57 in chips) 
+Seat 3: 0nlymindset (€13.74 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Qc 2s]
+caduceus369: folds 
+superbaccio: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931035372:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:18:33 CET [2025/09/29 4:18:33 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.73 in chips) 
+Seat 2: caduceus369 (€9.68 in chips) 
+Seat 3: superbaccio (€10.63 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [9c 8d]
+0nlymindset: folds 
+caduceus369: calls €0.05
+superbaccio: checks 
+*** FLOP *** [9d 6s 2d]
+caduceus369: checks 
+superbaccio: checks 
+*** TURN *** [9d 6s 2d] [4d]
+caduceus369: checks 
+superbaccio: checks 
+*** RIVER *** [9d 6s 2d 4d] [Jh]
+caduceus369: bets €0.10
+superbaccio: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.19 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0.01 
+Board [9d 6s 2d 4d Jh]
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) collected (€0.19)
+Seat 3: superbaccio (big blind) folded on the River
+
+
+
+PokerStars Zoom Hand #257931037782:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:19:09 CET [2025/09/29 4:19:09 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€10.10 in chips) 
+Seat 2: Georgata92 (€23.90 in chips) 
+Seat 3: caduceus369 (€9.77 in chips) 
+Seat 4: 0nlymindset (€18.74 in chips) 
+Georgata92: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2s As]
+0nlymindset: raises €0.20 to €0.30
+superbaccio: folds 
+Georgata92: folds 
+caduceus369: calls €0.20
+*** FLOP *** [6c 3h 3d]
+caduceus369: checks 
+0nlymindset: bets €0.31
+caduceus369: calls €0.31
+*** TURN *** [6c 3h 3d] [2d]
+caduceus369: checks 
+0nlymindset: bets €0.70
+caduceus369: calls €0.70
+*** RIVER *** [6c 3h 3d 2d] [4c]
+caduceus369: checks 
+0nlymindset: bets €1.20
+caduceus369: calls €1.20
+*** SHOW DOWN ***
+0nlymindset: shows [5d 5s] (a straight, Deuce to Six)
+caduceus369: mucks hand 
+0nlymindset collected €4.80 from pot
+*** SUMMARY ***
+Total pot €5.07 | Rake €0.27 
+Board [6c 3h 3d 2d 4c]
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: Georgata92 (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) mucked [2s As]
+Seat 4: 0nlymindset showed [5d 5s] and won (€4.80) with a straight, Deuce to Six
+
+
+
+PokerStars Zoom Hand #257931043566:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:20:37 CET [2025/09/29 4:20:37 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.26 in chips) 
+Seat 2: chloe_more24 (€41.40 in chips) 
+Seat 3: 0nlymindset (€21.03 in chips) 
+Seat 4: superbaccio (€16.19 in chips) 
+chloe_more24: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5s 3d]
+superbaccio: folds 
+caduceus369: folds 
+chloe_more24: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: chloe_more24 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+Seat 4: superbaccio folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931043851:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:20:41 CET [2025/09/29 4:20:41 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chloe_more24 (€41.35 in chips) 
+Seat 2: cucciolo68 (€5 in chips) 
+Seat 3: caduceus369 (€7.26 in chips) 
+Seat 4: 88linguaccia (€15.22 in chips) 
+cucciolo68: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Td 9c]
+88linguaccia: folds 
+chloe_more24: folds 
+cucciolo68: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: chloe_more24 (button) folded before Flop (didn't bet)
+Seat 2: cucciolo68 (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+Seat 4: 88linguaccia folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931044584:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:20:53 CET [2025/09/29 4:20:53 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€11 in chips) 
+Seat 2: caduceus369 (€7.31 in chips) 
+Seat 3: superbaccio (€16.19 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [6h 8d]
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+superbaccio: raises €0.65 to €0.95
+0nlymindset: folds 
+Uncalled bet (€0.65) returned to superbaccio
+superbaccio collected €0.65 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.65 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) collected (€0.65)
+
+
+
+PokerStars Zoom Hand #257931044987:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:20:58 CET [2025/09/29 4:20:58 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.26 in chips) 
+Seat 2: 88linguaccia (€15.27 in chips) 
+Seat 3: 0nlymindset (€21.03 in chips) 
+88linguaccia: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ah Jc]
+caduceus369: raises €0.10 to €0.20
+88linguaccia: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: 88linguaccia (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931045992:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:21:14 CET [2025/09/29 4:21:14 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€20.93 in chips) 
+Seat 2: superbaccio (€9.34 in chips) 
+Seat 3: caduceus369 (€7.41 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ts 2d]
+0nlymindset: raises €0.20 to €0.30
+superbaccio: folds 
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) collected (€0.25)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931046517:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:21:22 CET [2025/09/29 4:21:22 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.29 in chips) 
+Seat 2: caduceus369 (€7.31 in chips) 
+Seat 3: 0nlymindset (€24.95 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [3h 9c]
+superbaccio: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931047070:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:21:30 CET [2025/09/29 4:21:30 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€25 in chips) 
+Seat 2: superbaccio (€16.54 in chips) 
+Seat 3: caduceus369 (€7.26 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5c 3s]
+0nlymindset: raises €0.20 to €0.30
+superbaccio: raises €0.90 to €1.20
+caduceus369: folds 
+0nlymindset: folds 
+Uncalled bet (€0.90) returned to superbaccio
+superbaccio collected €0.70 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.70 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop
+Seat 2: superbaccio (small blind) collected (€0.70)
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931047884:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:21:43 CET [2025/09/29 4:21:43 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.16 in chips) 
+Seat 2: chloe_more24 (€39.86 in chips) 
+Seat 3: 88linguaccia (€15.37 in chips) 
+chloe_more24: posts small blind €0.05
+88linguaccia: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [7h Jc]
+caduceus369: folds 
+chloe_more24: folds 
+Uncalled bet (€0.05) returned to 88linguaccia
+88linguaccia collected €0.10 from pot
+88linguaccia: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: chloe_more24 (small blind) folded before Flop
+Seat 3: 88linguaccia (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931048206:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:21:48 CET [2025/09/29 4:21:48 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€8.85 in chips) 
+Seat 2: caduceus369 (€7.16 in chips) 
+Seat 3: superbaccio (€9.60 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8h Qs]
+TheDoctorBluff: folds 
+caduceus369: calls €0.05
+superbaccio: raises €0.30 to €0.40
+caduceus369: folds 
+Uncalled bet (€0.30) returned to superbaccio
+superbaccio collected €0.20 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: TheDoctorBluff (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) collected (€0.20)
+
+
+
+PokerStars Zoom Hand #257931049276:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:22:04 CET [2025/09/29 4:22:04 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: cucciolo68 (€6.28 in chips) 
+Seat 2: chloe_more24 (€39.71 in chips) 
+Seat 3: caduceus369 (€7.06 in chips) 
+chloe_more24: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [3s 7h]
+cucciolo68: folds 
+chloe_more24: raises €0.26 to €0.36
+caduceus369: folds 
+Uncalled bet (€0.26) returned to chloe_more24
+chloe_more24 collected €0.20 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: cucciolo68 (button) folded before Flop (didn't bet)
+Seat 2: chloe_more24 (small blind) collected (€0.20)
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931050077:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:22:16 CET [2025/09/29 4:22:16 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€6.96 in chips) 
+Seat 2: superbaccio (€10.08 in chips) 
+Seat 3: 0nlymindset (€21.53 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jd 5h]
+caduceus369: folds 
+superbaccio: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931050338:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:22:20 CET [2025/09/29 4:22:20 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€8.55 in chips) 
+Seat 2: caduceus369 (€6.96 in chips) 
+Seat 3: superbaccio (€16.69 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5d 5s]
+TheDoctorBluff: folds 
+caduceus369: calls €0.05
+superbaccio: raises €0.30 to €0.40
+caduceus369: raises €6.56 to €6.96 and is all-in
+superbaccio: folds 
+Uncalled bet (€6.56) returned to caduceus369
+caduceus369 collected €0.80 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.80 | Rake €0 
+Seat 1: TheDoctorBluff (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) collected (€0.80)
+Seat 3: superbaccio (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931052253:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:22:49 CET [2025/09/29 4:22:49 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 88linguaccia (€15.45 in chips) 
+Seat 2: superbaccio (€16.29 in chips) 
+Seat 3: caduceus369 (€7.36 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ad 2h]
+88linguaccia: folds 
+superbaccio: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 88linguaccia (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931052777:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:22:57 CET [2025/09/29 4:22:57 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€8.70 in chips) 
+Seat 2: 0nlymindset (€10 in chips) 
+Seat 3: superbaccio (€10.14 in chips) 
+Seat 4: caduceus369 (€7.41 in chips) 
+0nlymindset: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jd 8h]
+caduceus369: folds 
+TheDoctorBluff: raises €0.20 to €0.30
+0nlymindset: folds 
+superbaccio: folds 
+Uncalled bet (€0.20) returned to TheDoctorBluff
+TheDoctorBluff collected €0.25 from pot
+TheDoctorBluff: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: TheDoctorBluff (button) collected (€0.25)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: superbaccio (big blind) folded before Flop
+Seat 4: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931053094:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:02 CET [2025/09/29 4:23:02 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€14.69 in chips) 
+Seat 2: caduceus369 (€7.41 in chips) 
+Seat 3: superbaccio (€16.24 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8s Td]
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to superbaccio
+superbaccio collected €0.10 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931053837:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:14 CET [2025/09/29 4:23:14 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.31 in chips) 
+Seat 2: 88linguaccia (€15.45 in chips) 
+Seat 3: 0nlymindset (€10 in chips) 
+88linguaccia: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ac As]
+caduceus369: raises €0.10 to €0.20
+88linguaccia: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: 88linguaccia (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931053516:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:09 CET [2025/09/29 4:23:09 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€10.04 in chips) 
+Seat 2: caduceus369 (€7.36 in chips) 
+Seat 3: Georgata92 (€31.96 in chips) 
+Seat 4: 0nlymindset (€10 in chips) 
+caduceus369: posts small blind €0.05
+Georgata92: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5h 2d]
+0nlymindset: folds 
+superbaccio: raises €0.15 to €0.25
+caduceus369: folds 
+Georgata92: folds 
+Uncalled bet (€0.15) returned to superbaccio
+superbaccio collected €0.25 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: superbaccio (button) collected (€0.25)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: Georgata92 (big blind) folded before Flop
+Seat 4: 0nlymindset folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931054571:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:25 CET [2025/09/29 4:23:25 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.46 in chips) 
+Seat 2: 0nlymindset (€10 in chips) 
+Seat 3: 88linguaccia (€15.40 in chips) 
+0nlymindset: posts small blind €0.05
+88linguaccia: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [3d 4c]
+caduceus369: folds 
+0nlymindset: folds 
+Uncalled bet (€0.05) returned to 88linguaccia
+88linguaccia collected €0.10 from pot
+88linguaccia: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: 88linguaccia (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931054893:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:30 CET [2025/09/29 4:23:30 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: Georgata92 (€31.81 in chips) 
+Seat 2: superbaccio (€10.49 in chips) 
+Seat 3: caduceus369 (€7.46 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [9s 7h]
+Georgata92: folds 
+superbaccio: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: Georgata92 (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931055495:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:39 CET [2025/09/29 4:23:39 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€10.04 in chips) 
+Seat 2: caduceus369 (€7.51 in chips) 
+Seat 3: 0nlymindset (€20.63 in chips) 
+Seat 4: 88linguaccia (€15.45 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Js 4s]
+88linguaccia: folds 
+superbaccio: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+Seat 4: 88linguaccia folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931055953:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:46 CET [2025/09/29 4:23:46 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€10.05 in chips) 
+Seat 2: Georgata92 (€31.86 in chips) 
+Seat 3: superbaccio (€10.04 in chips) 
+Seat 4: caduceus369 (€7.46 in chips) 
+Georgata92: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [7d 5h]
+caduceus369: folds 
+0nlymindset: folds 
+Georgata92: raises €0.20 to €0.30
+superbaccio: folds 
+Uncalled bet (€0.20) returned to Georgata92
+Georgata92 collected €0.20 from pot
+Georgata92: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: 0nlymindset (button) folded before Flop (didn't bet)
+Seat 2: Georgata92 (small blind) collected (€0.20)
+Seat 3: superbaccio (big blind) folded before Flop
+Seat 4: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931056203:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:50 CET [2025/09/29 4:23:50 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.46 in chips) 
+Seat 2: 0nlymindset (€20.68 in chips) 
+Seat 3: TheDoctorBluff (€8.80 in chips) 
+Seat 4: superbaccio (€18.16 in chips) 
+0nlymindset: posts small blind €0.05
+TheDoctorBluff: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2d As]
+superbaccio: folds 
+caduceus369: folds 
+0nlymindset: raises €0.20 to €0.30
+TheDoctorBluff: calls €0.20
+*** FLOP *** [Ah 2s 9c]
+0nlymindset: bets €0.23
+TheDoctorBluff: folds 
+Uncalled bet (€0.23) returned to 0nlymindset
+0nlymindset collected €0.57 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.60 | Rake €0.03 
+Board [Ah 2s 9c]
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) collected (€0.57)
+Seat 3: TheDoctorBluff (big blind) folded on the Flop
+Seat 4: superbaccio folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931056525:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:23:55 CET [2025/09/29 4:23:55 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€10.39 in chips) 
+Seat 2: 0nlymindset (€10.05 in chips) 
+Seat 3: caduceus369 (€7.46 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Kh 7c]
+superbaccio: folds 
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.20 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) collected (€0.20)
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931057489:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:24:10 CET [2025/09/29 4:24:10 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€12.54 in chips) 
+Seat 2: caduceus369 (€7.36 in chips) 
+Seat 3: superbaccio (€9.92 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [7d 3h]
+0nlymindset: raises €0.20 to €0.30
+caduceus369: folds 
+superbaccio: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) collected (€0.25)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931057843:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:24:15 CET [2025/09/29 4:24:15 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.31 in chips) 
+Seat 2: superbaccio (€18.16 in chips) 
+Seat 3: 88linguaccia (€15.45 in chips) 
+superbaccio: posts small blind €0.05
+88linguaccia: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5h Kh]
+caduceus369: raises €0.10 to €0.20
+superbaccio: folds 
+88linguaccia: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 88linguaccia (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931058654:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:24:28 CET [2025/09/29 4:24:28 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: mercykillig (€10 in chips) 
+Seat 2: superbaccio (€9.84 in chips) 
+Seat 3: caduceus369 (€7.46 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ac 2s]
+mercykillig: folds 
+superbaccio: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: mercykillig (button) folded before Flop (didn't bet)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931059370:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:24:39 CET [2025/09/29 4:24:39 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chloe_more24 (€46.29 in chips) 
+Seat 2: caduceus369 (€7.51 in chips) 
+Seat 3: TheDoctorBluff (€8.73 in chips) 
+caduceus369: posts small blind €0.05
+TheDoctorBluff: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2c 8c]
+chloe_more24: raises €0.17 to €0.27
+caduceus369: folds 
+TheDoctorBluff: folds 
+Uncalled bet (€0.17) returned to chloe_more24
+chloe_more24 collected €0.25 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: chloe_more24 (button) collected (€0.25)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: TheDoctorBluff (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931059780:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:24:45 CET [2025/09/29 4:24:45 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: mercykillig (€9.90 in chips) 
+Seat 2: carisoli (€3.75 in chips) 
+Seat 3: caduceus369 (€7.46 in chips) 
+Seat 4: superbaccio (€9.79 in chips) 
+carisoli: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ah Jd]
+superbaccio: folds 
+mercykillig: folds 
+carisoli: raises €0.20 to €0.30
+caduceus369: raises €0.90 to €1.20
+carisoli: folds 
+Uncalled bet (€0.90) returned to caduceus369
+caduceus369 collected €0.60 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.60 | Rake €0 
+Seat 1: mercykillig (button) folded before Flop (didn't bet)
+Seat 2: carisoli (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.60)
+Seat 4: superbaccio folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931061110:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:25:05 CET [2025/09/29 4:25:05 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.76 in chips) 
+Seat 2: carisoli (€3.45 in chips) 
+Seat 3: mercykillig (€9.75 in chips) 
+Seat 4: Georgata92 (€32.16 in chips) 
+carisoli: posts small blind €0.05
+mercykillig: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5c Kd]
+Georgata92: raises €0.10 to €0.20
+caduceus369: folds 
+carisoli: folds 
+mercykillig: calls €0.10
+*** FLOP *** [8h 7c Kh]
+mercykillig: checks 
+Georgata92: bets €0.14
+mercykillig: folds 
+Uncalled bet (€0.14) returned to Georgata92
+Georgata92 collected €0.43 from pot
+Georgata92: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.45 | Rake €0.02 
+Board [8h 7c Kh]
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: carisoli (small blind) folded before Flop
+Seat 3: mercykillig (big blind) folded on the Flop
+Seat 4: Georgata92 collected (€0.43)
+
+
+
+PokerStars Zoom Hand #257931061468:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:25:10 CET [2025/09/29 4:25:10 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: carisoli (€3.40 in chips) 
+Seat 2: TheDoctorBluff (€8.68 in chips) 
+Seat 3: caduceus369 (€7.76 in chips) 
+Seat 4: 0nlymindset (€20.85 in chips) 
+TheDoctorBluff: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ks 6h]
+0nlymindset: folds 
+carisoli: folds 
+TheDoctorBluff: raises €0.15 to €0.25
+caduceus369: folds 
+Uncalled bet (€0.15) returned to TheDoctorBluff
+TheDoctorBluff collected €0.20 from pot
+TheDoctorBluff: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: carisoli (button) folded before Flop (didn't bet)
+Seat 2: TheDoctorBluff (small blind) collected (€0.20)
+Seat 3: caduceus369 (big blind) folded before Flop
+Seat 4: 0nlymindset folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931062221:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:25:21 CET [2025/09/29 4:25:21 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: carisoli (€4.04 in chips) 
+Seat 2: caduceus369 (€7.66 in chips) 
+Seat 3: 0nlymindset (€20.85 in chips) 
+caduceus369: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4c Jh]
+carisoli: raises €0.10 to €0.20
+caduceus369: folds 
+0nlymindset: raises €20.65 to €20.85 and is all-in
+carisoli: folds 
+Uncalled bet (€20.65) returned to 0nlymindset
+0nlymindset collected €0.45 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.45 | Rake €0 
+Seat 1: carisoli (button) folded before Flop
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.45)
+
+
+
+PokerStars Zoom Hand #257931062474:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:25:25 CET [2025/09/29 4:25:25 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.61 in chips) 
+Seat 2: superbaccio (€16.87 in chips) 
+Seat 3: 0nlymindset (€12.69 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ts As]
+caduceus369: raises €0.10 to €0.20
+superbaccio: folds 
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931063184:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:25:36 CET [2025/09/29 4:25:36 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.76 in chips) 
+Seat 2: 0nlymindset (€21.10 in chips) 
+Seat 3: Ifen54 (€10.07 in chips) 
+0nlymindset: posts small blind €0.05
+Ifen54: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Qc 2d]
+caduceus369: folds 
+0nlymindset: folds 
+Uncalled bet (€0.05) returned to Ifen54
+Ifen54 collected €0.10 from pot
+Ifen54: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: Ifen54 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931063528:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:25:41 CET [2025/09/29 4:25:41 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 88linguaccia (€16.27 in chips) 
+Seat 2: 0nlymindset (€12.59 in chips) 
+Seat 3: caduceus369 (€7.76 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ah Qd]
+88linguaccia: folds 
+0nlymindset: folds 
+Uncalled bet (€0.05) returned to caduceus369
+caduceus369 collected €0.10 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: 88linguaccia (button) folded before Flop (didn't bet)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931065562:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:26:13 CET [2025/09/29 4:26:13 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.76 in chips) 
+Seat 2: 0nlymindset (€10.71 in chips) 
+Seat 3: TheDoctorBluff (€7 in chips) 
+0nlymindset: posts small blind €0.05
+TheDoctorBluff: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [8s Ts]
+caduceus369: raises €0.10 to €0.20
+0nlymindset: folds 
+TheDoctorBluff: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.25 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: caduceus369 (button) collected (€0.25)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: TheDoctorBluff (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931064177:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:25:52 CET [2025/09/29 4:25:52 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: carisoli (€3.80 in chips) 
+Seat 2: caduceus369 (€7.81 in chips) 
+Seat 3: superbaccio (€10 in chips) 
+Seat 4: Georgata92 (€32.29 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [6s 6h]
+Georgata92: folds 
+carisoli: raises €0.20 to €0.30
+caduceus369: folds 
+superbaccio: raises €0.85 to €1.15
+carisoli: raises €2.65 to €3.80 and is all-in
+superbaccio: calls €2.65
+*** FLOP *** [8h Ah 4h]
+*** TURN *** [8h Ah 4h] [Td]
+*** RIVER *** [8h Ah 4h Td] [6c]
+*** SHOW DOWN ***
+superbaccio: shows [Jc Js] (a pair of Jacks)
+carisoli: shows [Ad As] (three of a kind, Aces)
+carisoli collected €7.23 from pot
+*** SUMMARY ***
+Total pot €7.65 | Rake €0.42 
+Board [8h Ah 4h Td 6c]
+Seat 1: carisoli (button) showed [Ad As] and won (€7.23) with three of a kind, Aces
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) showed [Jc Js] and lost with a pair of Jacks
+Seat 4: Georgata92 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931066728:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:26:31 CET [2025/09/29 4:26:31 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€15.47 in chips) 
+Seat 2: carisoli (€5.38 in chips) 
+Seat 3: caduceus369 (€7.91 in chips) 
+carisoli: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Th 2s]
+0nlymindset: raises €0.20 to €0.30
+carisoli: folds 
+caduceus369: folds 
+Uncalled bet (€0.20) returned to 0nlymindset
+0nlymindset collected €0.25 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: 0nlymindset (button) collected (€0.25)
+Seat 2: carisoli (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931067160:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:26:38 CET [2025/09/29 4:26:38 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: carisoli (€5.33 in chips) 
+Seat 2: caduceus369 (€7.81 in chips) 
+Seat 3: superbaccio (€10.15 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4h 9d]
+carisoli: folds 
+caduceus369: folds 
+Uncalled bet (€0.05) returned to superbaccio
+superbaccio collected €0.10 from pot
+superbaccio: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: carisoli (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931067831:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:26:48 CET [2025/09/29 4:26:48 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€7.76 in chips) 
+Seat 2: 0nlymindset (€23.73 in chips) 
+Seat 3: 88linguaccia (€17 in chips) 
+0nlymindset: posts small blind €0.05
+88linguaccia: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Ac Jd]
+caduceus369: raises €0.10 to €0.20
+0nlymindset: raises €0.80 to €1
+88linguaccia: folds 
+caduceus369: calls €0.80
+*** FLOP *** [Kh 7s 2s]
+0nlymindset: checks 
+caduceus369: checks 
+*** TURN *** [Kh 7s 2s] [3d]
+0nlymindset: bets €1
+caduceus369: calls €1
+*** RIVER *** [Kh 7s 2s 3d] [Jc]
+0nlymindset: checks 
+caduceus369: bets €5.76 and is all-in
+0nlymindset: folds 
+Uncalled bet (€5.76) returned to caduceus369
+caduceus369 collected €3.88 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €4.10 | Rake €0.22 
+Board [Kh 7s 2s 3d Jc]
+Seat 1: caduceus369 (button) collected (€3.88)
+Seat 2: 0nlymindset (small blind) folded on the River
+Seat 3: 88linguaccia (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931072450:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:27:58 CET [2025/09/29 4:27:58 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: TheDoctorBluff (€5.70 in chips) 
+Seat 2: 0nlymindset (€11.76 in chips) 
+Seat 3: caduceus369 (€9.64 in chips) 
+0nlymindset: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Qd 5s]
+TheDoctorBluff: raises €0.20 to €0.30
+0nlymindset: folds 
+caduceus369: folds 
+Uncalled bet (€0.20) returned to TheDoctorBluff
+TheDoctorBluff collected €0.25 from pot
+TheDoctorBluff: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: TheDoctorBluff (button) collected (€0.25)
+Seat 2: 0nlymindset (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931074657:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:28:31 CET [2025/09/29 4:28:31 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: Ettore1988 (€10 in chips) 
+Seat 2: 88linguaccia (€17.34 in chips) 
+Seat 3: Vaporyfish (€10.72 in chips) 
+Seat 4: mercykillig (€9.50 in chips) 
+Seat 5: superbaccio (€9.75 in chips) 
+Seat 6: caduceus369 (€9.49 in chips) 
+88linguaccia: posts small blind €0.05
+Vaporyfish: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [4d 8c]
+mercykillig: raises €0.10 to €0.20
+superbaccio: folds 
+caduceus369: folds 
+Ettore1988: folds 
+88linguaccia: folds 
+Vaporyfish: folds 
+Uncalled bet (€0.10) returned to mercykillig
+mercykillig collected €0.25 from pot
+mercykillig: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: Ettore1988 (button) folded before Flop (didn't bet)
+Seat 2: 88linguaccia (small blind) folded before Flop
+Seat 3: Vaporyfish (big blind) folded before Flop
+Seat 4: mercykillig collected (€0.25)
+Seat 5: superbaccio folded before Flop (didn't bet)
+Seat 6: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931073372:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:28:12 CET [2025/09/29 4:28:12 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: chloe_more24 (€45.49 in chips) 
+Seat 2: superbaccio (€9.95 in chips) 
+Seat 3: 0nlymindset (€16.72 in chips) 
+Seat 4: caduceus369 (€9.54 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [6h 9c]
+caduceus369: folds 
+chloe_more24: raises €0.17 to €0.27
+superbaccio: folds 
+0nlymindset: calls €0.17
+*** FLOP *** [4s 5d 2d]
+0nlymindset: checks 
+chloe_more24: checks 
+*** TURN *** [4s 5d 2d] [6d]
+0nlymindset: bets €0.39
+chloe_more24: raises €1.34 to €1.73
+0nlymindset: calls €1.34
+*** RIVER *** [4s 5d 2d 6d] [8h]
+0nlymindset: checks 
+chloe_more24: bets €3.83
+0nlymindset: calls €3.83
+*** SHOW DOWN ***
+chloe_more24: shows [7s Ad] (a straight, Four to Eight)
+0nlymindset: shows [7h 8c] (a straight, Four to Eight)
+0nlymindset collected €5.54 from pot
+chloe_more24 collected €5.53 from pot
+*** SUMMARY ***
+Total pot €11.71 | Rake €0.64 
+Board [4s 5d 2d 6d 8h]
+Seat 1: chloe_more24 (button) showed [7s Ad] and won (€5.53) with a straight, Four to Eight
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) showed [7h 8c] and won (€5.54) with a straight, Four to Eight
+Seat 4: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931074367:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:28:27 CET [2025/09/29 4:28:27 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.90 in chips) 
+Seat 2: Ettore1988 (€10 in chips) 
+Seat 3: 0nlymindset (€21.68 in chips) 
+Seat 4: Vaporyfish (€10.72 in chips) 
+Seat 5: caduceus369 (€9.49 in chips) 
+Ettore1988: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [3d 4s]
+Vaporyfish: folds 
+caduceus369: folds 
+superbaccio: raises €0.15 to €0.25
+Ettore1988: folds 
+0nlymindset: calls €0.15
+*** FLOP *** [2h 5c 7h]
+0nlymindset: checks 
+superbaccio: bets €0.17
+0nlymindset: raises €0.60 to €0.77
+superbaccio: folds 
+Uncalled bet (€0.60) returned to 0nlymindset
+0nlymindset collected €0.85 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.89 | Rake €0.04 
+Board [2h 5c 7h]
+Seat 1: superbaccio (button) folded on the Flop
+Seat 2: Ettore1988 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.85)
+Seat 4: Vaporyfish folded before Flop (didn't bet)
+Seat 5: caduceus369 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931075099:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:28:38 CET [2025/09/29 4:28:38 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.49 in chips) 
+Seat 2: superbaccio (€9.75 in chips) 
+Seat 3: 0nlymindset (€11.10 in chips) 
+Seat 4: Georgata92 (€31.44 in chips) 
+superbaccio: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Kc 4c]
+Georgata92: folds 
+caduceus369: raises €0.10 to €0.20
+superbaccio: folds 
+0nlymindset: calls €0.10
+*** FLOP *** [4d 9h 2d]
+0nlymindset: checks 
+caduceus369: checks 
+*** TURN *** [4d 9h 2d] [9c]
+0nlymindset: checks 
+caduceus369: bets €0.10
+0nlymindset: folds 
+Uncalled bet (€0.10) returned to caduceus369
+caduceus369 collected €0.43 from pot
+caduceus369: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.45 | Rake €0.02 
+Board [4d 9h 2d 9c]
+Seat 1: caduceus369 (button) collected (€0.43)
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) folded on the Turn
+Seat 4: Georgata92 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931073790:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:28:18 CET [2025/09/29 4:28:18 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: superbaccio (€9.90 in chips) 
+Seat 2: caduceus369 (€9.54 in chips) 
+Seat 3: Ettore1988 (€10 in chips) 
+Seat 4: TheDoctorBluff (€5.85 in chips) 
+Seat 5: Vaporyfish (€10.72 in chips) 
+caduceus369: posts small blind €0.05
+Ettore1988: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Tc 6h]
+TheDoctorBluff: raises €0.17 to €0.27
+Vaporyfish: folds 
+superbaccio: folds 
+caduceus369: folds 
+Ettore1988: calls €0.17
+*** FLOP *** [Jc 7c Kc]
+Ettore1988: checks 
+TheDoctorBluff: bets €0.28
+Ettore1988: calls €0.28
+*** TURN *** [Jc 7c Kc] [3d]
+Ettore1988: checks 
+TheDoctorBluff: bets €0.83
+Ettore1988: calls €0.83
+*** RIVER *** [Jc 7c Kc 3d] [Ts]
+Ettore1988: checks 
+TheDoctorBluff: bets €0.72
+Ettore1988: raises €6.15 to €6.87
+TheDoctorBluff: calls €3.75 and is all-in
+Uncalled bet (€2.40) returned to Ettore1988
+*** SHOW DOWN ***
+Ettore1988: shows [Qc Ah] (a straight, Ten to Ace)
+TheDoctorBluff: shows [Jd Js] (three of a kind, Jacks)
+Ettore1988 collected €11.11 from pot
+*** SUMMARY ***
+Total pot €11.75 | Rake €0.64 
+Board [Jc 7c Kc 3d Ts]
+Seat 1: superbaccio (button) folded before Flop (didn't bet)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: Ettore1988 (big blind) showed [Qc Ah] and won (€11.11) with a straight, Ten to Ace
+Seat 4: TheDoctorBluff showed [Jd Js] and lost with three of a kind, Jacks
+Seat 5: Vaporyfish folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931077803:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:29:18 CET [2025/09/29 4:29:18 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: Ettore1988 (€10 in chips) 
+Seat 2: caduceus369 (€9.72 in chips) 
+Seat 3: superbaccio (€9.48 in chips) 
+Seat 4: 0nlymindset (€11.81 in chips) 
+caduceus369: posts small blind €0.05
+superbaccio: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [Jd 8h]
+0nlymindset: folds 
+Ettore1988: raises €0.15 to €0.25
+caduceus369: folds 
+superbaccio: folds 
+Uncalled bet (€0.15) returned to Ettore1988
+Ettore1988 collected €0.25 from pot
+Ettore1988: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.25 | Rake €0 
+Seat 1: Ettore1988 (button) collected (€0.25)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: superbaccio (big blind) folded before Flop
+Seat 4: 0nlymindset folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #257931078338:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:29:26 CET [2025/09/29 4:29:26 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€9.67 in chips) 
+Seat 2: chloe_more24 (€45.87 in chips) 
+Seat 3: Ettore1988 (€10 in chips) 
+chloe_more24: posts small blind €0.05
+Ettore1988: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [2h 3h]
+caduceus369: folds 
+chloe_more24: raises €0.26 to €0.36
+Ettore1988: folds 
+Uncalled bet (€0.26) returned to chloe_more24
+chloe_more24 collected €0.20 from pot
+chloe_more24: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.20 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: chloe_more24 (small blind) collected (€0.20)
+Seat 3: Ettore1988 (big blind) folded before Flop
+
+
+
+PokerStars Zoom Hand #257931078680:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:29:31 CET [2025/09/29 4:29:31 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: 0nlymindset (€22.11 in chips) 
+Seat 2: superbaccio (€9.38 in chips) 
+Seat 3: caduceus369 (€9.67 in chips) 
+superbaccio: posts small blind €0.05
+caduceus369: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [7h Kc]
+0nlymindset: raises €0.20 to €0.30
+superbaccio: folds 
+caduceus369: calls €0.20
+*** FLOP *** [2d Kd 5d]
+caduceus369: checks 
+0nlymindset: checks 
+*** TURN *** [2d Kd 5d] [Tc]
+caduceus369: bets €0.20
+0nlymindset: calls €0.20
+*** RIVER *** [2d Kd 5d Tc] [5c]
+caduceus369: bets €0.20
+0nlymindset: calls €0.20
+*** SHOW DOWN ***
+caduceus369: shows [7h Kc] (two pair, Kings and Fives)
+0nlymindset: mucks hand 
+caduceus369 collected €1.38 from pot
+*** SUMMARY ***
+Total pot €1.45 | Rake €0.07 
+Board [2d Kd 5d Tc 5c]
+Seat 1: 0nlymindset (button) mucked [Qs Th]
+Seat 2: superbaccio (small blind) folded before Flop
+Seat 3: caduceus369 (big blind) showed [7h Kc] and won (€1.38) with two pair, Kings and Fives
+
+
+
+PokerStars Zoom Hand #257931082748:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:30:32 CET [2025/09/29 4:30:32 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: caduceus369 (€10.30 in chips) 
+Seat 2: Ettore1988 (€15.56 in chips) 
+Seat 3: 0nlymindset (€10 in chips) 
+Ettore1988: posts small blind €0.05
+0nlymindset: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [5h 9h]
+caduceus369: folds 
+Ettore1988: folds 
+Uncalled bet (€0.05) returned to 0nlymindset
+0nlymindset collected €0.10 from pot
+0nlymindset: doesn't show hand 
+*** SUMMARY ***
+Total pot €0.10 | Rake €0 
+Seat 1: caduceus369 (button) folded before Flop (didn't bet)
+Seat 2: Ettore1988 (small blind) folded before Flop
+Seat 3: 0nlymindset (big blind) collected (€0.10)
+
+
+
+PokerStars Zoom Hand #257931082367:  Hold'em No Limit (€0.05/€0.10) [ADM ID: M62B730448884DEK] - 2025/09/29 10:30:26 CET [2025/09/29 4:30:26 ET]
+Table 'Cigno' 6-max Seat #1 is the button
+Seat 1: Ettore1988 (€10.30 in chips) 
+Seat 2: caduceus369 (€10.35 in chips) 
+Seat 3: Vaporyfish (€14.24 in chips) 
+Seat 4: 0nlymindset (€10 in chips) 
+caduceus369: posts small blind €0.05
+Vaporyfish: posts big blind €0.10
+*** HOLE CARDS ***
+Dealt to caduceus369 [6d 2c]
+0nlymindset: folds 
+Ettore1988: raises €0.15 to €0.25
+caduceus369: folds 
+Vaporyfish: raises €0.55 to €0.80
+Ettore1988: raises €1.20 to €2
+Vaporyfish: calls €1.20
+*** FLOP *** [5s 4h As]
+Vaporyfish: bets €1.92
+Ettore1988: raises €6.38 to €8.30 and is all-in
+Vaporyfish: folds 
+Uncalled bet (€6.38) returned to Ettore1988
+Ettore1988 collected €7.46 from pot
+Ettore1988: doesn't show hand 
+*** SUMMARY ***
+Total pot €7.89 | Rake €0.43 
+Board [5s 4h As]
+Seat 1: Ettore1988 (button) collected (€7.46)
+Seat 2: caduceus369 (small blind) folded before Flop
+Seat 3: Vaporyfish (big blind) folded on the Flop
+Seat 4: 0nlymindset folded before Flop (didn't bet)
+
+
+

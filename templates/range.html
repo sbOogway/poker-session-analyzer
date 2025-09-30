@@ -5,6 +5,14 @@
 
 <body>
   <style>
+    @font-face {
+      font-family: "SourceSansVF";
+      src: url("assets/fonts/SourceSansVF-Upright.ttf.BsWL4Kly.woff2")
+        format("woff2");
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
     .rounded {
       border-radius: 4px;
     }
@@ -26,15 +34,18 @@
     }
   </style>
 
-  <div class="flex min-h-screen">
+  <div
+    class="flex min-h-screen"
+    style="font-family: 'SourceSansVF', sans-serif"
+  >
     <div
-      class="grid grid-cols-13 grid-rows-13 w-5/12 gap-1 p-4"
+      class="grid grid-cols-13 grid-rows-13 gap-1 p-4"
       style="
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       "
     >
       {% for hand in hands %}
-      <div class="grid-hand grid" style="aspect-ratio: 1">
+      <div class="grid-hand grid" style="aspect-ratio: 1; height: 48px">
         <div
           class="flex"
           name="{{ hand.name }}"
@@ -79,82 +90,109 @@
         </div>
 
         <div class="flex items-center justify-center" style="grid-area: 1 / 1">
-          <span class="text-2xl" name="{{hand.name}}">{{ hand.name }}</span>
+          <span class="text-xl" name="{{hand.name}}">{{ hand.name }}</span>
         </div>
       </div>
       {% endfor %}
     </div>
 
-    <div class="flex flex-col p-4 ml-auto">
-      <div class="overflow-x-auto rounded">
-        <table class="min-w-full border-collapse">
-          <thead class="bg-gray-100">
-            <tr class="bg-yellow-400">
-              <th
-                class="px-4 py-8 text-left text-sm font-medium text-gray-700 border-b"
-              >
-                <h1><span id="vis-name" class="text-base"></span></h1>
-              </th>
-              <th
-                class="px-4 py-8 text-left text-sm font-medium text-gray-700 border-b"
-              >
-                times
-              </th>
-              <th
-                class="px-4 py-8 text-left text-sm font-medium text-gray-700 border-b"
-              >
-                frequency
-              </th>
-            </tr>
-          </thead>
-          <tbody class="bg-white">
-            <tr class="hover:bg-gray-50 bg-blue-400 bg-blue-400">
-              <td class="px-4 py-4 border-b text-sm text-gray-800">fold</td>
-              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
-                <span id="vis-fold-abs"></span>
-              </td>
-              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
-                <span id="vis-fold-freq"></span>
-              </td>
-            </tr>
-            <tr class="hover:bg-gray-50 bg-green-400">
-              <td class="px-4 py-4 border-b text-sm text-gray-800">call</td>
-              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
-                <span id="vis-call-abs"></span>
-              </td>
-              <td class="px-4 py-4 border-b text-sm text-gray-800 text-right">
-                <span id="vis-call-freq"></span>
-              </td>
-            </tr>
-            <tr class="hover:bg-gray-50 bg-red-400">
-              <td class="px-4 py-4 text-sm text-gray-800 border-b">raise</td>
-              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
-                <span id="vis-raise-abs"></span>
-              </td>
-              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
-                <span id="vis-raise-freq"></span>
-              </td>
-            </tr>
-            <tr class="hover:bg-gray-50 bg-amber-400">
-              <td class="px-4 py-4 text-sm text-gray-800 border-b">check</td>
-              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
-                <span id="vis-free-flop-abs"></span>
-              </td>
-              <td class="px-4 py-4 text-sm text-gray-800 border-b text-right">
-                <span id="vis-free-flop-freq"></span>
-              </td>
-            </tr>
-            <tr class="hover:bg-gray-50 bg-purple-400">
-              <td class="px-4 py-4 text-sm text-gray-800">total</td>
-              <td class="px-4 py-4 text-sm text-gray-800 text-right">
-                <span id="vis-total-abs"></span>
-              </td>
-              <td class="px-4 py-4 text-sm text-gray-800 text-right">
-                <span id="vis-total-freq"></span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="flex flex-col justify-between w-full">
+      <div class="flex flex-col p-4 ml-auto min-w-[300px]">
+        <!-- <h1 class="text-4xl text-white py-2">Frequencies</h1> -->
+
+        <div class="p-2 bg-blue-400 flex">
+          <div>fold:</div>
+          <div class="ml-auto text-right">{{ absolute.fold_frequency }}%</div>
+        </div>
+        <div class="p-2 bg-green-400 flex">
+          <div>call:</div>
+          <div class="ml-auto text-right">{{ absolute.call_frequency }}%</div>
+        </div>
+        <div class="p-2 bg-red-400 flex">
+          <div>raise:</div>
+          <div class="ml-auto text-right">{{ absolute.raise_frequency }}%</div>
+        </div>
+        <div class="p-2 bg-amber-400 flex">
+          <div>check:</div>
+          <div class="ml-auto text-right">{{ absolute.check_frequency }}%</div>
+        </div>
+        <div class="p-2 bg-purple-400 flex">
+          <div>total hands:</div>
+          <div class="ml-auto text-right">{{ absolute.total }}</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col p-4 ml-auto min-w-[300px]">
+        <div class="overflow-x-auto">
+          <table class="min-w-full border-collapse">
+            <thead class="bg-gray-100">
+              <tr class="bg-yellow-400">
+                <th
+                  class="px-4 py-8 text-left text-sm font-medium  border-b"
+                >
+                  <h1><span id="vis-name" class="text-base"></span></h1>
+                </th>
+                <th
+                  class="px-4 py-8 text-left text-sm font-medium  border-b"
+                >
+                  times
+                </th>
+                <th
+                  class="px-4 py-8 text-left text-sm font-medium  border-b"
+                >
+                  frequency
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="hover:bg-gray-50 bg-blue-400 bg-blue-400">
+                <td class="px-4 py-4 border-b text-sm ">fold</td>
+                <td class="px-4 py-4 border-b text-sm  text-right">
+                  <span id="vis-fold-abs"></span>
+                </td>
+                <td class="px-4 py-4 border-b text-sm  text-right">
+                  <span id="vis-fold-freq"></span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-green-400">
+                <td class="px-4 py-4 border-b text-sm ">call</td>
+                <td class="px-4 py-4 border-b text-sm  text-right">
+                  <span id="vis-call-abs"></span>
+                </td>
+                <td class="px-4 py-4 border-b text-sm  text-right">
+                  <span id="vis-call-freq"></span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-red-400">
+                <td class="px-4 py-4 text-sm  border-b">raise</td>
+                <td class="px-4 py-4 text-sm  border-b text-right">
+                  <span id="vis-raise-abs"></span>
+                </td>
+                <td class="px-4 py-4 text-sm  border-b text-right">
+                  <span id="vis-raise-freq"></span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-amber-400">
+                <td class="px-4 py-4 text-sm  border-b">check</td>
+                <td class="px-4 py-4 text-sm  border-b text-right">
+                  <span id="vis-free-flop-abs"></span>
+                </td>
+                <td class="px-4 py-4 text-sm  border-b text-right">
+                  <span id="vis-free-flop-freq"></span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 bg-purple-400">
+                <td class="px-4 py-4 text-sm ">total</td>
+                <td class="px-4 py-4 text-sm  text-right">
+                  <span id="vis-total-abs"></span>
+                </td>
+                <td class="px-4 py-4 text-sm  text-right">
+                  <span id="vis-total-freq"></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

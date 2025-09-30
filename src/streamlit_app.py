@@ -14,8 +14,9 @@ from jinja2 import Environment, FileSystemLoader
 import subprocess
 
 
-
-subprocess.Popen(["/usr/bin/env", "python3", "-m", "http.server", "8888"], cwd="riropo/")
+subprocess.Popen(
+    ["/usr/bin/env", "python3", "-m", "http.server", "8888"], cwd="riropo/"
+)
 
 # # Set up Jinja2
 env = Environment(loader=FileSystemLoader("templates"))
@@ -26,7 +27,7 @@ range_template = env.get_template("range.html")
 #     return template.render(content=content)
 
 # with open("templates/output.html", "r") as f:
-    # range_html = f.read()
+# range_html = f.read()
 
 # html = render_html(range_html)
 
@@ -102,7 +103,7 @@ class HeroDataAnalyzer:
         self.df = self.df.iloc[:-1].reset_index(drop=True)
         pd.set_option("display.max_columns", None)  # show every column
 
-        pprint(self.df)
+        # pprint(self.df)
         pprint(self.df.columns)
         # pprint(self.df.loc[0])
 
@@ -249,18 +250,18 @@ class HeroDataAnalyzer:
 
         st.plotly_chart(fig, width="stretch")
 
-    def render_rake_analysis_chart(self):
+    def render_results_chart(self, currency):
         """Render rake analysis chart comparing profit with and without rake"""
         if self.df is None or self.df.empty:
             return
 
         # Create subplot with two y-axes
         fig = make_subplots(
-            rows=2,
+            rows=1,
             cols=1,
             subplot_titles=(
-                "Cumulative Profit: After Rake vs Before Rake",
-                "Total Rake Paid Over Time (Incl. Jackpot)",
+                "Result over hands",
+                # "Total Rake Paid Over Time (Incl. Jackpot)",
             ),
             vertical_spacing=0.1,
         )
@@ -270,23 +271,13 @@ class HeroDataAnalyzer:
             go.Scatter(
                 x=self.df["Hand_Number"],
                 y=self.df["Running_Profit"],
-                name="Profit (After Rake)",
-                line=dict(color="red", width=2),
+                name="Result (After Rake)",
+                line=dict(color="#6adcff", width=2),
             ),
             row=1,
             col=1,
         )
 
-        fig.add_trace(
-            go.Scatter(
-                x=self.df["Hand_Number"],
-                y=self.df["Running_Profit_Before_Rake"],
-                name="Profit (Before Rake)",
-                line=dict(color="green", width=2),
-            ),
-            row=1,
-            col=1,
-        )
 
         # Add zero line
         fig.add_hline(
@@ -298,19 +289,18 @@ class HeroDataAnalyzer:
             go.Scatter(
                 x=self.df["Hand_Number"],
                 y=self.df["Running_Rake"],
-                name="Cumulative Rake Paid (Incl. Jackpot)",
+                name="Cumulative Rake Paid",
                 line=dict(color="orange", width=2),
-                fill="tonexty",
+                fill="tozeroy",
             ),
-            row=2,
+            row=1,
             col=1,
         )
 
-        fig.update_layout(height=600, showlegend=True, hovermode="x unified")
+        fig.update_layout(height=600, showlegend=False, hovermode="x unified")
 
-        fig.update_xaxes(title_text="Hand Number", row=2, col=1)
-        fig.update_yaxes(title_text="Cumulative Profit ($)", row=1, col=1)
-        fig.update_yaxes(title_text="Cumulative Rake ($)", row=2, col=1)
+        fig.update_xaxes(title_text="Hand Number", row=1, col=1)
+        fig.update_yaxes(title_text=f"Amount in {currency}", row=1, col=1)
 
         st.plotly_chart(fig, width="stretch")
 
@@ -393,8 +383,7 @@ class HeroDataAnalyzer:
 
             hands_bucket[hand["Hand_Range_Bucket"]]["free_flop"] += 1
 
-
-        for name, hand  in hands_bucket.items():
+        for name, hand in hands_bucket.items():
             if hand["total"] == 0:
                 hands_bucket[name]["not_dealt_frequency"] = 100
                 continue
@@ -414,7 +403,33 @@ class HeroDataAnalyzer:
 
         hands_bucket = hands_bucket.values()
 
-        range_html = range_template.render({"hands": hands_bucket})
+        absolute = {
+            "fold": sum(hand.get("fold", 0) for hand in hands_bucket),
+            "call": sum(hand.get("call", 0) for hand in hands_bucket),
+            "raise": sum(hand.get("raise", 0) for hand in hands_bucket),
+            "check": sum(hand.get("free_flop", 0) for hand in hands_bucket),
+        }
+
+        absolute["total"] = (
+            absolute["fold"] + absolute["call"] + absolute["raise"] + absolute["check"]
+        )
+
+        absolute["call_frequency"] = round(
+            absolute["call"] / absolute["total"] * 100, 2
+        )
+        absolute["fold_frequency"] = round(
+            absolute["fold"] / absolute["total"] * 100, 2
+        )
+        absolute["raise_frequency"] = round(
+            absolute["raise"] / absolute["total"] * 100, 2
+        )
+        absolute["check_frequency"] = round(
+            absolute["check"] / absolute["total"] * 100, 2
+        )
+
+        range_html = range_template.render(
+            {"hands": hands_bucket, "absolute": absolute}
+        )
 
         # pprint(self.df)
         # pprint(hands_bucket)
@@ -586,10 +601,8 @@ class HeroDataAnalyzer:
 
 
 def main():
-    
 
-    st.title("📊 Hero Poker Data Analysis")
-    st.markdown("Streamlined poker data analysis focused on Hero performance metrics")
+    st.title("📊 Poker Session Analyzer")
 
     # Initialize analyzer
     if "analyzer" not in st.session_state:
@@ -678,13 +691,13 @@ def main():
                 )
                 st.metric("Total Hands", f"{metrics['total_hands']:,}")
 
-        if show_profit_chart:
-            st.header("💰 Profit Analysis")
-            analyzer.render_profit_chart()
+        # if show_profit_chart:
+        # st.header("💰 Profit Analysis")
+        # analyzer.render_profit_chart()
 
         if show_rake_analysis:
-            st.header("💸 Rake Analysis")
-            analyzer.render_rake_analysis_chart()
+            st.header("💰 Results")
+            analyzer.render_results_chart(currency=currency)
 
         if show_position_analysis:
             st.header("📍 Position Analysis")
@@ -706,32 +719,19 @@ def main():
         st.header("💾 Export Data")
         analyzer.export_data()
 
-
         st.header("🃏 Hand Replayer")
         # riropo
         st.components.v1.html(
             '<iframe src="http://localhost:8888" width="1066" height="714" style="border: none"></iframe>',
-            height=600
+            height=600,
         )
 
-        st.markdown("❤️❤️❤️ thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️❤️❤️")
+        st.markdown(
+            " thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️"
+        )
 
     else:
         st.info("Please load hand histories using the sidebar controls.")
-
-        # Show features
-        st.subheader("🚀 Features")
-        st.markdown(
-            """
-        - **Hero-Focused Analysis**: Only tracks your performance, not opponents
-        - **Key Metrics**: Showdown rates, flop win rates, profit tracking
-        - **Position Analysis**: Performance breakdown by table position
-        - **Stakes Analysis**: Performance across different stake levels
-        - **Hand Type Analysis**: Performance by hole card types
-        - **Export Capabilities**: Download data for further analysis
-        - **Streamlined Interface**: Focus on data analysis, not hand replay
-        """
-        )
 
 
 if __name__ == "__main__":

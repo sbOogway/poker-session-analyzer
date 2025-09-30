@@ -15,7 +15,7 @@ logger.setLevel(logging.DEBUG)
 
 log_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
-file_handler = logging.FileHandler(f"logs/{datetime.now().isoformat()}.log")
+file_handler = logging.FileHandler(f"/tmp/{datetime.now().isoformat()}.log")
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(log_format)
 
