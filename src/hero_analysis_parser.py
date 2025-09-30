@@ -12,15 +12,16 @@ import traceback
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-
 log_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
-file_handler = logging.FileHandler(f"/tmp/{datetime.now().isoformat()}.log")
+os.makedirs("/tmp/cardsharpner-logs", exist_ok=True)
+
+file_handler = logging.FileHandler(f"/tmp/cardsharpner-logs/{datetime.now().isoformat()}.log")
 file_handler.setLevel(logging.DEBUG)
 file_handler.setFormatter(log_format)
 
 console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
+console_handler.setLevel(logging.INFO)
 console_handler.setFormatter(log_format)
 
 

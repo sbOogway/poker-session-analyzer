@@ -11,25 +11,28 @@ from datetime import datetime, timedelta
 import streamlit.components.v1 as components
 import utils, config
 from jinja2 import Environment, FileSystemLoader
-import subprocess
+import subprocess, logging
 
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+log_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+console_handler.setFormatter(log_format)
+
+logger.addHandler(console_handler)
 
 subprocess.Popen(
     ["/usr/bin/env", "python3", "-m", "http.server", "8888"], cwd="riropo/"
 )
 
-# # Set up Jinja2
+logger.info("spun up riropo server")
+
 env = Environment(loader=FileSystemLoader("templates"))
-range_template = env.get_template("range.html")
+range_template = env.get_template("range.html.j2")
 
-# def render_html(content: str) -> str:
-#     """Render the HTML template with the given inner content."""
-#     return template.render(content=content)
-
-# with open("templates/output.html", "r") as f:
-# range_html = f.read()
-
-# html = render_html(range_html)
 
 # Page configuration
 st.set_page_config(
@@ -37,14 +40,6 @@ st.set_page_config(
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
-)
-
-st.markdown(
-    """
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-""",
-    unsafe_allow_html=True,
 )
 
 # Custom CSS
@@ -101,10 +96,10 @@ class HeroDataAnalyzer:
             return {}
 
         self.df = self.df.iloc[:-1].reset_index(drop=True)
-        pd.set_option("display.max_columns", None)  # show every column
+        # pd.set_option("display.max_columns", None)  # show every column
 
         # pprint(self.df)
-        pprint(self.df.columns)
+        # pprint(self.df.columns)
         # pprint(self.df.loc[0])
 
         total_hands = len(self.df)
@@ -112,7 +107,6 @@ class HeroDataAnalyzer:
         total_profit_before_rake = self.df["Net_Profit_Before_Rake"].sum()
         # total_profit_after_rake = self.df["Net_Profit_After_Rake"].sum()
         total_rake = self.df["Rake_Amount"].sum()
-        # total_rake_new = self.df.loc[self.df["Total_Collected"] > 0, 'Rake_Amount'].sum()
         avg_profit = self.df["Net_Profit"].mean()
         avg_profit_before_rake = self.df["Net_Profit_Before_Rake"].mean()
         avg_rake = self.df["Rake_Amount"].mean()
@@ -120,11 +114,6 @@ class HeroDataAnalyzer:
         rake_percentage = (
             (total_rake / total_pot_size * 100) if total_pot_size > 0 else 0
         )
-
-        # print("total rake old", total_rake)
-        # print("total rake new", total_rake)
-        # print(total_profit_after_rake)
-
         # VPIP metrics (separate from PFR)
         vpip_hands = self.df["VPIP"].sum()
         vpip_rate = (vpip_hands / total_hands) * 100 if total_hands > 0 else 0
