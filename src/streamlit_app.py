@@ -11,6 +11,11 @@ from datetime import datetime, timedelta
 import streamlit.components.v1 as components
 import utils, config
 from jinja2 import Environment, FileSystemLoader
+import subprocess
+
+
+
+subprocess.Popen(["/usr/bin/env", "python3", "-m", "http.server", "8888"], cwd="riropo/")
 
 # # Set up Jinja2
 env = Environment(loader=FileSystemLoader("templates"))
@@ -581,6 +586,8 @@ class HeroDataAnalyzer:
 
 
 def main():
+    
+
     st.title("📊 Hero Poker Data Analysis")
     st.markdown("Streamlined poker data analysis focused on Hero performance metrics")
 
@@ -698,6 +705,16 @@ def main():
         # Export section
         st.header("💾 Export Data")
         analyzer.export_data()
+
+
+        st.header("🃏 Hand Replayer")
+        # riropo
+        st.components.v1.html(
+            '<iframe src="http://localhost:8888" width="1066" height="714" style="border: none"></iframe>',
+            height=600
+        )
+
+        st.markdown("❤️❤️❤️ thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️❤️❤️")
 
     else:
         st.info("Please load hand histories using the sidebar controls.")
