@@ -11,24 +11,7 @@ from datetime import datetime, timedelta
 import streamlit.components.v1 as components
 import utils, config
 from jinja2 import Environment, FileSystemLoader
-import subprocess, logging
-import socket
-
-ip_address = socket.gethostbyname(socket.gethostname())
-
-
-def get_local_ip():
-    # Create a dummy socket connection to an external host
-    # (doesn't actually send data) to discover the local IP.
-    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-        try:
-            # Use a public IP address; the port number is arbitrary.
-            s.connect(("8.8.8.8", 80))
-            return s.getsockname()[0]
-        except OSError:
-            # Fallback if the network is unreachable
-            return "127.0.0.1"
-
+import logging
 
 
 
@@ -41,17 +24,6 @@ console_handler.setLevel(logging.INFO)
 console_handler.setFormatter(log_format)
 
 logger.addHandler(console_handler)
-
-try:
-    subprocess.Popen(
-        ["/usr/bin/env", "python3", "-m", "http.server", "8888"], cwd="riropo/"
-    )
-except:
-    pass
-
-logger.info(f"Local IP address: {get_local_ip()}")
-# logger.info("Your IP Address is:", ip_address)
-logger.info("spun up riropo server")
 
 env = Environment(loader=FileSystemLoader("templates"))
 range_template = env.get_template("range.html.j2")
@@ -728,7 +700,7 @@ def main():
         st.header("🃏 Hand Replayer")
         # riropo
         st.components.v1.html(
-            f'<iframe src="http://{get_local_ip()}:8888" width="1066" height="714" style="border: none"></iframe>',
+            f'<iframe src="https://sboogway.github.io/riropo" width="1066" height="714" style="border: none"></iframe>',
             height=600,
         )
 
