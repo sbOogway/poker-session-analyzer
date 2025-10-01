@@ -12,6 +12,24 @@ import streamlit.components.v1 as components
 import utils, config
 from jinja2 import Environment, FileSystemLoader
 import subprocess, logging
+import socket
+
+ip_address = socket.gethostbyname(socket.gethostname())
+
+
+def get_local_ip():
+    # Create a dummy socket connection to an external host
+    # (doesn't actually send data) to discover the local IP.
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+        try:
+            # Use a public IP address; the port number is arbitrary.
+            s.connect(("8.8.8.8", 80))
+            return s.getsockname()[0]
+        except OSError:
+            # Fallback if the network is unreachable
+            return "127.0.0.1"
+
+
 
 
 logger = logging.getLogger(__name__)
@@ -24,10 +42,15 @@ console_handler.setFormatter(log_format)
 
 logger.addHandler(console_handler)
 
-subprocess.Popen(
-    ["/usr/bin/env", "python3", "-m", "http.server", "8888"], cwd="riropo/"
-)
+try:
+    subprocess.Popen(
+        ["/usr/bin/env", "python3", "-m", "http.server", "8888"], cwd="riropo/"
+    )
+except:
+    pass
 
+logger.info(f"Local IP address: {get_local_ip()}")
+# logger.info("Your IP Address is:", ip_address)
 logger.info("spun up riropo server")
 
 env = Environment(loader=FileSystemLoader("templates"))
@@ -95,7 +118,7 @@ class HeroDataAnalyzer:
         if self.df is None or self.df.empty:
             return {}
 
-        self.df = self.df.iloc[:-1].reset_index(drop=True)
+        # self.df = self.df.iloc[:-1].reset_index(drop=True)
         # pd.set_option("display.max_columns", None)  # show every column
 
         # pprint(self.df)
@@ -182,7 +205,7 @@ class HeroDataAnalyzer:
 
     def render_overview_metrics(self, metrics):
         """Render overview metrics"""
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3 = st.columns(3)
 
         with col1:
             st.metric("Total Hands", f"{metrics['total_hands']:,}")
@@ -206,11 +229,6 @@ class HeroDataAnalyzer:
             st.metric("Avg Rake/Hand (Incl. Jackpot)", f"${metrics['avg_rake']:.2f}")
             st.metric("Rake Percentage", f"{metrics['rake_percentage']:.2f}%")
             st.metric("VPIP Rate", f"{metrics['vpip_rate']:.1f}%")
-
-        with col4:
-            st.metric("Preflop Raise Rate", f"{metrics['preflop_raise_rate']:.1f}%")
-            st.metric("Saw Flop Rate", f"{metrics['flop_rate']:.1f}%")
-            st.metric("Showdown Rate (of Flop)", f"{metrics['showdown_rate']:.1f}%")
 
     def render_profit_chart(self):
         """Render profit over time chart"""
@@ -266,7 +284,6 @@ class HeroDataAnalyzer:
             row=1,
             col=1,
         )
-
 
         # Add zero line
         fig.add_hline(
@@ -711,7 +728,7 @@ def main():
         st.header("🃏 Hand Replayer")
         # riropo
         st.components.v1.html(
-            '<iframe src="http://localhost:8888" width="1066" height="714" style="border: none"></iframe>',
+            f'<iframe src="http://{get_local_ip()}:8888" width="1066" height="714" style="border: none"></iframe>',
             height=600,
         )
 

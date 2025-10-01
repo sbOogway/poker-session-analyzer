@@ -743,6 +743,11 @@ class HeroAnalysisParser:
 
             results = []
             # del hands[0]
+            
+            
+            hands = [hand for hand in hands if hand != "\ufeff"]
+            logger.debug("hands dbg\n" + pformat(hands))
+
             for hand in hands:
                 if hand.strip():
                     result = self.parse_hand(hand, currency=currency, username=username)
