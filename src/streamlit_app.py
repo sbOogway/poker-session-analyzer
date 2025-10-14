@@ -12,8 +12,8 @@ import streamlit.components.v1 as components
 import utils, config
 from jinja2 import Environment, FileSystemLoader
 import logging
-
-
+import math
+from bankroll_growth import calc_growth_rate
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -311,7 +311,6 @@ class HeroDataAnalyzer:
             "CBet Rate",
         ]
 
-        st.subheader("Position Analysis")
         st.dataframe(position_stats, width="stretch")
 
         self.df["Hand_Range_Bucket"] = self.df["Hole_Cards"].apply(
@@ -392,29 +391,103 @@ class HeroDataAnalyzer:
             absolute["fold"] + absolute["call"] + absolute["raise"] + absolute["check"]
         )
 
-        absolute["call_frequency"] = round(
-            absolute["call"] / absolute["total"] * 100, 2
-        )
-        absolute["fold_frequency"] = round(
-            absolute["fold"] / absolute["total"] * 100, 2
-        )
-        absolute["raise_frequency"] = round(
-            absolute["raise"] / absolute["total"] * 100, 2
-        )
-        absolute["check_frequency"] = round(
-            absolute["check"] / absolute["total"] * 100, 2
-        )
+        # it doesnt work with villains because we don t know hole cards
+        try:
+            absolute["call_frequency"] = round(
+                absolute["call"] / absolute["total"] * 100, 2
+            )
+            absolute["fold_frequency"] = round(
+                absolute["fold"] / absolute["total"] * 100, 2
+            )
+            absolute["raise_frequency"] = round(
+                absolute["raise"] / absolute["total"] * 100, 2
+            )
+            absolute["check_frequency"] = round(
+                absolute["check"] / absolute["total"] * 100, 2
+            )
 
-        range_html = range_template.render(
-            {"hands": hands_bucket, "absolute": absolute}
-        )
+            range_html = range_template.render(
+                {"hands": hands_bucket, "absolute": absolute}
+            )
+
+            components.html(html=range_html, height=700)
+
+        except ZeroDivisionError:
+            pass
 
         # pprint(self.df)
         # pprint(hands_bucket)
         # range visualizer
-        components.html(html=range_html, height=700)
+        
 
         # st.table(self.df)
+
+    def render_expected_bankroll_chart(self):
+        st.header("💰 Expected bankroll growth")
+
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            p_of_win = st.number_input("Probability of winning", 0.0, 1.0, value=0.5)
+
+        with col2:
+            pot_size = st.number_input("Pot size", 0.01)
+        with col3:
+            call_amount = st.number_input("Amount to call", 0.01)
+
+        # kelly bankroll
+        fig = make_subplots(
+            rows=1,
+            cols=2,
+            subplot_titles=("Expected bankroll growth",),
+            specs=[[{"type": "scatter"}, {"type": "table"}]],
+        )
+
+        x_bankroll = [i for i in range(100)]
+        y_bankroll = [
+            math.log(calc_growth_rate(i / 100, 1, pot_size / call_amount, p_of_win))
+            * 100
+            for i in x_bankroll
+        ]
+
+        optimal_bet_size = round(x_bankroll[y_bankroll.index(max(y_bankroll))], 2)
+        optimal_growth_rate = round(max(y_bankroll), 2)
+        positives = list(filter(lambda x: x > 0, y_bankroll))
+        break_even_bet_size = len(positives)
+
+        fig.add_trace(
+            go.Scatter(
+                x=x_bankroll,
+                y=y_bankroll,
+                name="",
+                line=dict(color="#6adcff", width=2),
+            ),
+            row=1,
+            col=1,
+        )
+
+        fig.add_trace(
+            go.Table(
+                cells=dict(
+                    values=[
+                        [
+                            "optimal bet size",
+                            "optimal growth rate",
+                            "break even bet size",
+                        ],
+                        [
+                            f"{optimal_bet_size:.2f}",
+                            f"{optimal_growth_rate:.2f}",
+                            f"{break_even_bet_size:.2f}",
+                        ],
+                    ]
+                )
+            ),
+            row=1,
+            col=2,
+        )
+
+        st.plotly_chart(fig)
 
     def render_stakes_analysis(self):
         """Render stakes-based analysis"""
@@ -441,7 +514,6 @@ class HeroDataAnalyzer:
             "Flop_Win_Rate",
         ]
 
-        st.subheader("Stakes Analysis")
         st.dataframe(stakes_stats, width="stretch")
 
     def render_hand_strength_analysis(self):
@@ -509,15 +581,12 @@ class HeroDataAnalyzer:
             "Flop_Win_Rate",
         ]
 
-        st.subheader("Hand Type Analysis")
         st.dataframe(hand_type_stats, width="stretch")
 
     def render_detailed_data(self):
         """Render detailed hand data"""
         if self.df is None or self.df.empty:
             return
-
-        st.subheader("Detailed Hand Data")
 
         # Filters
         col1, col2, col3 = st.columns(3)
@@ -624,6 +693,15 @@ def main():
         show_hand_analysis = st.checkbox("Hand Type Analysis", value=False)
         show_detailed_data = st.checkbox("Detailed Data", value=True)
 
+        # st.page_link("#range-analysis", label="Range Analysis")
+
+        st.markdown(
+            """
+            [🎚️ Range analysis](#range-analysis)
+
+            [💰 Expected bankroll growth](#expected-bankroll-growth)
+            """
+        )
     # Main content
     if analyzer.df is not None and not analyzer.df.empty:
         metrics = analyzer.calculate_key_metrics()
@@ -697,19 +775,40 @@ def main():
         st.header("💾 Export Data")
         analyzer.export_data()
 
-        st.header("🃏 Hand Replayer")
-        # riropo
-        st.components.v1.html(
-            f'<iframe src="https://sboogway.github.io/riropo" width="1066" height="714" style="border: none"></iframe>',
-            height=600,
-        )
-
-        st.markdown(
-            " thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️"
-        )
-
     else:
         st.info("Please load hand histories using the sidebar controls.")
+
+    st.header("🃏 Hand Replayer")
+    # riropo
+    st.components.v1.html(
+        """
+        <div style=\"display: flex;\">
+            <iframe src="https://sboogway.github.io/riropo" width="1066" height="714" style="border: none"></iframe>
+            <iframe src="https://sboogway.github.io/pokertools/odds" width="500" height="714" style="border: none"></iframe>
+        </div>
+        """,
+        height=600,
+    )
+
+    st.markdown(
+        " thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️"
+    )
+
+    analyzer.render_expected_bankroll_chart()
+
+    st.header("🎚️ Range Analysis")
+
+    st.components.v1.html(
+        f'<iframe src="https://sboogway.github.io/pokertools" width="1104" height="669" style="border: none"></iframe>',
+        height=669,
+    )
+
+    st.header("Odds calulator")
+
+    st.components.v1.html(
+        f'',
+        height=669,
+    )
 
 
 if __name__ == "__main__":
