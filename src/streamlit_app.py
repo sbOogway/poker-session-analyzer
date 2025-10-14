@@ -13,7 +13,10 @@ import utils, config
 from jinja2 import Environment, FileSystemLoader
 import logging
 import math
+
+
 from bankroll_growth import calc_growth_rate
+import api
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -85,6 +88,12 @@ class HeroDataAnalyzer:
             self.df = self.parser.process_files(folder_path, currency, username)
         return not self.df.empty
 
+    def get_hands(self, username: str):
+        data = api.get_player_hands(username)
+        df = pd.DataFrame.from_dict(data["data"])
+        self.df = df
+        
+
     def calculate_key_metrics(self):
         """Calculate key performance metrics"""
         if self.df is None or self.df.empty:
@@ -97,54 +106,61 @@ class HeroDataAnalyzer:
         # pprint(self.df.columns)
         # pprint(self.df.loc[0])
 
+        self.df["running_profit"] = self.df["net_profit"].cumsum()
+        self.df["running_profit_before_rake"] = self.df["net_profit_before_rake"].cumsum()
+        self.df["running_rake"] = self.df["rake_amount"].where(self.df["net_profit"] > 0).cumsum()
+        self.df["hand_number"] = range(1, len(self.df) + 1)
+
+        self.df["stakes"] = self.df["game"].apply(lambda x: x.split("_")[2])
+
         total_hands = len(self.df)
-        total_profit = self.df["Net_Profit"].sum()
-        total_profit_before_rake = self.df["Net_Profit_Before_Rake"].sum()
-        # total_profit_after_rake = self.df["Net_Profit_After_Rake"].sum()
-        total_rake = self.df["Rake_Amount"].sum()
-        avg_profit = self.df["Net_Profit"].mean()
-        avg_profit_before_rake = self.df["Net_Profit_Before_Rake"].mean()
-        avg_rake = self.df["Rake_Amount"].mean()
-        total_pot_size = self.df["Total_Pot_Size"].sum()
+        total_profit = self.df["net_profit"].sum()
+        total_profit_before_rake = self.df["net_profit_before_rake"].sum()
+        # total_profit_after_rake = self.df["net_profit_after_rake"].sum()
+        total_rake = self.df["rake_amount"].sum()
+        avg_profit = self.df["net_profit"].mean()
+        avg_profit_before_rake = self.df["net_profit_before_rake"].mean()
+        avg_rake = self.df["rake_amount"].mean()
+        total_pot_size = self.df["total_pot_size"].sum()
         rake_percentage = (
             (total_rake / total_pot_size * 100) if total_pot_size > 0 else 0
         )
-        # VPIP metrics (separate from PFR)
-        vpip_hands = self.df["VPIP"].sum()
+        # vpip metrics (separate from pfr)
+        vpip_hands = self.df["vpip"].sum()
         vpip_rate = (vpip_hands / total_hands) * 100 if total_hands > 0 else 0
 
-        # Flop metrics
-        saw_flop = self.df["Saw_Flop"].sum()
+        # flop metrics
+        saw_flop = self.df["saw_flop"].sum()
         flop_rate = (saw_flop / total_hands) * 100 if total_hands > 0 else 0
 
-        won_when_saw_flop = self.df["Won_When_Saw_Flop"].sum()
+        won_when_saw_flop = self.df["won_when_saw_flop"].sum()
         flop_win_rate = (won_when_saw_flop / saw_flop) * 100 if saw_flop > 0 else 0
 
-        # Showdown metrics (only calculated on hands where Hero saw flop)
-        went_to_showdown = self.df["Went_to_Showdown"].sum()
+        # showdown metrics (only calculated on hands where hero saw flop)
+        went_to_showdown = self.df["went_to_showdown"].sum()
         showdown_rate = (went_to_showdown / saw_flop) * 100 if saw_flop > 0 else 0
 
-        # Won at showdown (W$SD) - percentage of showdowns won
-        won_at_showdown = self.df["Won_at_Showdown"].sum()
+        # won at showdown (w$sd) - percentage of showdowns won
+        won_at_showdown = self.df["won_at_showdown"].sum()
         won_at_showdown_rate = (
             (won_at_showdown / went_to_showdown) * 100 if went_to_showdown > 0 else 0
         )
 
-        # Preflop metrics
-        preflop_raised = self.df["Preflop_Raised"].sum()
+        # preflop metrics
+        preflop_raised = self.df["preflop_raised"].sum()
         preflop_raise_rate = (
             (preflop_raised / total_hands) * 100 if total_hands > 0 else 0
         )
 
-        preflop_called = self.df["Preflop_Called"].sum()
+        preflop_called = self.df["preflop_called"].sum()
         preflop_call_rate = (
             (preflop_called / total_hands) * 100 if total_hands > 0 else 0
         )
 
-        # C-bet metrics
-        cbet_flop = self.df["CBet_Flop"].sum()
-        cbet_turn = self.df["CBet_Turn"].sum()
-        cbet_river = self.df["CBet_River"].sum()
+        # c-bet metrics
+        cbet_flop = self.df["cbet_flop"].sum()
+        cbet_turn = self.df["cbet_turn"].sum()
+        cbet_river = self.df["cbet_river"].sum()
 
         return {
             "total_hands": total_hands,
@@ -248,8 +264,8 @@ class HeroDataAnalyzer:
         # Add profit lines
         fig.add_trace(
             go.Scatter(
-                x=self.df["Hand_Number"],
-                y=self.df["Running_Profit"],
+                x=self.df["hand_number"],
+                y=self.df["running_profit"],
                 name="Result (After Rake)",
                 line=dict(color="#6adcff", width=2),
             ),
@@ -265,8 +281,8 @@ class HeroDataAnalyzer:
         # Add rake line
         fig.add_trace(
             go.Scatter(
-                x=self.df["Hand_Number"],
-                y=self.df["Running_Rake"],
+                x=self.df["hand_number"],
+                y=self.df["running_rake"],
                 name="Cumulative Rake Paid",
                 line=dict(color="orange", width=2),
                 fill="tozeroy",
@@ -288,36 +304,36 @@ class HeroDataAnalyzer:
             return
 
         position_stats = (
-            self.df.groupby("Position")
+            self.df.groupby("position")
             .agg(
                 {
-                    "Net_Profit": ["count", "sum", "mean"],
-                    "Went_to_Showdown": "mean",
-                    "Won_When_Saw_Flop": "mean",
-                    "Preflop_Raised": "mean",
-                    "CBet_Flop": "mean",
+                    "net_profit": ["count", "sum", "mean"],
+                    "went_to_showdown": "mean",
+                    "won_when_saw_flop": "mean",
+                    "preflop_raised": "mean",
+                    "cbet_flop": "mean",
                 }
             )
             .round(3)
         )
 
         position_stats.columns = [
-            "Hands",
-            "Total Profit",
-            "Avg Profit",
-            "Showdown Rate",
-            "Flop Win Rate",
-            "Preflop Raise Rate",
-            "CBet Rate",
+            "hands",
+            "total profit",
+            "avg profit",
+            "showdown rate",
+            "flop win rate",
+            "preflop raise rate",
+            "cbet rate",
         ]
 
         st.dataframe(position_stats, width="stretch")
 
-        self.df["Hand_Range_Bucket"] = self.df["Hole_Cards"].apply(
+        self.df["hand_range_bucket"] = self.df["hole_cards"].apply(
             lambda x: utils.categorize_hand(x)
         )
 
-        hands_by_position = self.df.groupby("Position")
+        hands_by_position = self.df.groupby("position")
 
         hands_bucket = {
             hand: {
@@ -336,29 +352,29 @@ class HeroDataAnalyzer:
         }
 
         for idx, hand in self.df.iterrows():
-            if hand["Hand_Range_Bucket"] == "":
+            if hand["hand_range_bucket"] == "":
                 continue
 
-            hands_bucket[hand["Hand_Range_Bucket"]]["total"] += 1
+            hands_bucket[hand["hand_range_bucket"]]["total"] += 1
 
-            if hand["Limped"] or hand["Called"] or hand["Serial_Caller"]:
-                hands_bucket[hand["Hand_Range_Bucket"]]["call"] += 1
+            if hand["limped"] or hand["called"] or hand["serial_caller"]:
+                hands_bucket[hand["hand_range_bucket"]]["call"] += 1
                 continue
 
             if (
-                hand["Single_Raised_Pot"]
-                or hand["Three_Bet"]
-                or hand["Four_Bet"]
-                or hand["Five_Bet"]
+                hand["single_raised_pot"]
+                or hand["three_bet"]
+                or hand["four_bet"]
+                or hand["five_bet"]
             ):
-                hands_bucket[hand["Hand_Range_Bucket"]]["raise"] += 1
+                hands_bucket[hand["hand_range_bucket"]]["raise"] += 1
                 continue
 
-            if hand["Preflop_Folded"]:
-                hands_bucket[hand["Hand_Range_Bucket"]]["fold"] += 1
+            if hand["preflop_folded"]:
+                hands_bucket[hand["hand_range_bucket"]]["fold"] += 1
                 continue
 
-            hands_bucket[hand["Hand_Range_Bucket"]]["free_flop"] += 1
+            hands_bucket[hand["hand_range_bucket"]]["free_flop"] += 1
 
         for name, hand in hands_bucket.items():
             if hand["total"] == 0:
@@ -495,23 +511,23 @@ class HeroDataAnalyzer:
             return
 
         stakes_stats = (
-            self.df.groupby("Stakes")
+            self.df.groupby("stakes")
             .agg(
                 {
-                    "Net_Profit": ["count", "sum", "mean"],
-                    "Went_to_Showdown": "mean",
-                    "Won_When_Saw_Flop": "mean",
+                    "net_profit": ["count", "sum", "mean"],
+                    "went_to_showdown": "mean",
+                    "won_when_saw_flop": "mean",
                 }
             )
             .round(3)
         )
 
         stakes_stats.columns = [
-            "Hands",
-            "Total_Profit",
-            "Avg_Profit",
-            "Showdown_Rate",
-            "Flop_Win_Rate",
+            "hands",
+            "total_profit",
+            "avg_profit",
+            "showdown_rate",
+            "flop_win_rate",
         ]
 
         st.dataframe(stakes_stats, width="stretch")
@@ -522,7 +538,7 @@ class HeroDataAnalyzer:
             return
 
         # Analyze by hole cards (simplified)
-        df_with_cards = self.df[self.df["Hole_Cards"] != ""].copy()
+        df_with_cards = self.df[self.df["hole_cards"] != ""].copy()
 
         if df_with_cards.empty:
             st.info("No hole card data available for analysis")
@@ -574,11 +590,11 @@ class HeroDataAnalyzer:
         )
 
         hand_type_stats.columns = [
-            "Hands",
-            "Total_Profit",
-            "Avg_Profit",
-            "Showdown_Rate",
-            "Flop_Win_Rate",
+            "hands",
+            "total_profit",
+            "avg_profit",
+            "showdown_rate",
+            "flop_win_rate",
         ]
 
         st.dataframe(hand_type_stats, width="stretch")
@@ -592,42 +608,42 @@ class HeroDataAnalyzer:
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            positions = ["All"] + list(self.df["Position"].unique())
-            selected_position = st.selectbox("Filter by Position", positions)
+            positions = ["all"] + list(self.df["position"].unique())
+            selected_position = st.selectbox("filter by position", positions)
 
         with col2:
-            stakes = ["All"] + list(self.df["Stakes"].unique())
-            selected_stakes = st.selectbox("Filter by Stakes", stakes)
+            stakes = ["all"] + list(self.df["stakes"].unique())
+            selected_stakes = st.selectbox("filter by stakes", stakes)
 
         with col3:
-            show_showdown_only = st.checkbox("Show showdown hands only")
+            show_showdown_only = st.checkbox("show showdown hands only")
 
-        # Apply filters
+        # apply filters
         filtered_df = self.df.copy()
 
-        if selected_position != "All":
-            filtered_df = filtered_df[filtered_df["Position"] == selected_position]
+        if selected_position != "all":
+            filtered_df = filtered_df[filtered_df["position"] == selected_position]
 
-        if selected_stakes != "All":
-            filtered_df = filtered_df[filtered_df["Stakes"] == selected_stakes]
+        if selected_stakes != "all":
+            filtered_df = filtered_df[filtered_df["stakes"] == selected_stakes]
 
         if show_showdown_only:
-            filtered_df = filtered_df[filtered_df["Went_to_Showdown"] == True]
+            filtered_df = filtered_df[filtered_df["went_to_showdown"] == True]
 
         # Display data
         st.dataframe(
             filtered_df[
                 [
-                    "Hand_ID",
-                    "Timestamp",
-                    "Position",
-                    "Stakes",
-                    "Hole_Cards",
-                    "Net_Profit",
-                    "Went_to_Showdown",
-                    "Won_When_Saw_Flop",
-                    "Preflop_Raised",
-                    "CBet_Flop",
+                    "hand_id",
+                    "time",
+                    "position",
+                    "stakes",
+                    "hole_cards",
+                    "net_profit",
+                    "went_to_showdown",
+                    "won_when_saw_flop",
+                    "preflop_raised",
+                    "cbet_flop",
                 ]
             ],
             width="stretch",
@@ -676,10 +692,12 @@ def main():
             # print(file.getvalue().decode())
             # analyzer.parser.parse_file(file.getvalue().decode())
 
-            if analyzer.load_data(folder_path, currency, username):
-                st.success(f"Loaded {len(analyzer.df)} hands")
-            else:
-                st.error("No data found. Please check the folder path.")
+            analyzer.get_hands(username)
+
+            # if analyzer.load_data(folder_path, currency, username):
+            st.success(f"Loaded {len(analyzer.df)} hands")
+            # else:
+                # st.error("No data found. Please check the folder path.")
 
         # print(analyzer.df)
 
@@ -809,6 +827,8 @@ def main():
         f'',
         height=669,
     )
+
+    
 
 
 if __name__ == "__main__":
