@@ -88,8 +88,9 @@ class HeroDataAnalyzer:
             self.df = self.parser.process_files(folder_path, currency, username)
         return not self.df.empty
 
-    def get_hands(self, username: str):
-        data = api.get_player_hands(username)
+    def get_hands(self, username: str, session_id: str = None):
+        data = api.get_player_hands(username, session_id)
+        pprint(data)
         df = pd.DataFrame.from_dict(data["data"])
         self.df = df
         
@@ -686,13 +687,17 @@ def main():
 
         currency = st.text_input("currency", "€")
         username = st.text_input("Your username", "caduceus369")
+        session_id = st.text_input("Session id")
 
         if st.button("🔄 Load Data"):
             # for file in files:
             # print(file.getvalue().decode())
             # analyzer.parser.parse_file(file.getvalue().decode())
 
-            analyzer.get_hands(username)
+            if session_id:
+                analyzer.get_hands(username, session_id)
+            else:
+                analyzer.get_hands(username)
 
             # if analyzer.load_data(folder_path, currency, username):
             st.success(f"Loaded {len(analyzer.df)} hands")
