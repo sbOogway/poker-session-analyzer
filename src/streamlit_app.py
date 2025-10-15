@@ -6,7 +6,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import os
 import glob
-from hero_analysis_parser import HeroAnalysisParser
 from datetime import datetime, timedelta
 import streamlit.components.v1 as components
 import utils, config
@@ -41,46 +40,9 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS
-# st.markdown(
-#     """
-
-
-# <style>
-#     .metric-card {
-#         background: white;
-#         padding: 15px;
-#         border-radius: 10px;
-#         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-#         margin: 5px 0;
-#     }
-
-#     .stat-highlight {
-#         background: #e3f2fd;
-#         padding: 10px;
-#         border-radius: 5px;
-#         border-left: 4px solid #2196f3;
-#     }
-
-#     .profit-positive {
-#         color: #4caf50;
-#         font-weight: bold;
-#     }
-
-#     .profit-negative {
-#         color: #f44336;
-#         font-weight: bold;
-#     }
-
-# </style>
-# """,
-#     unsafe_allow_html=True,
-# )
-
 
 class HeroDataAnalyzer:
     def __init__(self):
-        self.parser = HeroAnalysisParser()
         self.df = None
 
     def get_hands(self, username: str, session_id: str = None):
@@ -717,12 +679,7 @@ def main():
     with st.sidebar:
         st.header("📁 Data Controls")
 
-        # folder_path = st.text_input("Hand History Folder:", "hand_ps_dbg")
-
-        # folder_path = f"data/{folder_path}"
-
         files = st.file_uploader("📤 Upload file", accept_multiple_files=True)
-        # print(files)
 
         currency = st.text_input("currency", "€")
         username = st.text_input("Your username", "caduceus369")
@@ -730,20 +687,10 @@ def main():
 
         if st.button("🔄 Upload Data"):
             for file in files:
-
-                # print(file.getvalue())
-                # print(file.name)
                 response = api.upload_hands(
                     {"file": (file.name, file.getvalue(), "text/plain")}
                 )
-                # print(response)
-            # print(file.getvalue().decode())
-            # analyzer.parser.parse_file(file.getvalue().decode())
-
-            # if analyzer.load_data(folder_path, currency, username):
             st.success(f"Loaded {len(analyzer.df)} hands")
-            # else:
-            # st.error("No data found. Please check the folder path.")
 
         if st.button("🔁 Reload Data"):
             if session_id:
@@ -754,8 +701,6 @@ def main():
         if st.button("🔬 Analyze Data"):
             response = api.analyze_hands(username)
             print(response)
-
-        # print(analyzer.df)
 
         st.header("📊 Analysis Options")
 
