@@ -13,6 +13,7 @@ import utils, config
 from jinja2 import Environment, FileSystemLoader
 import logging
 import math
+from decimal import Decimal
 
 
 from bankroll_growth import calc_growth_rate
@@ -41,40 +42,40 @@ st.set_page_config(
 )
 
 # Custom CSS
-st.markdown(
-    """
-       
- 
-<style>
-    .metric-card {
-        background: white;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin: 5px 0;
-    }
-    
-    .stat-highlight {
-        background: #e3f2fd;
-        padding: 10px;
-        border-radius: 5px;
-        border-left: 4px solid #2196f3;
-    }
-    
-    .profit-positive {
-        color: #4caf50;
-        font-weight: bold;
-    }
-    
-    .profit-negative {
-        color: #f44336;
-        font-weight: bold;
-    }
-    
-</style>
-""",
-    unsafe_allow_html=True,
-)
+# st.markdown(
+#     """
+
+
+# <style>
+#     .metric-card {
+#         background: white;
+#         padding: 15px;
+#         border-radius: 10px;
+#         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+#         margin: 5px 0;
+#     }
+
+#     .stat-highlight {
+#         background: #e3f2fd;
+#         padding: 10px;
+#         border-radius: 5px;
+#         border-left: 4px solid #2196f3;
+#     }
+
+#     .profit-positive {
+#         color: #4caf50;
+#         font-weight: bold;
+#     }
+
+#     .profit-negative {
+#         color: #f44336;
+#         font-weight: bold;
+#     }
+
+# </style>
+# """,
+#     unsafe_allow_html=True,
+# )
 
 
 class HeroDataAnalyzer:
@@ -82,34 +83,45 @@ class HeroDataAnalyzer:
         self.parser = HeroAnalysisParser()
         self.df = None
 
-    def load_data(self, folder_path: str, currency: str, username: str):
-        """Load and process hand history data"""
-        with st.spinner("Loading and analyzing hand histories..."):
-            self.df = self.parser.process_files(folder_path, currency, username)
-        return not self.df.empty
-
     def get_hands(self, username: str, session_id: str = None):
         data = api.get_player_hands(username, session_id)
-        pprint(data)
+        # pprint(data)
         df = pd.DataFrame.from_dict(data["data"])
         self.df = df
-        
 
     def calculate_key_metrics(self):
         """Calculate key performance metrics"""
         if self.df is None or self.df.empty:
             return {}
 
-        # self.df = self.df.iloc[:-1].reset_index(drop=True)
-        # pd.set_option("display.max_columns", None)  # show every column
+        self.df["timestamp"] = self.df["time"].apply(
+            lambda x: datetime.strptime(x, "%Y-%m-%dT%H:%M:%S%z")
+        )
+        self.df = self.df.sort_values("timestamp")
 
-        # pprint(self.df)
-        # pprint(self.df.columns)
-        # pprint(self.df.loc[0])
+        # pprint(self.df.head())
+
+        fail_mask = (
+            self.df["total_collected"]
+            - self.df["total_contributed"]
+            != self.df["net_profit"]
+        )
+
+        # print(fail_mask)
+
+        fail_indices = self.df.index[fail_mask].tolist()
+
+        print(fail_indices)
+        print(sorted(fail_indices))
+        print(len(fail_indices))
 
         self.df["running_profit"] = self.df["net_profit"].cumsum()
-        self.df["running_profit_before_rake"] = self.df["net_profit_before_rake"].cumsum()
-        self.df["running_rake"] = self.df["rake_amount"].where(self.df["net_profit"] > 0).cumsum()
+        self.df["running_profit_before_rake"] = self.df[
+            "net_profit_before_rake"
+        ].cumsum()
+        self.df["running_rake"] = (
+            self.df["rake_amount"].where(self.df["net_profit"] > 0).cumsum()
+        )
         self.df["hand_number"] = range(1, len(self.df) + 1)
 
         self.df["stakes"] = self.df["game"].apply(lambda x: x.split("_")[2])
@@ -118,7 +130,8 @@ class HeroDataAnalyzer:
         total_profit = self.df["net_profit"].sum()
         total_profit_before_rake = self.df["net_profit_before_rake"].sum()
         # total_profit_after_rake = self.df["net_profit_after_rake"].sum()
-        total_rake = self.df["rake_amount"].sum()
+        total_rake = self.df["rake_amount"].where(self.df["net_profit"] > 0).sum()
+
         avg_profit = self.df["net_profit"].mean()
         avg_profit_before_rake = self.df["net_profit_before_rake"].mean()
         avg_rake = self.df["rake_amount"].mean()
@@ -331,8 +344,10 @@ class HeroDataAnalyzer:
         st.dataframe(position_stats, width="stretch")
 
         self.df["hand_range_bucket"] = self.df["hole_cards"].apply(
-            lambda x: utils.categorize_hand(x)
+            lambda x: utils.categorize_hand(" ".join(x))
         )
+
+        # print(self.df[""])
 
         hands_by_position = self.df.groupby("position")
 
@@ -430,12 +445,12 @@ class HeroDataAnalyzer:
             components.html(html=range_html, height=700)
 
         except ZeroDivisionError:
+            print("error division 0 visualizer")
             pass
 
         # pprint(self.df)
         # pprint(hands_bucket)
         # range visualizer
-        
 
         # st.table(self.df)
 
@@ -641,6 +656,10 @@ class HeroDataAnalyzer:
                     "stakes",
                     "hole_cards",
                     "net_profit",
+                    "rake_amount",
+                    "total_pot_size",
+                    "total_contributed",
+                    "total_collected",
                     "went_to_showdown",
                     "won_when_saw_flop",
                     "preflop_raised",
@@ -678,31 +697,43 @@ def main():
     with st.sidebar:
         st.header("📁 Data Controls")
 
-        folder_path = st.text_input("Hand History Folder:", "hand_ps_dbg")
+        # folder_path = st.text_input("Hand History Folder:", "hand_ps_dbg")
 
-        folder_path = f"data/{folder_path}"
+        # folder_path = f"data/{folder_path}"
 
-        # files = st.file_uploader("📤 Upload file",  accept_multiple_files=True)
+        files = st.file_uploader("📤 Upload file", accept_multiple_files=True)
         # print(files)
 
         currency = st.text_input("currency", "€")
         username = st.text_input("Your username", "caduceus369")
-        session_id = st.text_input("Session id")
+        session_id = st.text_input("Session id", "M62C33044BB297NJ")
 
-        if st.button("🔄 Load Data"):
-            # for file in files:
+        if st.button("🔄 Upload Data"):
+            for file in files:
+
+                # print(file.getvalue())
+                # print(file.name)
+                response = api.upload_hands(
+                    {"file": (file.name, file.getvalue(), "text/plain")}
+                )
+                # print(response)
             # print(file.getvalue().decode())
             # analyzer.parser.parse_file(file.getvalue().decode())
-
-            if session_id:
-                analyzer.get_hands(username, session_id)
-            else:
-                analyzer.get_hands(username)
 
             # if analyzer.load_data(folder_path, currency, username):
             st.success(f"Loaded {len(analyzer.df)} hands")
             # else:
-                # st.error("No data found. Please check the folder path.")
+            # st.error("No data found. Please check the folder path.")
+
+        if st.button("🔁 Reload Data"):
+            if session_id:
+                analyzer.get_hands(username, session_id)
+            else:
+                analyzer.get_hands(username, "all")
+
+        if st.button("🔬 Analyze Data"):
+            response = api.analyze_hands(username)
+            print(response)
 
         # print(analyzer.df)
 
@@ -805,6 +836,18 @@ def main():
     # riropo
     st.components.v1.html(
         """
+        
+        <button onclick="handleClick()">
+        click me
+        </button>
+
+        <script>
+        function handleClick() {
+            localStorage.setItem("hh_hard_drive", 
+            "UG9rZXJTdGFycyBIYW5kICMyMjQ1NjAzMzY2Mzc6ICBIb2xkJ2VtIE5vIExpbWl0IChcdTIwQUMwLjAxL1x1MjBBQzAuMDIgRVVSKSAtIDIwMjEvMDMvMDcgMTc6MzI6MjQgV0VUIFsyMDIxLzAzLzA3IDEyOjMyOjI0IEVUXQ0KVGFibGUgJ0dyb2dsZXInIDYtbWF4IFNlYXQgIzUgaXMgdGhlIGJ1dHRvbg0KU2VhdCAxOiByZWxpYXMyMjA1IChcdTIwQUMzLjIzIGluIGNoaXBzKSANClNlYXQgMjogQ2Fzw6kzIChcdTIwQUMwLjcwIGluIGNoaXBzKSANClNlYXQgMzogdmlrY2NoIChcdTIwQUMzLjk4IGluIGNoaXBzKSANClNlYXQgNDogWWFubmlja1BhenluIChcdTIwQUMyLjIwIGluIGNoaXBzKSANClNlYXQgNTogbXUzMGpvIChcdTIwQUMyLjEzIGluIGNoaXBzKSANClNlYXQgNjogUsO6YmVuIEJhYmF1IChcdTIwQUMyLjAxIGluIGNoaXBzKSANClLDumJlbiBCYWJhdTogcG9zdHMgc21hbGwgYmxpbmQgXHUyMEFDMC4wMQ0KcmVsaWFzMjIwNTogcG9zdHMgYmlnIGJsaW5kIFx1MjBBQzAuMDINCioqKiBIT0xFIENBUkRTICoqKg0KRGVhbHQgdG8gdmlrY2NoIFs3YyA1aF0NCkNhc8OpMyBoYXMgdGltZWQgb3V0DQpDYXPDqTM6IGZvbGRzIA0KdmlrY2NoIGhhcyB0aW1lZCBvdXQNCnZpa2NjaDogZm9sZHMgDQpZYW5uaWNrUGF6eW46IGZvbGRzIA0KbXUzMGpvOiBmb2xkcyANClLDumJlbiBCYWJhdTogcmFpc2VzIFx1MjBBQzAuMDQgdG8gXHUyMEFDMC4wNg0KcmVsaWFzMjIwNTogZm9sZHMgDQpVbmNhbGxlZCBiZXQgKFx1MjBBQzAuMDQpIHJldHVybmVkIHRvIFLDumJlbiBCYWJhdQ0KUsO6YmVuIEJhYmF1IGNvbGxlY3RlZCBcdTIwQUMwLjA0IGZyb20gcG90DQpSw7piZW4gQmFiYXU6IGRvZXNuJ3Qgc2hvdyBoYW5kIA0KKioqIFNVTU1BUlkgKioqDQpUb3RhbCBwb3QgXHUyMEFDMC4wNCB8IFJha2UgXHUyMEFDMCANClNlYXQgMTogcmVsaWFzMjIwNSAoYmlnIGJsaW5kKSBmb2xkZWQgYmVmb3JlIEZsb3ANClNlYXQgMjogQ2Fzw6kzIGZvbGRlZCBiZWZvcmUgRmxvcCAoZGlkbid0IGJldCkNClNlYXQgMzogdmlrY2NoIGZvbGRlZCBiZWZvcmUgRmxvcCAoZGlkbid0IGJldCkNClNlYXQgNDogWWFubmlja1BhenluIGZvbGRlZCBiZWZvcmUgRmxvcCAoZGlkbid0IGJldCkNClNlYXQgNTogbXUzMGpvIChidXR0b24pIGZvbGRlZCBiZWZvcmUgRmxvcCAoZGlkbid0IGJldCkNClNlYXQgNjogUsO6YmVuIEJhYmF1IChzbWFsbCBibGluZCkgY29sbGVjdGVkIChcdTIwQUMwLjA0KQ0KDQoNCg0KDQo=");
+            console.debug("debug hh_hard_drive")
+        }
+        </script>
         <div style=\"display: flex;\">
             <iframe src="https://sboogway.github.io/riropo" width="1066" height="714" style="border: none"></iframe>
             <iframe src="https://sboogway.github.io/pokertools/odds" width="500" height="714" style="border: none"></iframe>
@@ -829,11 +872,9 @@ def main():
     st.header("Odds calulator")
 
     st.components.v1.html(
-        f'',
+        f"",
         height=669,
     )
-
-    
 
 
 if __name__ == "__main__":
