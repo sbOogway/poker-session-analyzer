@@ -101,19 +101,38 @@ class HeroDataAnalyzer:
 
         # pprint(self.df.head())
 
-        fail_mask = (
-            self.df["total_collected"]
-            - self.df["total_contributed"]
-            != self.df["net_profit"]
+
+        fail_mask_1 = (
+            (self.df["total_collected"].apply(lambda x: Decimal(str(x))) - self.df["total_contributed"].apply(lambda x : Decimal(str(x))))
+            == self.df["net_profit"].apply(lambda x: Decimal(str(x)))
         )
+
+        fail_mask_2 = (
+            (self.df["net_profit_before_rake"])
+        )
+
+        # print(fail_mask_1)
+        assert all(fail_mask_1)
 
         # print(fail_mask)
 
-        fail_indices = self.df.index[fail_mask].tolist()
+        # fail_indices = self.df.index[fail_mask_1].tolist()
 
-        print(fail_indices)
-        print(sorted(fail_indices))
-        print(len(fail_indices))
+        # for index, row in self.df.iterrows():
+        #     if index in fail_indices:
+        #         print(index)
+        #         print("coll", row["total_collected"])
+        #         print("cont", row["total_contributed"])
+        #         print("net", row["net_profit"])
+        #         print(
+        #             Decimal(str(row["total_collected"]))
+        #             - Decimal(str(row["total_contributed"]))
+        #         )
+        #         print()
+
+        # print(fail_indices)
+        # print(sorted(fail_indices))
+        # print(len(fail_indices))
 
         self.df["running_profit"] = self.df["net_profit"].cumsum()
         self.df["running_profit_before_rake"] = self.df[
@@ -656,6 +675,7 @@ class HeroDataAnalyzer:
                     "stakes",
                     "hole_cards",
                     "net_profit",
+                    "net_profit_before_rake",
                     "rake_amount",
                     "total_pot_size",
                     "total_contributed",
