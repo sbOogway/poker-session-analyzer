@@ -1,6 +1,8 @@
 import re
 import pandas as pd
 from decimal import Decimal
+import streamlit as st
+
 
 class CardRank:
 
@@ -72,5 +74,13 @@ def categorize_hand(hand: str) -> str:
         else:
             return c1[0] + c2[0] + "o"
 
+
 def to_decimal(series: pd.Series) -> pd.Series:
     return series.astype(str).apply(Decimal)
+
+
+def format_sessions_selection(sessions) -> tuple:
+    result = []
+    for session in sessions:
+        result.append(f'{session["start_time"]} - {session["game"]} - {session["id"]}')
+    return result

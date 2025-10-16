@@ -95,7 +95,6 @@ def render_overview_metrics(metrics):
     """Render overview metrics"""
     col1, col2, col3 = st.columns(3)
 
-    st.header("📈 Overview Metrics")
     with col1:
         st.metric("Total Hands", f"{metrics['total_hands']:,}")
         st.metric("Total Profit ", f"${metrics['total_profit']:.2f}")

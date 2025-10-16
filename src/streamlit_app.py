@@ -8,8 +8,8 @@ import streamlit_charts
 import utils
 import api
 
-import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
+# import warnings
+# warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 logger = logging.getLogger(__name__)
@@ -24,22 +24,56 @@ log_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
 
 # Page configuration
-st.set_page_config(
-    page_title="Hero Poker Data Analysis",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
 
 class HeroDataAnalyzer:
     def __init__(self):
         self.df = None
+        self.sessions_retrieved = dict()
+
+    def fetch_sessions(self, sessions_iterable, username):
+        for session in sessions_iterable:
+            if "session" == "all":
+                continue
+            id = session.split(" - ")[-1]
+            try:
+                # do not remove tmp variable otherwise st renders df on top of page
+                tmp = st.session_state[session]
+            except KeyError:
+                data = api.get_player_hands(username, id)
+                st.session_state[session] = pd.DataFrame.from_dict(data["data"]) 
+    
+    def update_hands_df(self, sessions_iterable):
+        for session in sessions_iterable:
+            if session == "all":
+                continue
+            self.df = pd.concat([self.df, st.session_state[session]])
+
+
+    def display_sessions_all(self, username):
+        sessions_iterable = st.session_state.poker_sessions
+        self.fetch_sessions(sessions_iterable, username)
+        self.update_hands_df(sessions_iterable)
+
+
+    def display_sessions_from_select(self, username):
+        sessions_iterable = st.session_state.poker_session_ids
+        self.fetch_sessions(sessions_iterable, username)
+        self.update_hands_df(sessions_iterable)
+
+    def display_sessions(self, username):
+        self.df = pd.DataFrame()
+        if "all" in st.session_state.poker_session_ids:
+            self.display_sessions_all(username)
+        else:
+            self.display_sessions_from_select(username)
 
     def get_hands(self, username: str, session_id: str = None):
+        if session_id in self.data.keys():
+            return
+        
         data = api.get_player_hands(username, session_id)
-        # pprint(data)
         df = pd.DataFrame.from_dict(data["data"])
+        self.data[session_id] = df
         self.df = df
 
     def calculate_key_metrics(self):
@@ -163,27 +197,49 @@ class HeroDataAnalyzer:
             "cbet_river": cbet_river,
         }
 
-    
-def main():
 
-    
-    st.title("📊 Poker Session Analyzer")
+def main():
+    st.set_page_config(
+    page_title="Poker Session analyzer",
+    page_icon=":material/poker_chip:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
     if "analyzer" not in st.session_state:
         st.session_state.analyzer = HeroDataAnalyzer()
 
+    # if "sessions" not in st.session_state:
+    #     st.session_state.poker_session_ids = []
+
     analyzer = st.session_state.analyzer
 
-    # Sidebar controls
-    with st.sidebar:
-        st.header("📁 Data Controls")
+    sessions = api.get_sessions()
+    sessions = utils.format_sessions_selection(sessions)
+    st.session_state.poker_sessions = sessions
+    # pprint(sessions)
 
+    st.title("📊 Poker Session Analyzer")
+
+    
+    c1, c2 = st.columns([3, 1])
+
+    with c2:
+        username = st.text_input("Your username", "caduceus369")
+
+    with c1:
+        st.multiselect("sessions", ["all"] + sessions, default=[], on_change=analyzer.display_sessions, key="poker_session_ids", args=(username,))
+        
+    
+
+
+    with st.sidebar:
         files = st.file_uploader("📤 Upload file", accept_multiple_files=True)
 
         currency = st.text_input("currency", "€")
-        username = st.text_input("Your username", "caduceus369")
+        
         session_id = st.text_input("Session id", "M62C33044BB297NJ")
-        st.selectbox("sessions", ("All", "yoofhewofhweuiofhouwehfuiwehfoiuewhfiouhweioufhioweuhfoiwehfiwehfiuwehfo", "test"))
+        
 
         if st.button("🔄 Upload Data"):
             for file in files:
@@ -208,66 +264,32 @@ def main():
             st.toast(f"analyzed hands from {username}", icon="✅")
 
 
-        st.header("📊 Analysis Options")
-
-        show_overview = st.checkbox("Overview Metrics", value=True)
-        show_profit_chart = st.checkbox("Profit Chart", value=True)
-        show_rake_analysis = st.checkbox("Rake Analysis", value=True)
-        show_position_analysis = st.checkbox("Position Analysis", value=True)
-        show_stakes_analysis = st.checkbox("Stakes Analysis", value=True)
-        show_hand_analysis = st.checkbox("Hand Type Analysis", value=False)
-        show_detailed_data = st.checkbox("Detailed Data", value=True)
-
-        # st.page_link("#range-analysis", label="Range Analysis")
-
-        st.markdown(
-            """
-            [🎚️ Range analysis](#range-analysis)
-
-            [💰 Expected bankroll growth](#expected-bankroll-growth)
-            """
-        )
-    # Main content
     if analyzer.df is not None and not analyzer.df.empty:
         metrics = analyzer.calculate_key_metrics()
-
-        if show_overview:
             
-            streamlit_charts.render_overview_metrics(metrics)
+        st.header("📈 Overview Metrics")
+        streamlit_charts.render_overview_metrics(metrics)
 
-            # Additional Statistics Section
-            
+        st.header("💰 Results")
+        streamlit_charts.render_results_chart(analyzer.df, currency=currency)
 
-        # if show_profit_chart:
-        # st.header("💰 Profit Analysis")
-        # analyzer.render_profit_chart()
+        st.header("📍 Position Analysis")
+        streamlit_charts.render_position_analysis(analyzer.df)
 
-        if show_rake_analysis:
-            st.header("💰 Results")
-            streamlit_charts.render_results_chart(analyzer.df, currency=currency)
+        st.header("💵 Stakes Analysis")
+        streamlit_charts.render_stakes_analysis(analyzer.df)
 
-        if show_position_analysis:
-            st.header("📍 Position Analysis")
-            streamlit_charts.render_position_analysis(analyzer.df)
+        # st.header("🃏 Hand Type Analysis")
+        # streamlit_charts.render_hand_strength_analysis(analyzer.df)
 
-        if show_stakes_analysis:
-            st.header("💵 Stakes Analysis")
-            streamlit_charts.render_stakes_analysis(analyzer.df)
-
-        if show_hand_analysis:
-            st.header("🃏 Hand Type Analysis")
-            streamlit_charts.render_hand_strength_analysis(analyzer.df)
-
-        if show_detailed_data:
-            st.header("📋 Detailed Hand Data")
-            streamlit_charts.render_detailed_data(analyzer.df)
+        st.header("📋 Detailed Hand Data")
+        streamlit_charts.render_detailed_data(analyzer.df)
 
         # Export section
         st.header("💾 Export Data")
         streamlit_charts.export_data(analyzer.df)
 
-    else:
-        st.info("Please load hand histories using the sidebar controls.")
+
 
     streamlit_charts.render_external_tools()
 
