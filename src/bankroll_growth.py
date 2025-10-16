@@ -1,9 +1,5 @@
 import math
 
-
-
-
-
 """
 https://en.wikipedia.org/wiki/Kelly_criterion
 
@@ -36,7 +32,7 @@ def calc_growth_rate(f: float, a: float, b: float, p: float):
 
 if __name__ == "__main__":
 
-  from matplotlib import pyplot as plt
+  from matplotlib import pyplot as plt # type: ignore
 
   plt.style.use('dark_background')
 
