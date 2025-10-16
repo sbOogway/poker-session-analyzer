@@ -690,7 +690,7 @@ def main():
                 response = api.upload_hands(
                     {"file": (file.name, file.getvalue(), "text/plain")}
                 )
-            st.success(f"Loaded {len(analyzer.df)} hands")
+            # st.success(f"Loaded {len(analyzer.df)} hands")
 
         if st.button("🔁 Reload Data"):
             if session_id:
