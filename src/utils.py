@@ -2,7 +2,12 @@ import re
 import pandas as pd
 from decimal import Decimal
 import streamlit as st
+import logging
+import base64
 
+
+def logger():
+    return logging.getLogger()
 
 class CardRank:
 
@@ -84,3 +89,8 @@ def format_sessions_selection(sessions) -> tuple:
     for session in sessions:
         result.append(f'{session["start_time"]} - {session["game"]} - {session["id"]}')
     return result
+
+
+def _encode_base64(val):
+    # Convert the value to a string, then to bytes, then encode
+    return base64.urlsafe_b64encode(str(val).encode()).decode().rstrip("=")

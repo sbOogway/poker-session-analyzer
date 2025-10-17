@@ -28,3 +28,13 @@ def get_sessions():
     return requests.get(
         f"{BASE_URL}/api/v1/sessions"
     ).json()
+
+def get_rake_pot():
+    return requests.get(
+        f"{BASE_URL}/api/v1/rake"
+    ).json()
+
+def get_players():
+    return requests.get(
+        f"{BASE_URL}/api/v1/players"
+    ).json()

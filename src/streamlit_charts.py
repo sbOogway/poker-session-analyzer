@@ -9,6 +9,7 @@ import math
 from bankroll_growth import calc_growth_rate
 from jinja2 import Environment, FileSystemLoader
 import streamlit.components.v1 as components
+import api
 
 
 def render_profit_chart(self):
@@ -37,6 +38,7 @@ def render_profit_chart(self):
     )
 
     st.plotly_chart(fig, width="stretch")
+
 
 def render_results_chart(df: pd.DataFrame, currency):
     """Render rake analysis chart comparing profit with and without rake"""
@@ -67,9 +69,7 @@ def render_results_chart(df: pd.DataFrame, currency):
     )
 
     # Add zero line
-    fig.add_hline(
-        y=0, line_dash="dash", line_color="gray", opacity=0.5, row=1, col=1
-    )
+    fig.add_hline(y=0, line_dash="dash", line_color="gray", opacity=0.5, row=1, col=1)
 
     # Add rake line
     fig.add_trace(
@@ -91,6 +91,7 @@ def render_results_chart(df: pd.DataFrame, currency):
 
     st.plotly_chart(fig, config=dict(width="stretch"))
 
+
 def render_overview_metrics(metrics):
     """Render overview metrics"""
     col1, col2, col3 = st.columns(3)
@@ -103,19 +104,19 @@ def render_overview_metrics(metrics):
         st.metric(
             "Total Profit (Before Rake)",
             f"{metrics['total_profit_before_rake']:.2f}",
-            border=True
+            border=True,
         )
-        st.metric(
-            "Total Rake Paid", f"{metrics['total_rake']:.2f}", border=True
-        )
-    
+        st.metric("Total Rake Paid", f"{metrics['total_rake']:.2f}", border=True)
+
     with col3:
-        st.metric("Avg Profit/Hand (After Rake)", f"{metrics['avg_profit']:.2f}", border=True)
+        st.metric(
+            "Avg Profit/Hand (After Rake)", f"{metrics['avg_profit']:.2f}", border=True
+        )
         st.metric(
             "Avg Profit/Hand (Before Rake)",
-            f"{metrics['avg_profit_before_rake']:.2f}", border=True)
-
-        
+            f"{metrics['avg_profit_before_rake']:.2f}",
+            border=True,
+        )
 
     # st.header("🎯 Detailed Statistics")
     col1, col2, col3, col4 = st.columns(4)
@@ -135,12 +136,8 @@ def render_overview_metrics(metrics):
 
     with col3:
         st.metric("Showdown Rate (of Flop)", f"{metrics['showdown_rate']:.1f}%")
-        st.metric(
-            "W$SD (Won at Showdown)", f"{metrics['won_at_showdown_rate']:.1f}%"
-        )
-        st.metric(
-            "Won at Showdown Count", f"{metrics['won_at_showdown']} times"
-        )
+        st.metric("W$SD (Won at Showdown)", f"{metrics['won_at_showdown_rate']:.1f}%")
+        st.metric("Won at Showdown Count", f"{metrics['won_at_showdown']} times")
 
     with col4:
         st.metric(
@@ -153,9 +150,6 @@ def render_overview_metrics(metrics):
         )
         st.metric("Total Hands", f"{metrics['total_hands']:,}")
 
-    
-
-    
 
 def render_position_analysis(df: pd.DataFrame):
     """Render position-based analysis"""
@@ -268,40 +262,33 @@ def render_position_analysis(df: pd.DataFrame):
         absolute["fold"] + absolute["call"] + absolute["raise"] + absolute["check"]
     )
 
-
     env = Environment(loader=FileSystemLoader("templates"))
     range_template = env.get_template("range.html.j2")
 
     # it doesnt work with villains because we don t know hole cards
-    try:
-        absolute["call_frequency"] = round(
-            absolute["call"] / absolute["total"] * 100, 2
-        )
-        absolute["fold_frequency"] = round(
-            absolute["fold"] / absolute["total"] * 100, 2
-        )
-        absolute["raise_frequency"] = round(
-            absolute["raise"] / absolute["total"] * 100, 2
-        )
-        absolute["check_frequency"] = round(
-            absolute["check"] / absolute["total"] * 100, 2
-        )
+    if absolute["total"] == 0:
+        absolute["total"] = float("inf")
+    # try:
 
-        range_html = range_template.render(
-            {"hands": hands_bucket, "absolute": absolute}
-        )
+    absolute["call_frequency"] = round(absolute["call"] / absolute["total"] * 100, 2)
+    absolute["fold_frequency"] = round(absolute["fold"] / absolute["total"] * 100, 2)
+    absolute["raise_frequency"] = round(absolute["raise"] / absolute["total"] * 100, 2)
+    absolute["check_frequency"] = round(absolute["check"] / absolute["total"] * 100, 2)
 
-        components.html(html=range_html, height=700)
+    range_html = range_template.render({"hands": hands_bucket, "absolute": absolute})
 
-    except ZeroDivisionError:
-        print("error division 0 visualizer")
-        pass
+    components.html(html=range_html, height=700)
+
+    # except ZeroDivisionError:
+    #     print("error division 0 visualizer")
+    #     pass
 
     # pprint(self.df)
     # pprint(hands_bucket)
     # range visualizer
 
     # st.table(self.df)
+
 
 def render_expected_bankroll_chart():
     st.header("💰 Expected bankroll growth")
@@ -326,8 +313,7 @@ def render_expected_bankroll_chart():
 
     x_bankroll = [i for i in range(100)]
     y_bankroll = [
-        math.log(calc_growth_rate(i / 100, 1, pot_size / call_amount, p_of_win))
-        * 100
+        math.log(calc_growth_rate(i / 100, 1, pot_size / call_amount, p_of_win)) * 100
         for i in x_bankroll
     ]
 
@@ -370,6 +356,7 @@ def render_expected_bankroll_chart():
 
     st.plotly_chart(fig)
 
+
 def render_stakes_analysis(df: pd.DataFrame):
     """Render stakes-based analysis"""
     if df is None or df.empty:
@@ -396,6 +383,7 @@ def render_stakes_analysis(df: pd.DataFrame):
     ]
 
     st.dataframe(stakes_stats, width="stretch")
+
 
 def render_hand_strength_analysis(df: pd.DataFrame):
     """Render hand strength analysis"""
@@ -464,6 +452,7 @@ def render_hand_strength_analysis(df: pd.DataFrame):
 
     st.dataframe(hand_type_stats, width="stretch")
 
+
 def render_detailed_data(df: pd.DataFrame):
     """Render detailed hand data"""
     if df is None or df.empty:
@@ -505,32 +494,67 @@ def render_detailed_data(df: pd.DataFrame):
                 "stakes",
                 "hole_cards",
                 "net_profit",
-                "net_profit_before_rake",
+                # "net_profit_before_rake",
                 "rake_amount",
                 "total_pot_size",
-                "total_contributed",
-                "total_collected",
+                # "total_contributed",
+                "hand_review",
+                # "total_collected",
                 "went_to_showdown",
-                "won_when_saw_flop",
+                # "won_when_saw_flop",
                 "preflop_raised",
                 "cbet_flop",
             ]
         ],
         width="stretch",
+        # on_select="rerun",
+        column_config={
+            "hand_review": st.column_config.LinkColumn(
+                "review hand", help="open hand in reviewer", display_text="open hand in reviewer"
+            )
+        },
     )
+
 
 def export_data(df: pd.DataFrame):
     """Export data to CSV"""
-    if df is None or df.empty:
-        return
 
-    csv = df.to_csv(index=False)
-    st.download_button(
-        label="Download Hero Analysis Data (CSV)",
-        data=csv,
-        file_name=f"hero_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-        mime="text/csv",
-    )
+    c = st.columns([1, 1])
+
+    with c[1]:
+        # if df is None or df.empty:
+        try:
+            csv = df.to_csv(index=False)
+            st.download_button(
+                label="Download Hero Analysis Data (CSV)",
+                data=csv,
+                file_name=f"hero_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                mime="text/csv",
+            )
+        except AttributeError:
+            pass
+
+    with c[0]:
+        files = st.file_uploader("📤 Upload file", accept_multiple_files=True)
+
+        # session_id = st.text_input("Session id", "M62C33044BB297NJ")
+
+        if st.button("🔄 Upload Data", use_container_width=True):
+            for file in files:
+                response = api.upload_hands(
+                    {"file": (file.name, file.getvalue(), "text/plain")}
+                )
+                if response["status"] != "got em":
+                    st.toast("error uploading data", icon="❌")
+                utils.logger().info(response)
+            st.toast(f"uploaded {len(files)} hand files to database", icon="✅")
+
+
+def render_overrall_rake():
+    if st.button("🪓 Get rake data"):
+        rake_data = api.get_rake_pot()
+        rake_df = pd.DataFrame(rake_data["data"])
+        st.scatter_chart(rake_df, x="total_pot_size", y="rake_amount")
 
 
 def render_hand_replayer():
@@ -560,8 +584,6 @@ def render_hand_replayer():
     st.markdown(
         " thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️"
     )
-
-
 
 
 def render_external_tools():
