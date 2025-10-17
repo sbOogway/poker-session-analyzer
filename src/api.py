@@ -4,7 +4,7 @@ import requests
 BASE_URL = "https://poker-api.caduceus.lol"
 
 # for dev
-BASE_URL = "http://localhost:8008"
+# BASE_URL = "http://localhost:8008"
 
 
 def get_player_hands(player_id: str, session_id: str | None):

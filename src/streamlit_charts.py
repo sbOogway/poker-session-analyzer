@@ -96,27 +96,26 @@ def render_overview_metrics(metrics):
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.metric("Total Hands", f"{metrics['total_hands']:,}")
-        st.metric("Total Profit ", f"${metrics['total_profit']:.2f}")
-        st.metric(
-            "Total Profit (Before Rake)",
-            f"${metrics['total_profit_before_rake']:.2f}",
-        )
+        st.metric("Total Hands", f"{metrics['total_hands']:,}", border=True)
+        st.metric("Total Profit ", f"{metrics['total_profit']:.2f}", border=True)
 
     with col2:
-        st.metric("Avg Profit/Hand (After Rake)", f"${metrics['avg_profit']:.2f}")
+        st.metric(
+            "Total Profit (Before Rake)",
+            f"{metrics['total_profit_before_rake']:.2f}",
+            border=True
+        )
+        st.metric(
+            "Total Rake Paid", f"{metrics['total_rake']:.2f}", border=True
+        )
+    
+    with col3:
+        st.metric("Avg Profit/Hand (After Rake)", f"{metrics['avg_profit']:.2f}", border=True)
         st.metric(
             "Avg Profit/Hand (Before Rake)",
-            f"${metrics['avg_profit_before_rake']:.2f}",
-        )
-        st.metric(
-            "Total Rake Paid (Incl. Jackpot)", f"${metrics['total_rake']:.2f}"
-        )
+            f"{metrics['avg_profit_before_rake']:.2f}", border=True)
 
-    with col3:
-        st.metric("Avg Rake/Hand (Incl. Jackpot)", f"${metrics['avg_rake']:.2f}")
-        st.metric("Rake Percentage", f"{metrics['rake_percentage']:.2f}%")
-        st.metric("VPIP Rate", f"{metrics['vpip_rate']:.1f}%")
+        
 
     st.header("🎯 Detailed Statistics")
     col1, col2, col3, col4 = st.columns(4)
