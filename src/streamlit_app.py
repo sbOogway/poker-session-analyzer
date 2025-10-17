@@ -25,6 +25,7 @@ log_format = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 
 # Page configuration
 
+
 class HeroDataAnalyzer:
     def __init__(self):
         self.df = None
@@ -40,20 +41,18 @@ class HeroDataAnalyzer:
                 tmp = st.session_state[session]
             except KeyError:
                 data = api.get_player_hands(username, id)
-                st.session_state[session] = pd.DataFrame.from_dict(data["data"]) 
-    
+                st.session_state[session] = pd.DataFrame.from_dict(data["data"])
+
     def update_hands_df(self, sessions_iterable):
         for session in sessions_iterable:
             if session == "all":
                 continue
             self.df = pd.concat([self.df, st.session_state[session]])
 
-
     def display_sessions_all(self, username):
         sessions_iterable = st.session_state.poker_sessions
         self.fetch_sessions(sessions_iterable, username)
         self.update_hands_df(sessions_iterable)
-
 
     def display_sessions_from_select(self, username):
         sessions_iterable = st.session_state.poker_session_ids
@@ -70,7 +69,7 @@ class HeroDataAnalyzer:
     def get_hands(self, username: str, session_id: str = None):
         if session_id in self.data.keys():
             return
-        
+
         data = api.get_player_hands(username, session_id)
         df = pd.DataFrame.from_dict(data["data"])
         self.data[session_id] = df
@@ -86,21 +85,22 @@ class HeroDataAnalyzer:
         )
         self.df = self.df.sort_values("timestamp")
 
-
         # assertions
         fail_mask_1 = (
-            (self.df["total_collected"].apply(lambda x: Decimal(str(x))) - self.df["total_contributed"].apply(lambda x : Decimal(str(x))))
-            == self.df["net_profit"].apply(lambda x: Decimal(str(x)))
-        )
+            self.df["total_collected"].apply(lambda x: Decimal(str(x)))
+            - self.df["total_contributed"].apply(lambda x: Decimal(str(x)))
+        ) == self.df["net_profit"].apply(lambda x: Decimal(str(x)))
 
-        net_profit          = utils.to_decimal(self.df["net_profit"])
-        rake_amount         = utils.to_decimal(self.df["rake_amount"])
-        net_profit_before   = utils.to_decimal(self.df["net_profit_before_rake"])
+        net_profit = utils.to_decimal(self.df["net_profit"])
+        rake_amount = utils.to_decimal(self.df["rake_amount"])
+        net_profit_before = utils.to_decimal(self.df["net_profit_before_rake"])
 
         positive_mask = net_profit > 0
         negative_mask = ~positive_mask
 
-        cond1 = (net_profit[positive_mask] + rake_amount[positive_mask]) == net_profit_before[positive_mask]
+        cond1 = (
+            net_profit[positive_mask] + rake_amount[positive_mask]
+        ) == net_profit_before[positive_mask]
         cond2 = net_profit[negative_mask] == net_profit_before[negative_mask]
 
         assert cond1.all() and cond2.all()
@@ -200,11 +200,11 @@ class HeroDataAnalyzer:
 
 def main():
     st.set_page_config(
-    page_title="Poker Session analyzer",
-    page_icon=":material/poker_chip:",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+        page_title="Poker Session analyzer",
+        page_icon=":material/poker_chip:",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
 
     if "analyzer" not in st.session_state:
         st.session_state.analyzer = HeroDataAnalyzer()
@@ -219,29 +219,92 @@ def main():
     st.session_state.poker_sessions = sessions
     # pprint(sessions)
 
-    st.title("📊 Poker Session Analyzer")
+    # st.title("📊 Poker Session Analyzer")
 
-    
-    c1, c2 = st.columns([3, 1])
+    c = st.columns([5, 3, 2, 1], vertical_alignment="bottom")
 
-    with c2:
+    with c[1]:
         username = st.text_input("Your username", "caduceus369")
 
-    with c1:
-        st.multiselect("sessions", ["all"] + sessions, default=[], on_change=analyzer.display_sessions, key="poker_session_ids", args=(username,))
+    with c[0]:
+        st.multiselect(
+            "sessions",
+            ["all"] + sessions,
+            default=[],
+            on_change=analyzer.display_sessions,
+            key="poker_session_ids",
+            args=(username,),
+        )
+
+    with c[2]:
+        currency = st.text_input("currency", "€")
+
+    with c[3]:
+        if st.button("🔬", help="Analyze Data", use_container_width=True):
+            response = api.analyze_hands(username)
+            logger.info(response)
+            st.toast(f"analyzed hands from {username}", icon="✅")
+
+    # with st.sidebar:
+    # if st.button("🔁 Reload Data"):
+    #     if session_id:
+    #         analyzer.get_hands(username, session_id)
+    #     else:
+    #         analyzer.get_hands(username, "all")
+    #     st.toast(f"retrieved {len(analyzer.df)} hands from database", icon="✅")
+
+    tabs = st.tabs(
+        [
+            "📈 Overview",
+            "💰 Results",
+            "📍 Position",
+            "💵 Stakes analysis",
+            "📋 Detailed hand data",
+            "💾 Upload/Export data",
+            "🃏 Hand replayer",
+            "🛠️ Analysis tools",
+
+        ]
+    )
+
+    if analyzer.df is not None and not analyzer.df.empty:
+        metrics = analyzer.calculate_key_metrics()
+
+        with tabs[0]:
+            # st.header("📈 Overview Metrics")
+            streamlit_charts.render_overview_metrics(metrics)
+
+        with tabs[1]:
+            # st.header("💰 Results")
+            streamlit_charts.render_results_chart(analyzer.df, currency=currency)
+
+        with tabs[2]:
+            # st.header("📍 Position Analysis")
+            streamlit_charts.render_position_analysis(analyzer.df)
+
+        with tabs[3]:
+            # st.header("💵 Stakes Analysis")
+            streamlit_charts.render_stakes_analysis(analyzer.df)
+
+        # st.header("🃏 Hand Type Analysis")
+        # streamlit_charts.render_hand_strength_analysis(analyzer.df)
+
+        with tabs[4]:
+            # st.header("📋 Detailed Hand Data")
+            streamlit_charts.render_detailed_data(analyzer.df)
+
+        # Export section
         
-    
 
+    with tabs[5]:
+        # st.header("💾 Export Data")
+        streamlit_charts.export_data(analyzer.df)
 
-    with st.sidebar:
         files = st.file_uploader("📤 Upload file", accept_multiple_files=True)
 
-        currency = st.text_input("currency", "€")
-        
-        session_id = st.text_input("Session id", "M62C33044BB297NJ")
-        
+        # session_id = st.text_input("Session id", "M62C33044BB297NJ")
 
-        if st.button("🔄 Upload Data"):
+        if st.button("🔄 Upload Data", use_container_width=True):
             for file in files:
                 response = api.upload_hands(
                     {"file": (file.name, file.getvalue(), "text/plain")}
@@ -251,47 +314,11 @@ def main():
                 logger.info(response)
             st.toast(f"uploaded {len(files)} hand files to database", icon="✅")
 
-        if st.button("🔁 Reload Data"):
-            if session_id:
-                analyzer.get_hands(username, session_id)
-            else:
-                analyzer.get_hands(username, "all")
-            st.toast(f"retrieved {len(analyzer.df)} hands from database", icon="✅")
 
-        if st.button("🔬 Analyze Data"):
-            response = api.analyze_hands(username)
-            logger.info(response)
-            st.toast(f"analyzed hands from {username}", icon="✅")
-
-
-    if analyzer.df is not None and not analyzer.df.empty:
-        metrics = analyzer.calculate_key_metrics()
-            
-        st.header("📈 Overview Metrics")
-        streamlit_charts.render_overview_metrics(metrics)
-
-        st.header("💰 Results")
-        streamlit_charts.render_results_chart(analyzer.df, currency=currency)
-
-        st.header("📍 Position Analysis")
-        streamlit_charts.render_position_analysis(analyzer.df)
-
-        st.header("💵 Stakes Analysis")
-        streamlit_charts.render_stakes_analysis(analyzer.df)
-
-        # st.header("🃏 Hand Type Analysis")
-        # streamlit_charts.render_hand_strength_analysis(analyzer.df)
-
-        st.header("📋 Detailed Hand Data")
-        streamlit_charts.render_detailed_data(analyzer.df)
-
-        # Export section
-        st.header("💾 Export Data")
-        streamlit_charts.export_data(analyzer.df)
-
-
-
-    streamlit_charts.render_external_tools()
+    with tabs[6]:
+        streamlit_charts.render_hand_replayer()
+    with tabs[7]:
+        streamlit_charts.render_external_tools()
 
 
 if __name__ == "__main__":

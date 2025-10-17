@@ -117,7 +117,7 @@ def render_overview_metrics(metrics):
 
         
 
-    st.header("🎯 Detailed Statistics")
+    # st.header("🎯 Detailed Statistics")
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
@@ -533,8 +533,7 @@ def export_data(df: pd.DataFrame):
     )
 
 
-def render_external_tools():
-    st.header("🃏 Hand Replayer")
+def render_hand_replayer():
     # riropo
     st.components.v1.html(
         """
@@ -562,6 +561,10 @@ def render_external_tools():
         " thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️"
     )
 
+
+
+
+def render_external_tools():
     render_expected_bankroll_chart()
 
     st.header("🎚️ Range Analysis")
