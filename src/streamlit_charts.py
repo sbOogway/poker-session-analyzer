@@ -122,9 +122,9 @@ def render_overview_metrics(metrics):
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric("VPIP Rate", f"{metrics['vpip_rate']:.1f}%")
-        st.metric("Preflop Raise Rate", f"{metrics['preflop_raise_rate']:.1f}%")
-        st.metric("Preflop Call Rate", f"{metrics['preflop_call_rate']:.1f}%")
+        st.metric("VPIP Rate", f"{metrics['vpip_rate']:.2f}%")
+        st.metric("Preflop Raise Rate", f"{metrics['preflop_raise_rate']:.2f}%")
+        st.metric("Preflop Call Rate", f"{metrics['preflop_call_rate']:.2f}%")
 
     with col2:
         st.metric("Saw Flop Rate", f"{metrics['flop_rate']:.1f}%")
