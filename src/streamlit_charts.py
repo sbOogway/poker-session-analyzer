@@ -574,7 +574,7 @@ def render_hand_replayer():
         }
         </script>
         <div style=\"display: flex;\">
-            <iframe src="https://sboogway.github.io/riropo" width="1066" height="714" style="border: none"></iframe>
+            <iframe src="https://sboogway.github.io/poker-hand-replayer" width="1066" height="714" style="border: none"></iframe>
             <iframe src="https://sboogway.github.io/pokertools/odds" width="500" height="714" style="border: none"></iframe>
         </div>
         """,
@@ -596,9 +596,3 @@ def render_external_tools():
         height=669,
     )
 
-    st.header("Odds calulator")
-
-    st.components.v1.html(
-        f"",
-        height=669,
-    )
