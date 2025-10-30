@@ -1,7 +1,7 @@
 import requests
 
 
-BASE_URL = "https://poker-api.caduceus.lol"
+BASE_URL = "https://poker-api-v2.caduceus.lol"
 
 # for dev
 # BASE_URL = "http://localhost:8008"
