@@ -24,6 +24,11 @@ def analyze_hands(player_id):
         f"{BASE_URL}/api/v1/analyze", params=dict(username=player_id)
     ).json()
 
+def analyze_hands():
+    return requests.post(
+        f"{BASE_URL}/api/v1/analyze_all"
+    )
+
 def get_sessions():
     return requests.get(
         f"{BASE_URL}/api/v1/sessions"
