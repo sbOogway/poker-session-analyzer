@@ -24,7 +24,7 @@ def analyze_hands(player_id):
         f"{BASE_URL}/api/v1/analyze", params=dict(username=player_id)
     ).json()
 
-def analyze_hands():
+def analyze_all_hands():
     return requests.post(
         f"{BASE_URL}/api/v1/analyze_all"
     )

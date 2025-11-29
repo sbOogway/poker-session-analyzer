@@ -67,7 +67,7 @@ def main():
     
     with c[4]:
         if st.button("🔬", help="analyze all players data", use_container_width=True):
-            response = api.analyze_hands()
+            response = api.analyze_all_hands()
             logger.info(response)
             st.toast(f"analyzed hands from all players", icon="✅")
 
