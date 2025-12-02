@@ -80,8 +80,7 @@ def main():
     )
 
     if analyzer.df is not None and not analyzer.df.empty:
-        metrics = analyzer.calculate_key_metrics()
-        metrics['bb_per_100'] = streamlit_charts.calculate_bb_per_100(analyzer.df, currency)
+        metrics = analyzer.calculate_key_metrics(currency)
 
         with tabs[0]:
             streamlit_charts.render_overview_metrics(metrics)

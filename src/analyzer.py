@@ -60,7 +60,7 @@ class DataAnalyzer:
         self.data[session_id] = df
         self.df = df
 
-    def calculate_key_metrics(self):
+    def calculate_key_metrics(self, currency):
         """Calculate key performance metrics"""
         if self.df is None or self.df.empty:
             return {}
@@ -106,7 +106,7 @@ class DataAnalyzer:
         self.df["stakes"] = self.df["game"].apply(lambda x: x.split("_")[2])
 
         self.df["b64_text"] = self.df["text"].apply(utils._encode_base64)
-        self.df["hand_review"] = ('https://sboogway.github.io/riropo?text=' + self.df["b64_text"].astype(str))
+        self.df["hand_review"] = ('https://sboogway.github.io/poker-hand-review?text=' + self.df["b64_text"].astype(str))
 
         total_hands = len(self.df)
         total_profit = self.df["net_profit"].sum()
@@ -158,6 +158,45 @@ class DataAnalyzer:
         cbet_turn = self.df["cbet_turn"].sum()
         cbet_river = self.df["cbet_river"].sum()
 
+
+        # Calculate big blind per 100 hands metric
+        if self.df is None or self.df.empty:
+            bb_per_100 = 0.0
+        else:
+            # Parse big blind from stakes (format like "$0.01/$0.02")
+            def get_bb(stakes_str):
+                import re
+                match = re.search(r'/' + currency + '([\d\..]+)', stakes_str)
+                if match:
+                    try:
+                        return float(match.group(1))
+                    except ValueError:
+                        print(f"ValueError parsing BB from: {stakes_str}")
+                        return 0.0
+                return 0.0
+
+            df_copy = self.df.copy()
+            print(df_copy['stakes'])
+
+            df_copy['bb'] = df_copy['stakes'].apply(get_bb)
+
+            print(df_copy['bb'])
+            # Filter out hands where BB is 0 or invalid
+            df_copy = df_copy[df_copy['bb'] > 0]
+
+            if df_copy.empty:
+                bb_per_100 = 0.0
+            else:
+                # Profit in big blinds
+                df_copy['profit_bb'] = df_copy['net_profit'] / df_copy['bb']
+
+                # Total BB profit
+                total_bb_profit = df_copy['profit_bb'].sum()
+                total_hands = len(df_copy)
+
+                # BB per 100 hands
+                bb_per_100 = (total_bb_profit / total_hands) * 100
+
         return {
             "total_hands": total_hands,
             "total_profit": total_profit,
@@ -185,4 +224,7 @@ class DataAnalyzer:
             "cbet_flop": cbet_flop,
             "cbet_turn": cbet_turn,
             "cbet_river": cbet_river,
+            "bb_per_100": bb_per_100,
         }
+
+
