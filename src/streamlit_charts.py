@@ -117,6 +117,7 @@ def render_overview_metrics(metrics):
             f"{metrics['avg_profit_before_rake']:.2f}",
             border=True,
         )
+        st.metric("BB/100", f"{metrics['bb_per_100']:.2f}", border=True)
 
     # st.header("🎯 Detailed Statistics")
     col1, col2, col3, col4 = st.columns(4)
@@ -572,6 +573,50 @@ def render_hand_replayer():
     st.markdown(
         " thanks to [vikcch](https://github.com/vikcch) for the [hand replayer](https://github.com/vikcch/riropo) ❤️"
     )
+
+
+def calculate_bb_per_100(df, currency):
+    """Calculate big blind per 100 hands metric"""
+    if df is None or df.empty:
+        return 0.0
+
+    # Parse big blind from stakes (format like "$0.01/$0.02")
+    def get_bb(stakes_str):
+        import re
+        match = re.search(r'/' + currency + '([\d\..]+)', stakes_str)
+        if match:
+            try:
+                return float(match.group(1))
+            except ValueError:
+                print(f"ValueError parsing BB from: {stakes_str}")
+                return 0.0
+        return 0.0
+    
+    
+
+    df_copy = df.copy()
+    print(df_copy['stakes'])
+    
+    df_copy['bb'] = df_copy['stakes'].apply(get_bb)
+
+    print(df_copy['bb'])
+    # Filter out hands where BB is 0 or invalid
+    df_copy = df_copy[df_copy['bb'] > 0]
+
+    if df_copy.empty:
+        return 0.0
+
+    # Profit in big blinds
+    df_copy['profit_bb'] = df_copy['net_profit'] / df_copy['bb']
+
+    # Total BB profit
+    total_bb_profit = df_copy['profit_bb'].sum()
+    total_hands = len(df_copy)
+
+    # BB per 100 hands
+    bb_per_100 = (total_bb_profit / total_hands) * 100
+
+    return bb_per_100
 
 
 def render_external_tools():
