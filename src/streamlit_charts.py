@@ -505,6 +505,7 @@ def render_detailed_data(df: pd.DataFrame):
                 # "won_when_saw_flop",
                 "preflop_raised",
                 "cbet_flop",
+                "text"
             ]
         ],
         width="stretch",

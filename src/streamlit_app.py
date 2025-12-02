@@ -37,7 +37,7 @@ def main():
     st.session_state.poker_sessions = sessions
     # pprint(sessions)
 
-    c = st.columns([10, 3, 1, 1], vertical_alignment="bottom")
+    c = st.columns([10, 3, 1, 1, 1], vertical_alignment="bottom")
 
     with c[1]:
         username = st.selectbox(
@@ -64,6 +64,12 @@ def main():
             response = api.analyze_hands(username)
             logger.info(response)
             st.toast(f"analyzed hands from {username}", icon="✅")
+    
+    with c[4]:
+        if st.button("🔬", help="analyze all players data", use_container_width=True):
+            response = api.analyze_all_hands()
+            logger.info(response)
+            st.toast(f"analyzed hands from all players", icon="✅")
 
     tabs = st.tabs(
         [

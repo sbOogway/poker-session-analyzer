@@ -106,7 +106,7 @@ class DataAnalyzer:
         self.df["stakes"] = self.df["game"].apply(lambda x: x.split("_")[2])
 
         self.df["b64_text"] = self.df["text"].apply(utils._encode_base64)
-        self.df["hand_review"] = ('https://sboogway.github.io/poker-hand-review?text=' + self.df["b64_text"].astype(str))
+        self.df["hand_review"] = ('https://sboogway.github.io/poker-hand-replayer?text=' + self.df["b64_text"].astype(str))
 
         total_hands = len(self.df)
         total_profit = self.df["net_profit"].sum()
