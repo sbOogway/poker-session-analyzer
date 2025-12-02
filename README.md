@@ -16,8 +16,9 @@ A streamlined poker data analysis system built with Python and Streamlit. This p
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.11 or higher
 - Git (for cloning the repository)
+- uv (Python package manager)
 
 ### Setup
 
@@ -28,24 +29,32 @@ git clone https://github.com/yourusername/poker-hand-analysis.git
 cd poker-hand-analysis
 ```
 
-2. **Install dependencies:**
+2. **Install uv (if not already installed):**
 
 ```bash
-pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-3. **Run the application:**
+3. **Install dependencies:**
 
 ```bash
-streamlit run hero_data_analysis.py
+uv sync
+```
+
+   This will create a virtual environment and install all dependencies as specified in `pyproject.toml`. The `uv.lock` file ensures reproducible builds.
+
+4. **Run the application:**
+
+```bash
+uv run streamlit run src/streamlit_app.py
 ```
 
 ## Usage
 
 ### Basic Usage
 
-1. **Load Hand Histories**: Place your poker hand history files in the `hand_histories` folder
-2. **Start the Application**: Run `streamlit run hero_data_analysis.py`
+1. **Load Hand Histories**: Upload your poker hand history files via the application interface
+2. **Start the Application**: Run `uv run streamlit run src/streamlit_app.py`
 3. **Select Analysis Options**: Choose which metrics and charts to display
 4. **Analyze Your Performance**: Review your poker performance with key metrics and insights
 
@@ -106,7 +115,7 @@ All statistics are broken down by position (UTG, MP, CO, BTN, SB, BB)
 ### Running Tests
 
 ```bash
-python test_comprehensive_system.py
+uv run python test/test_comprehensive_system.py
 ```
 
 ### Adding New Features
